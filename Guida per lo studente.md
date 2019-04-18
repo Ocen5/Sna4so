@@ -1,4 +1,4 @@
-﻿# Guida allo studente
+# Guida allo studente
 
 ## Indice
 - Pipeline di progetto
@@ -163,7 +163,7 @@ Se l’operazione è andata a buon fine, siamo quasi pronti per partire… Ma pr
 
 **Configurazione di Eclipse**
 
-Assicuarsi di aver installato [Java versione 8](https://www.oracle.com/technetwork/java/javase/overview/index.html) o superiore ed [Eclipse IDE for Java](https://www.eclipse.org/downloads/) versione 2018-12 (4.10.0) o superiore.
+Assicuarsi di aver installato [Java versione 8](https://www.oracle.com/technetwork/java/javase/overview/index.html) ed [Eclipse IDE for Java](https://www.eclipse.org/downloads/) versione 2018-12 (4.10.0) o superiore.
 
 ###### Installazione Google Cloud Tools
 
@@ -206,9 +206,19 @@ Dall'albero di progetto nella vista *Navigator*, attivate il menu contestuale e 
 
 ![](res/img/guida-studente/project-properties.png)
 
-Quindi, selezionate la voce `Java Build Path` e verificate le seguenti librerie siano presenti come in figura. Qualora mancassero, procedete ad aggiungerle premendo il bottone `Add Library…`. I file `jar` richiesti sono salvati nella cartella `<nomeprogetto>/libs`.
+Quindi, selezionate la voce `Java Build Path` e verificate le seguenti librerie siano presenti come in figura. Qualora mancassero, procedete ad aggiungerle premendo il bottone `Add JARs…`. I file `jar` richiesti sono salvati nella cartella `<nomeprogetto>/libs`.
 
 ![](res/img/guida-studente/buildpath.png)
+
+Se dovesse invece mancare la voce *Google Cloud Platform Libraries*, aggiungetela premendo sul task *"Add Library…"*.
+
+![](res/img/guida-studente/gcloudlib1.png)
+
+Quindi, premete su *"Finish"*, senza selezionare alcuna voce.
+
+![](res/img/guida-studente/gcloudlib2.png)
+
+
 
 ## Eseguire l'applicazione
 
@@ -225,16 +235,18 @@ Questi passi devono essere eseguiti da un solo componente del gruppo di progetto
 5. Selezionate la voce `APIs & Services > Credentials` della dashboard e create una ***Service account key*** come da figura.
    ![](res/img/guida-studente/service-account-credentials.png)
 
-6. Compilate i campi come da figura e create la chiave in formato JSON (NB. il valore del campo `Service Account ID` è generato automaticamente).
+6. Compilate i campi come da figura e create la chiave in formato JSON (NB. il valore del campo `Service Account ID` è generato automaticamente). Annotate, invece, l'**ID di progetto** evidenziato in rosso nella figura sottostante (in questo caso `sna4so`) compreso tra il simbolo '@' e il resto della stringa '.iam….'.
    ![](res/img/guida-studente/create-json-key.png)
 
 7. Rinominate il file JSON utilizzando il nome del vostro progetto; per esempio, se fate parte del progetto ***Allen***, la chiave dovrà chiamarsi `project-allen.json`.
 8. Via Slack, inviate la chiave a Fabio Calefato ***come messaggio privato***.
-9. Il file sarà accessibile all'URL: http://neo.di.uniba.it/credentials/DOCKERID.json, dove `DOCKERID` deve essere sostituito con il Docker ID usato per l'accesso a Docker Hub.
-9. L'URL precedente deve essere usato per aggiornare l'attributo `url` nei file:
+9. Il file sarà accessibile all'URL inviato in risposta al messaggio.
+10. Tale URL dovrà essere usato per aggiornare l'attributo `url` nei file:
    * `SOQuery.java` (riga 36)
    * `GoogleDocsUtils.java` (riga 63)
-10. Posizionatevi sul file `AppMain.java` ed eseguite come Java application da Eclipse.
+11. Nel file `SOQuery.java` (riga 45), sostituite la stringa "_sna4so_" nel costruttore con l'ID del vostro progetto, annotato nel passo 6. Qualora non lo aveste segnato, potete recuperarlo come da figura sottostante.
+    ![](res/img/guida-studente/project-ID.png)
+12. Posizionatevi sul file `AppMain.java` ed eseguite come Java application da Eclipse.
 
 ## Lavoro sul codice dell’applicazione
 
@@ -250,10 +262,10 @@ Il workflow da utilizzare è il [GitHub Flow](https://guides.github.com/introduc
 - Dopo l’esecuzione dei test è possibile lanciare gli strumenti di **Quality Assurance** (checkstyle e findbugs) per assicurarsi di aver scritto codice di qualità. Leggere la sezione *Controlli di Qualità* per ulteriori informazioni.
 - A questo punto, dunque, si può procedere all'apertura di una pull request, andando su GitHub e posizionandosi sul branch su cui si sta lavorando.
 - Scrivere un titolo conciso ed esplicativo per la pull request e una descrizione significativa per il revisore come commento, incluso un riferimento all'issue nella forma *closes #n*. Scegliere almeno un reviewer tra i componenti del team.
-- Una volta lanciata la pull request, si attiverà la costruzione automatica della build e ci sarà da attendere qualche minuto. In caso di conflitti, bisogna risolverli. Può essere utile consultare la documentazione di GitHub (<https://help.github.com/articles/about-merge-conflicts/>) e comunicare con chi ha effettuato le modifiche in conflitto.  
+- Una volta lanciata la pull request, si attiverà la costruzione automatica della build e ci sarà da attendere qualche minuto. In caso di conflitti, bisogna risolverli. Può essere utile consultare la documentazione di GitHub (<https://help.github.com/articles/about-merge-conflicts>) e comunicare con chi ha effettuato le modifiche in conflitto.  
 - Discutere eventuali commenti dei reviewer e apportare le modifiche se necessarie come commit sul branch di lavoro. Ricordare che i commit aggiuntivi vanno comunque propagati sul repository remoto in GitHub mediante comando `git push origin <nome branch>`.
 - Ricevuta l'approvazione esplicita di almeno un componente del team, si può procedere da GitHub al merge del nuovo *branch* con il *master branch* sul repository remoto.
-- Se il merge è andato a buon fine, per completare il lavoro, cancellare il branch sul repository remoto (mediante interfaccia web di GitHub) e sul repository locale con la sequenza di comandi: `git checkout master`, `git pull` e `git branch -d <nome branch>`.
+- Se la build Travis e il merge su GitHub sono entrambi andati a buon fine, per completare il lavoro, cancellare il branch sul repository remoto (mediante interfaccia web di GitHub) e sul repository locale con la sequenza di comandi: `git checkout master`, `git pull` e `git branch -d <nome branch>`.
 
 ## Test automatici e Controlli di Qualità
 È possibile misurare la copertura dei test automatici e operare dei controlli statici sulla qualità del codice Java (QA, quality assurance), grazie a strumenti come *JUnit*, *JaCoCo*, *Checkstyle*, *Findbugs*. Per lanciarli in un colpo solo si può utilizzare *Gradle*.
