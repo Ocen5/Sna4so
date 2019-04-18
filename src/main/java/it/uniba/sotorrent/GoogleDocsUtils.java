@@ -40,7 +40,7 @@ public class GoogleDocsUtils {
 	/**
 	 * The app name.
 	 */
-	private static final String APPLICATION_NAME = "sna4so";
+	private static final String APPLICATION_NAME = "sna4so-237908";
 	/**
 	 * Permissions to manage Google Drive.
 	 */
@@ -60,7 +60,7 @@ public class GoogleDocsUtils {
 	/**
 	 * The location where the SON credential file is stored on the Internet.
 	 */
-	private static final String url = "http://neo.di.uniba.it/credentials/project-sna4so.json";
+	private static final String url = "http://neo.di.uniba.it/credentials/project-codd-we445rt.json";
 
 	/**
 	 * Default constructor, authenticates and instantiate services.
