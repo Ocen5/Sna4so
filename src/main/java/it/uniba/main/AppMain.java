@@ -4,9 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.GeneralSecurityException;
-import java.util.Map;
+import java.util.Scanner;
 
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.TableResult;
 
 import it.uniba.sotorrent.GoogleDocsUtils;
 import it.uniba.sotorrent.ISOQuery;
@@ -72,13 +73,24 @@ public final class AppMain {
 
 		ISOQuery soq = new SOQuery();
 		Job job = soq.runQuery();
-		Map<String, Long> res = soq.getResults(job);
+		TableResult res = soq.getResults(job);
 
 		GoogleDocsUtils ut = new GoogleDocsUtils();
 		String spid = ut.createSheet("Prova sna4so");
 		ut.shareSheet(spid);
 		ut.getSheetByTitle(spid);
 		ut.writeSheet(spid, res);
+		
+		/*
+		* Parte provvisioria da eliminare alla fine del progetto
+		* elimina lo spreadsheet dopo aver premuto invio
+		*/
+		Scanner sc = new Scanner(System.in);
+        System.out.print("Premi invio per continuare. ");
+        sc.nextLine();
+        ut.deleteSheet(spid);
+        System.out.println("Foglio eliminato");
+        sc.close();
 
 	}
 
