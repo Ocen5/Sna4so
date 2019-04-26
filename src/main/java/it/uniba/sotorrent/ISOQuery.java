@@ -2,9 +2,8 @@ package it.uniba.sotorrent;
 
 import com.google.cloud.bigquery.JobException;
 
-import java.util.Map;
-
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.TableResult;
 
 /**
  * Interface for running a query on Stack Overflow via Google's BigQuery service.
@@ -25,6 +24,6 @@ public interface ISOQuery {
 	 * @throws JobException Generic error occurred.
 	 * @throws InterruptedException Raised on timeouts.
 	 */
-	Map<String, Long> getResults(Job job) throws JobException, InterruptedException;
+	TableResult getResults(Job job) throws JobException, InterruptedException;
 
 }

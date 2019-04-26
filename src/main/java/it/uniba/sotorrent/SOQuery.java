@@ -6,8 +6,6 @@ package it.uniba.sotorrent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
@@ -76,20 +74,23 @@ public final class SOQuery implements ISOQuery {
 
 
 	@Override
-	public Map<String, Long> getResults(final Job queryJob) throws JobException, InterruptedException {
-		Map<String, Long> results = new HashMap<String, Long>();
+	public final TableResult getResults(final Job queryJob) throws JobException, InterruptedException {
 
-		if (queryJob != null) {
-			TableResult result = queryJob.getQueryResults();
-			// Print all pages of the results.
-			for (FieldValueList row : result.iterateAll()) {
-				String keyUrl = row.get("url").getStringValue();
-				long viewCount = row.get("view_count").getLongValue();
-				System.out.printf("url: %s views: %d%n", keyUrl, viewCount);
-				results.put(keyUrl, viewCount);
-			}
-		}
-		return results;
-	}
+        TableResult result = null;
+        if (queryJob != null) {
+            result = queryJob.getQueryResults();
+            // Print all pages of the results.
+            for (FieldValueList row : result.iterateAll()) {
+                for (int schemaIndex = 0; schemaIndex < result.getSchema().getFields().size(); schemaIndex++) {
+                    String attributeName = result.getSchema().getFields().get(schemaIndex).getName();
+                    String value = row.get(attributeName).getStringValue();
+                    System.out.printf("%s: %s \t\t" ,attributeName, value);
+                }
+                System.out.println("");
+
+            }
+        }
+        return result;
+    }
 
 }
