@@ -36,7 +36,7 @@ abstract class ASOQuery implements ISOQuery {
 
 
 
-	abstract public Job runQuery() throws InterruptedException;
+	abstract public Job runQuery(String[] values) throws InterruptedException;
 
 
 
