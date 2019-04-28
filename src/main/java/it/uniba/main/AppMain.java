@@ -12,6 +12,8 @@ import com.google.cloud.bigquery.TableResult;
 import it.uniba.sotorrent.GoogleDocsUtils;
 import it.uniba.sotorrent.ISOQuery;
 import it.uniba.sotorrent.SOQuery;
+import it.uniba.sotorrent.SOQueryQuestionDay;
+
 
 /**
  * The main class for the project. It must be customized to meet the project
@@ -19,11 +21,19 @@ import it.uniba.sotorrent.SOQuery;
  * 
  * <b>DO NOT RENAME</b>
  */
+
 public final class AppMain {
+
+
+	private static String[] values = new String[5];
+
+	private static String type = new String();
+
 
 	/**
 	 * Private constructor. Change if needed.
 	 */
+
 	private AppMain() {
 
 	}
@@ -40,6 +50,7 @@ public final class AppMain {
 	 * @throws URISyntaxException  See stack trace for proper location.
 	 * @throws IllegalArgumentException See stack trace for proper location.
 	 */
+
 	public static void main(final String[] args) throws FileNotFoundException,
 	IOException,
 	InterruptedException,
@@ -49,22 +60,81 @@ public final class AppMain {
 	{
 		System.out.println("Current working dir: " + System.getProperty("user.dir"));
 
-		String[] values = getInput(args);				//0:yyyy	1:mm	2:dd	3:taglike	4:limit		5:type
+		getInput(args);				//values 0:yyyy		1:mm	2:dd	3:taglike	4:limit
 
 
 		ISOQuery soq = null;
 
-		if(values[2] != null && values[3] == null)            //Query con DAY
+		switch(type) {
+		case "question" :
+			
+			if(values[2] != null && values[3] == null) {           //Query con DAY
+				System.out.println("Seleziona i primi 100 id utente che hanno fatto "
+									+ "almeno una domanda in un dato anno, mese e giorno");
+			soq = new SOQueryQuestionDay();									
+			break;
+			}
+			
+			if(values[2] == null && values[3] != null) {          //Query con TAGLIKE
+				System.out.println("Seleziona i primi 100 id utente che hanno fatto "
+									+ "almeno una domanda su un dato argomento in un dato mese e anno");
 			soq = new SOQuery();							//SOSTITUIRE CON LA TIPOLOGIA DI QUERY APPROPRIATA E PASSARE VALUES
-
-
-
-		if(values[2] == null && values[3] != null)           //Query con TAGLIKE
+			break;
+			}
+			else {
+				IllegalArgumentException valuesException = new IllegalArgumentException("Argomenti non validi.");
+				throw valuesException;
+			}
+			
+		case "answer" :
+			
+			if(values[2] != null && values[3] == null) {           //Query con DAY
+				System.out.println("Seleziona i primi 100 id utente che hanno dato "
+									+ "almeno una risposta in un dato anno, mese e giorno");
 			soq = new SOQuery();							//SOSTITUIRE CON LA TIPOLOGIA DI QUERY APPROPRIATA E PASSARE VALUES
+			break;
+			}
+			
+			if(values[2] == null && values[3] != null) {          //Query con TAGLIKE
+				System.out.println("Seleziona i primi 100 id utente che hanno dato "
+									+ "almeno una risposta su un dato argomento in un dato mese e anno");
+			soq = new SOQuery();							//SOSTITUIRE CON LA TIPOLOGIA DI QUERY APPROPRIATA E PASSARE VALUES
+			break;
+			}
+			else {
+				IllegalArgumentException valuesException = new IllegalArgumentException("Argomenti non validi.");
+				throw valuesException;
+			}
+			
+		case "post" :
+			
+			if(values[2] != null && values[3] == null) {           //Query con DAY
+				System.out.println("Seleziona i primi 100 id utente che hanno fatto "
+									+ "almeno un post in un dato anno, mese e giorno");
+			soq = new SOQuery();								//SOSTITUIRE CON LA TIPOLOGIA DI QUERY APPROPRIATA E PASSARE VALUES
+			break;
+			}
+
+			if(values[2] == null && values[3] != null) {         //Query con TAGLIKE
+				System.out.println("Seleziona i primi 100 id utente che hanno fatto "
+									+ "almeno un post su un dato argomento in un dato mese e anno");
+			soq = new SOQuery();							//SOSTITUIRE CON LA TIPOLOGIA DI QUERY APPROPRIATA E PASSARE VALUES
+			break;
+			} 
+			else {
+				IllegalArgumentException valuesException = new IllegalArgumentException("Argomenti non validi.");
+				throw valuesException;
+			}
+			
+		default :
+			
+			IllegalArgumentException typeException = new IllegalArgumentException("Type query non valido.");
+			throw typeException;
+
+		}
 
 
-
-		Job job = soq.runQuery();
+		Job job = soq.runQuery(values);
 		TableResult res = soq.getResults(job);
 
 		String name = "";								//Stringa nome Sheet
@@ -84,6 +154,7 @@ public final class AppMain {
 		 * Parte provvisioria da eliminare alla fine del progetto
 		 * elimina lo spreadsheet dopo aver premuto invio
 		 */
+
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Premi invio per continuare. ");
 		sc.nextLine();
@@ -93,29 +164,24 @@ public final class AppMain {
 
 	}
 
-
-
-
 	/**
-	 * 	 * This function returns valid input values for queries.
+	 * 	 * This function sets valid input values for queries.
 	 *
 	 * @param args The command-line arguments.
 	 * 
-	 * @return values: 
+	 * @init values: 
 	 * @0 year(yyyy)
 	 * @1 month(mm)
 	 * @2 day(dd)
 	 * @3 taglike
 	 * @4 limit
-	 * @5 type
+	 * 
+	 * @init type
 	 * 
 	 * @throws IllegalArgumentException See stack trace for proper location.
 	 */
-	private static String[] getInput(String[] args)  throws IllegalArgumentException
+	private static void getInput(String[] args)  throws IllegalArgumentException
 	{
-
-		String[] values = new String[6];
-
 
 		for(int i = 0; i < args.length; i++) {
 			if(args[i].contains("yyyy=")) {
@@ -147,8 +213,8 @@ public final class AppMain {
 
 							else {
 								if(args[i].contains("type=")) {
-									values[5]= args[i].substring(5);
-									System.out.println(values[5]);
+									type = args[i].substring(5);
+									System.out.println(type);
 								}
 								else {
 									IllegalArgumentException exception = new IllegalArgumentException("Parametro di input non valido.");
@@ -161,9 +227,6 @@ public final class AppMain {
 			}
 		}
 
-	return values;
-
-}
-
+	}
 
 }
