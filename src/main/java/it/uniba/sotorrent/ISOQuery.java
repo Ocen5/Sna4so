@@ -12,6 +12,9 @@ public interface ISOQuery {
 
 	/**
 	 * Starts the query.
+	 * 
+	 * @param values Valid values for the parameters of the query.
+	 * 
 	 * @return The job for the query.
 	 * @throws InterruptedException Raised on timeouts.
 	 */

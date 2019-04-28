@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="3.0.1" sequence="0" timestamp="1556473447423" analysisTimestamp="1556473447460" release="">
+<BugCollection version="3.0.1" sequence="0" timestamp="1556489743785" analysisTimestamp="1556489743817" release="">
   <Project projectName="">
     <Jar>C:\Users\Giovanni Marcello Al\progetto1819-codd\build\classes\java\main</Jar>
     <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-bigquery\1.64.0\5f36ee28621b7eaccbfb98cf2fab1d68b51d4bef\google-cloud-bigquery-1.64.0.jar</AuxClasspathEntry>
@@ -50,9 +50,10 @@
     <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\ASOQuery.java</SrcDir>
     <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\GoogleDocsUtils.java</SrcDir>
     <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\ISOQuery.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQuery.java</SrcDir>
     <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryAnswerDay.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryAnswerTags.java</SrcDir>
     <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryPostDay.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryPostTags.java</SrcDir>
     <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryQuestionDay.java</SrcDir>
     <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryQuestionTags.java</SrcDir>
   </Project>
@@ -74,52 +75,49 @@
     </Method>
     <SourceLine classname="it.uniba.example.utils.math.MathUtils" start="32" end="32" startBytecode="7" endBytecode="7" sourcefile="MathUtils.java" sourcepath="it/uniba/example/utils/math/MathUtils.java"/>
   </BugInstance>
-  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
-    <Class classname="it.uniba.main.AppMain">
-      <SourceLine classname="it.uniba.main.AppMain" start="44" end="264" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
-    </Class>
-    <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
-      <SourceLine classname="it.uniba.main.AppMain" start="77" end="208" startBytecode="0" endBytecode="1441" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
-    </Method>
-    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
-      <SourceLine classname="java.util.Scanner" start="563" end="564" startBytecode="0" endBytecode="43" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
-    </Method>
-    <SourceLine classname="it.uniba.main.AppMain" start="201" end="201" startBytecode="885" endBytecode="885" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
-  </BugInstance>
   <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
     <Class classname="it.uniba.main.AppMain">
-      <SourceLine classname="it.uniba.main.AppMain" start="44" end="264" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+      <SourceLine classname="it.uniba.main.AppMain" start="39" end="238" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
     </Class>
     <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
-      <SourceLine classname="it.uniba.main.AppMain" start="77" end="208" startBytecode="0" endBytecode="1441" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+      <SourceLine classname="it.uniba.main.AppMain" start="74" end="188" startBytecode="0" endBytecode="1454" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
     </Method>
-    <SourceLine classname="it.uniba.main.AppMain" start="95" end="95" startBytecode="263" endBytecode="263" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="107" end="107" startBytecode="354" endBytecode="354" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="125" end="125" startBytecode="459" endBytecode="459" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="136" end="136" startBytecode="550" endBytecode="550" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="154" end="154" startBytecode="655" endBytecode="655" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="165" end="165" startBytecode="746" endBytecode="746" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="91" end="91" startBytecode="259" endBytecode="259" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="100" end="100" startBytecode="344" endBytecode="344" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="116" end="116" startBytecode="443" endBytecode="443" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="125" end="125" startBytecode="528" endBytecode="528" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="141" end="141" startBytecode="627" endBytecode="627" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="150" end="150" startBytecode="712" endBytecode="712" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
   </BugInstance>
   <BugInstance type="DM_STRING_VOID_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
     <Class classname="it.uniba.main.AppMain">
-      <SourceLine classname="it.uniba.main.AppMain" start="44" end="264" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+      <SourceLine classname="it.uniba.main.AppMain" start="39" end="238" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
     </Class>
     <Method classname="it.uniba.main.AppMain" name="&lt;clinit&gt;" signature="()V" isStatic="true">
-      <SourceLine classname="it.uniba.main.AppMain" start="44" end="49" startBytecode="0" endBytecode="45" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+      <SourceLine classname="it.uniba.main.AppMain" start="39" end="44" startBytecode="0" endBytecode="45" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
     </Method>
-    <SourceLine classname="it.uniba.main.AppMain" start="49" end="49" startBytecode="11" endBytecode="11" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="44" end="44" startBytecode="11" endBytecode="11" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
   </BugInstance>
   <BugInstance type="DM_STRING_VOID_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
     <Class classname="it.uniba.main.AppMain">
-      <SourceLine classname="it.uniba.main.AppMain" start="44" end="264" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+      <SourceLine classname="it.uniba.main.AppMain" start="39" end="238" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
     </Class>
     <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
-      <SourceLine classname="it.uniba.main.AppMain" start="77" end="208" startBytecode="0" endBytecode="1441" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+      <SourceLine classname="it.uniba.main.AppMain" start="74" end="188" startBytecode="0" endBytecode="1454" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
     </Method>
-    <SourceLine classname="it.uniba.main.AppMain" start="89" end="89" startBytecode="72" endBytecode="72" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="80" end="80" startBytecode="39" endBytecode="39" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+  </BugInstance>
+  <BugInstance type="SBSC_USE_STRINGBUFFER_CONCATENATION" priority="2" rank="18" abbrev="SBSC" category="PERFORMANCE">
+    <Class classname="it.uniba.main.AppMain">
+      <SourceLine classname="it.uniba.main.AppMain" start="39" end="238" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Class>
+    <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="it.uniba.main.AppMain" start="74" end="188" startBytecode="0" endBytecode="1454" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.main.AppMain" start="177" end="177" startBytecode="797" endBytecode="797" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
   </BugInstance>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Sun, 28 Apr 2019 19:44:07 +0200" total_classes="13" referenced_classes="111" total_bugs="6" total_size="372" num_packages="5" java_version="1.8.0_211" vm_version="25.211-b12" cpu_seconds="12.53" clock_seconds="2.77" peak_mbytes="213.00" alloc_mbytes="1801.00" gc_seconds="0.12" priority_2="5" priority_1="1">
+  <FindBugsSummary timestamp="Mon, 29 Apr 2019 00:15:43 +0200" total_classes="14" referenced_classes="111" total_bugs="6" total_size="405" num_packages="5" java_version="1.8.0_211" vm_version="25.211-b12" cpu_seconds="11.64" clock_seconds="2.49" peak_mbytes="211.97" alloc_mbytes="1801.00" gc_seconds="0.12" priority_2="6">
     <PackageStats package="it.uniba.example.db" total_bugs="0" total_types="1" total_size="28">
       <ClassStats class="it.uniba.example.db.DatabaseConnection" sourceFile="DatabaseConnection.java" interface="false" size="28" bugs="0"/>
     </PackageStats>
@@ -129,38 +127,41 @@
     <PackageStats package="it.uniba.example.utils.strings" total_bugs="0" total_types="1" total_size="20">
       <ClassStats class="it.uniba.example.utils.strings.StringUtils" sourceFile="StringUtils.java" interface="false" size="20" bugs="0"/>
     </PackageStats>
-    <PackageStats package="it.uniba.main" total_bugs="4" total_types="1" total_size="90" priority_2="3" priority_1="1">
-      <ClassStats class="it.uniba.main.AppMain" sourceFile="AppMain.java" interface="false" size="90" bugs="4" priority_2="3" priority_1="1"/>
+    <PackageStats package="it.uniba.main" total_bugs="4" total_types="1" total_size="86" priority_2="4">
+      <ClassStats class="it.uniba.main.AppMain" sourceFile="AppMain.java" interface="false" size="86" bugs="4" priority_2="4"/>
     </PackageStats>
-    <PackageStats package="it.uniba.sotorrent" total_bugs="0" total_types="9" total_size="227">
+    <PackageStats package="it.uniba.sotorrent" total_bugs="0" total_types="10" total_size="264">
       <ClassStats class="it.uniba.sotorrent.ASOQuery" sourceFile="ASOQuery.java" interface="false" size="24" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.GoogleDocsUtils" sourceFile="GoogleDocsUtils.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.GoogleDocsUtils" sourceFile="GoogleDocsUtils.java" interface="false" size="88" bugs="0"/>
       <ClassStats class="it.uniba.sotorrent.GoogleDocsUtils$1" sourceFile="GoogleDocsUtils.java" interface="false" size="11" bugs="0"/>
       <ClassStats class="it.uniba.sotorrent.ISOQuery" sourceFile="ISOQuery.java" interface="true" size="3" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQuery" sourceFile="SOQuery.java" interface="false" size="14" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryAnswerDay" sourceFile="SOQueryAnswerDay.java" interface="false" size="22" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryPostDay" sourceFile="SOQueryPostDay.java" interface="false" size="22" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryQuestionDay" sourceFile="SOQueryQuestionDay.java" interface="false" size="22" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryQuestionTags" sourceFile="SOQueryQuestionTags.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryAnswerDay" sourceFile="SOQueryAnswerDay.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryAnswerTags" sourceFile="SOQueryAnswerTags.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryPostDay" sourceFile="SOQueryPostDay.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryPostTags" sourceFile="SOQueryPostTags.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryQuestionDay" sourceFile="SOQueryQuestionDay.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryQuestionTags" sourceFile="SOQueryQuestionTags.java" interface="false" size="23" bugs="0"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="453" invocations="935" avgMicrosecondsPerInvocation="484" maxMicrosecondsPerInvocation="9752" standardDeviationMircosecondsPerInvocation="368"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="323" invocations="932" avgMicrosecondsPerInvocation="347" maxMicrosecondsPerInvocation="19412" standardDeviationMircosecondsPerInvocation="849"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="158" invocations="218" avgMicrosecondsPerInvocation="727" maxMicrosecondsPerInvocation="86308" standardDeviationMircosecondsPerInvocation="5832"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="133" invocations="111" avgMicrosecondsPerInvocation="1204" maxMicrosecondsPerInvocation="11650" standardDeviationMircosecondsPerInvocation="2082"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="127" invocations="111" avgMicrosecondsPerInvocation="1144" maxMicrosecondsPerInvocation="15945" standardDeviationMircosecondsPerInvocation="2233"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="58" invocations="46" avgMicrosecondsPerInvocation="1276" maxMicrosecondsPerInvocation="11038" standardDeviationMircosecondsPerInvocation="2137"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="56" invocations="898" avgMicrosecondsPerInvocation="62" maxMicrosecondsPerInvocation="3004" standardDeviationMircosecondsPerInvocation="146"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="54" invocations="168" avgMicrosecondsPerInvocation="323" maxMicrosecondsPerInvocation="14722" standardDeviationMircosecondsPerInvocation="1184"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="52" invocations="47" avgMicrosecondsPerInvocation="1112" maxMicrosecondsPerInvocation="12674" standardDeviationMircosecondsPerInvocation="2305"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="49" invocations="46" avgMicrosecondsPerInvocation="1067" maxMicrosecondsPerInvocation="9951" standardDeviationMircosecondsPerInvocation="1953"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="48" invocations="46" avgMicrosecondsPerInvocation="1050" maxMicrosecondsPerInvocation="9031" standardDeviationMircosecondsPerInvocation="1929"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="47" invocations="111" avgMicrosecondsPerInvocation="425" maxMicrosecondsPerInvocation="8264" standardDeviationMircosecondsPerInvocation="954"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="46" invocations="45" avgMicrosecondsPerInvocation="1024" maxMicrosecondsPerInvocation="7398" standardDeviationMircosecondsPerInvocation="1761"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="42" invocations="49" avgMicrosecondsPerInvocation="858" maxMicrosecondsPerInvocation="33099" standardDeviationMircosecondsPerInvocation="4660"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="41" invocations="111" avgMicrosecondsPerInvocation="374" maxMicrosecondsPerInvocation="3963" standardDeviationMircosecondsPerInvocation="641"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="37" invocations="111" avgMicrosecondsPerInvocation="337" maxMicrosecondsPerInvocation="4688" standardDeviationMircosecondsPerInvocation="614"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="37" invocations="46" avgMicrosecondsPerInvocation="805" maxMicrosecondsPerInvocation="9646" standardDeviationMircosecondsPerInvocation="1569"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="371" invocations="918" avgMicrosecondsPerInvocation="404" maxMicrosecondsPerInvocation="2982" standardDeviationMircosecondsPerInvocation="180"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="288" invocations="915" avgMicrosecondsPerInvocation="314" maxMicrosecondsPerInvocation="17959" standardDeviationMircosecondsPerInvocation="894"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="146" invocations="49" avgMicrosecondsPerInvocation="2995" maxMicrosecondsPerInvocation="103325" standardDeviationMircosecondsPerInvocation="14589"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="108" invocations="111" avgMicrosecondsPerInvocation="974" maxMicrosecondsPerInvocation="11089" standardDeviationMircosecondsPerInvocation="1730"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="85" invocations="111" avgMicrosecondsPerInvocation="768" maxMicrosecondsPerInvocation="8401" standardDeviationMircosecondsPerInvocation="1205"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="60" invocations="48" avgMicrosecondsPerInvocation="1266" maxMicrosecondsPerInvocation="12404" standardDeviationMircosecondsPerInvocation="2507"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="59" invocations="213" avgMicrosecondsPerInvocation="278" maxMicrosecondsPerInvocation="4037" standardDeviationMircosecondsPerInvocation="501"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="56" invocations="48" avgMicrosecondsPerInvocation="1178" maxMicrosecondsPerInvocation="11312" standardDeviationMircosecondsPerInvocation="2345"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="56" invocations="167" avgMicrosecondsPerInvocation="337" maxMicrosecondsPerInvocation="14957" standardDeviationMircosecondsPerInvocation="1429"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="50" invocations="48" avgMicrosecondsPerInvocation="1057" maxMicrosecondsPerInvocation="11457" standardDeviationMircosecondsPerInvocation="2197"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="45" invocations="881" avgMicrosecondsPerInvocation="51" maxMicrosecondsPerInvocation="1101" standardDeviationMircosecondsPerInvocation="93"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="43" invocations="47" avgMicrosecondsPerInvocation="934" maxMicrosecondsPerInvocation="7814" standardDeviationMircosecondsPerInvocation="1631"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="41" invocations="51" avgMicrosecondsPerInvocation="812" maxMicrosecondsPerInvocation="33092" standardDeviationMircosecondsPerInvocation="4569"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="37" invocations="111" avgMicrosecondsPerInvocation="342" maxMicrosecondsPerInvocation="5407" standardDeviationMircosecondsPerInvocation="750"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="37" invocations="48" avgMicrosecondsPerInvocation="777" maxMicrosecondsPerInvocation="9465" standardDeviationMircosecondsPerInvocation="1534"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="35" invocations="111" avgMicrosecondsPerInvocation="323" maxMicrosecondsPerInvocation="4231" standardDeviationMircosecondsPerInvocation="601"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="32" invocations="40" avgMicrosecondsPerInvocation="805" maxMicrosecondsPerInvocation="7363" standardDeviationMircosecondsPerInvocation="1462"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="29" invocations="111" avgMicrosecondsPerInvocation="265" maxMicrosecondsPerInvocation="7875" standardDeviationMircosecondsPerInvocation="802"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="29" invocations="111" avgMicrosecondsPerInvocation="262" maxMicrosecondsPerInvocation="3344" standardDeviationMircosecondsPerInvocation="493"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

@@ -10,25 +10,31 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 
+/*
+ * Class for run query from questions table with year, month, taglike, limit.
+ */
 public final class SOQueryQuestionTags extends ASOQuery implements ISOQuery {
-	
+
 	/**
-	 * Default constructor, see ASOQuery constructor
+	 * Default constructor, see ASOQuery constructor.
+	 * @throws FileNotFoundException See stack trace for proper location.
+	 * @throws IOException  See stack trace for proper location.
 	**/
-	public SOQueryQuestionTags() throws FileNotFoundException, IOException {};
-	
-	
+	public SOQueryQuestionTags() throws FileNotFoundException, IOException {
+
+	}
+
 
 	@Override
-	public Job runQuery(String[] values) throws InterruptedException {
-		
-		//Variabili per la query
-		Integer yyyy=Integer.valueOf(values[0]), 
-				mm=Integer.valueOf(values[1]),
-				limit=Integer.valueOf(values[4]);
-		String taglike=values[3];
-				
-		
+	public Job runQuery(final String[] values) throws InterruptedException {
+
+		//Variabili per la query.
+		Integer yyyy = Integer.valueOf(values[0]),
+				mm = Integer.valueOf(values[1]),
+				limit = Integer.valueOf(values[4]);
+		String taglike = values[3];
+
+
 		// Use standard SQL syntax for queries.
 		// See: https://cloud.google.com/bigquery/sql-reference/
 		QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder("SELECT "
@@ -43,7 +49,7 @@ public final class SOQueryQuestionTags extends ASOQuery implements ISOQuery {
 				.addNamedParameter("yyyy", QueryParameterValue.int64(yyyy))
 				.addNamedParameter("mm", QueryParameterValue.int64(mm))
 				.addNamedParameter("limit", QueryParameterValue.int64(limit))
-				.addNamedParameter("taglike",QueryParameterValue.string(taglike))
+				.addNamedParameter("taglike", QueryParameterValue.string(taglike))
 				.setUseLegacySql(false).build();
 
 		// Create a job ID so that we can safely retry.

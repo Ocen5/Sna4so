@@ -10,10 +10,15 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 
+/*
+ * Class for run query from questions table with year, month, taglike, limit.
+ */
 public final class SOQueryPostTags extends ASOQuery implements ISOQuery {
 
 	/**
 	 * Default constructor, see ASOQuery constructor.
+	 * @throws FileNotFoundException See stack trace for proper location.
+	 * @throws IOException  See stack trace for proper location.
 	**/
 	public SOQueryPostTags() throws FileNotFoundException, IOException {
 
@@ -37,16 +42,19 @@ public final class SOQueryPostTags extends ASOQuery implements ISOQuery {
 				+ "FROM `bigquery-public-data.stackoverflow.stackoverflow_posts` "
 				+ "WHERE extract(year FROM `bigquery-public-data.stackoverflow.stackoverflow_posts`.creation_date)=@yyyy  "
 				+ "AND extract(month FROM `bigquery-public-data.stackoverflow.stackoverflow_posts`.creation_date)=@mm  "
-				+ "AND `bigquery-public-data.stackoverflow.stackoverflow_posts`.tags like CONCAT('%' ,@taglike, '%') "
+				+ "AND `bigquery-public-data.stackoverflow.stackoverflow_posts`.tags like "
+				+ "CONCAT('%' ,@taglike, '%') "
 				+ "AND `bigquery-public-data.stackoverflow.stackoverflow_posts`.owner_user_id  > 0 "
 				+ "UNION DISTINCT "
 				+ "SELECT `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id "
 				+ "FROM `bigquery-public-data.stackoverflow.posts_questions` "
 				+ "INNER JOIN `bigquery-public-data.stackoverflow.posts_answers`  "
-				+ "ON `bigquery-public-data.stackoverflow.posts_questions`.id = `bigquery-public-data.stackoverflow.posts_answers`.parent_id "
+				+ "ON `bigquery-public-data.stackoverflow.posts_questions`.id "
+				+ "= `bigquery-public-data.stackoverflow.posts_answers`.parent_id "
 				+ "WHERE extract(year FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=@yyyy "
 				+ "AND extract(month FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=@mm "
-				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.tags like CONCAT('%' ,@taglike, '%') "
+				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.tags like "
+				+ "CONCAT('%' ,@taglike, '%') "
 				+ "AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id  > 0 "
 				+ "ORDER BY owner_user_id ASC LIMIT @limit")
 				.addNamedParameter("yyyy", QueryParameterValue.int64(yyyy))
