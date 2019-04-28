@@ -13,6 +13,7 @@ import it.uniba.sotorrent.GoogleDocsUtils;
 import it.uniba.sotorrent.ISOQuery;
 import it.uniba.sotorrent.SOQuery;
 import it.uniba.sotorrent.SOQueryAnswerDay;
+import it.uniba.sotorrent.SOQueryPostDay;
 import it.uniba.sotorrent.SOQueryQuestionDay;
 
  
@@ -112,7 +113,7 @@ public final class AppMain {
 			if(values[2] != null && values[3] == null) {           //Query con DAY
 				System.out.println("Seleziona i primi 100 id utente che hanno fatto "
 									+ "almeno un post in un dato anno, mese e giorno");
-			soq = new SOQuery();								//SOSTITUIRE CON LA TIPOLOGIA DI QUERY APPROPRIATA E PASSARE VALUES
+			soq = new SOQueryPostDay();	
 			break;
 			}
 
