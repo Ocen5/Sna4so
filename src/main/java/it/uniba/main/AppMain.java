@@ -12,9 +12,10 @@ import com.google.cloud.bigquery.TableResult;
 import it.uniba.sotorrent.GoogleDocsUtils;
 import it.uniba.sotorrent.ISOQuery;
 import it.uniba.sotorrent.SOQuery;
+import it.uniba.sotorrent.SOQueryAnswerDay;
 import it.uniba.sotorrent.SOQueryQuestionDay;
 
-
+ 
 /**
  * The main class for the project. It must be customized to meet the project
  * assignment specifications.
@@ -37,7 +38,7 @@ public final class AppMain {
 	private AppMain() {
 
 	}
-
+ 
 	/**
 	 * 	 * This is the main entry of the application.
 	 *
@@ -91,7 +92,7 @@ public final class AppMain {
 			if(values[2] != null && values[3] == null) {           //Query con DAY
 				System.out.println("Seleziona i primi 100 id utente che hanno dato "
 									+ "almeno una risposta in un dato anno, mese e giorno");
-			soq = new SOQuery();							//SOSTITUIRE CON LA TIPOLOGIA DI QUERY APPROPRIATA E PASSARE VALUES
+			soq = new SOQueryAnswerDay();
 			break;
 			}
 			
