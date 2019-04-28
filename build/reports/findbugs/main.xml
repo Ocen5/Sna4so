@@ -1,15 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="3.0.1" sequence="0" timestamp="1525777737256" analysisTimestamp="1525777737320" release="">
+<BugCollection version="3.0.1" sequence="0" timestamp="1556473447423" analysisTimestamp="1556473447460" release="">
   <Project projectName="">
-    <Jar>/Users/fabio/git/base1718/build/classes/java/main</Jar>
-    <AuxClasspathEntry>/Users/fabio/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/21.0/3a3d111be1be1b745edfa7d91678a12d7ed38709/guava-21.0.jar</AuxClasspathEntry>
-    <SrcDir>/Users/fabio/git/base1718/src/main/java/it/uniba/example/utils/strings/StringUtils.java</SrcDir>
-    <SrcDir>/Users/fabio/git/base1718/src/main/java/it/uniba/example/utils/math/MathUtils.java</SrcDir>
-    <SrcDir>/Users/fabio/git/base1718/src/main/java/it/uniba/example/utils/package-info.java</SrcDir>
-    <SrcDir>/Users/fabio/git/base1718/src/main/java/it/uniba/example/db/DatabaseConnection.java</SrcDir>
-    <SrcDir>/Users/fabio/git/base1718/src/main/java/it/uniba/example/db/package-info.java</SrcDir>
-    <SrcDir>/Users/fabio/git/base1718/src/main/java/it/uniba/main/AppMain.java</SrcDir>
+    <Jar>C:\Users\Giovanni Marcello Al\progetto1819-codd\build\classes\java\main</Jar>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-bigquery\1.64.0\5f36ee28621b7eaccbfb98cf2fab1d68b51d4bef\google-cloud-bigquery-1.64.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-sheets\v4-rev516-1.23.0\27be18389c71171d9248a0c1c84c41d57bba3267\google-api-services-sheets-v4-rev516-1.23.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-drive\v3-rev154-1.25.0\b840aeb45c31b97e28f365667f93bbd86fd8790d\google-api-services-drive-v3-rev154-1.25.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-core-http\1.64.0\f45925e04324207d766dbcb12f4d58a1f86e58d9\google-cloud-core-http-1.64.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-bigquery\v2-rev20181104-1.27.0\d539fb4b7ac318cadc344579fa6f80ae6cb8070e\google-api-services-bigquery-v2-rev20181104-1.27.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.27.0\7d498c11db92fb72521784212c953612a42e50db\google-api-client-1.27.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client-jetty\1.23.0\e0deaf34371e9ca09f9a04bcbaa854243283cae4\google-oauth-client-jetty-1.23.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-core\1.64.0\22175a6506b6a6c76b226a98005095ca0dc51ec2\google-cloud-core-1.64.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api\gax-httpjson\0.57.0\db33a8de6ac64a9265472c386b7b2efb5c0a7bbc\gax-httpjson-0.57.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api\gax\1.40.0\5c041bfeab54fcd309cb0653df16f0edf9e14be4\gax-1.40.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-java-util\3.6.1\35f62815e87c32b01bf1ed8c5aa3f9e33a08c2f3\protobuf-java-util-3.6.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.auth\google-auth-library-oauth2-http\0.13.0\c93cc4307226014ab6b7554af71308ba1a8f4f54\google-auth-library-oauth2-http-0.13.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-appengine\1.28.0\3f3f6869fcd4080e17aa37c24a1144a55bbd64e7\google-http-client-appengine-1.28.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.28.0\ff58559c28960a7988aeab3d66dbe3a07e983187\google-http-client-jackson2-1.28.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client-java6\1.23.0\7acbddf56c4ad04efc9d3b48fe015e6250241bf0\google-oauth-client-java6-1.23.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.27.0\1979e3b499f1ef49959005ca59101791361abca9\google-oauth-client-1.27.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.28.0\cc5f55b32dd3458329a92ca9b3cdedfa7fbc03ef\google-http-client-1.28.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\io.opencensus\opencensus-contrib-http-util\0.18.0\76a37e4a931d5801a9e25b0c0353e5f37c4d1e8e\opencensus-contrib-http-util-0.18.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api.grpc\proto-google-iam-v1\0.12.0\ea312c0250a5d0a7cdd1b20bc2c3259938b79855\proto-google-iam-v1-0.12.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api\api-common\1.7.0\ea59fb8b2450999345035dec8a6f472543391766\api-common-1.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\26.0-android\ef69663836b339db335fde0df06fb3cd84e3742b\guava-26.0-android.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\javax.annotation\javax.annotation-api\1.3.2\934c04d3cfef185a8008e7bf34331b79730a9d43\javax.annotation-api-1.3.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\jetty\6.1.26\2f546e289fddd5b1fab1d4199fbb6e9ef43ee4b0\jetty-6.1.26.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api.grpc\proto-google-common-protos\1.14.0\ad60859aff00b10176d00f277d9bf7474f966916\proto-google-common-protos-1.14.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.auth\google-auth-library-credentials\0.13.0\aaaef2cea944d272259f3a0315bc5deb296f5171\google-auth-library-credentials-0.13.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\io.opencensus\opencensus-api\0.18.0\b89a8f8dfd1e1e0d68d83c82a855624814b19a6e\opencensus-api-0.18.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\jetty-util\6.1.26\e5642fe0399814e1687d55a3862aa5a3417226a9\jetty-util-6.1.26.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\servlet-api\2.5-20081211\22bff70037e1e6fa7e6413149489552ee2064702\servlet-api-2.5-20081211.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.1\976d8d30bebc251db406f2bdb3eb01962b5685b3\j2objc-annotations-1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.threeten\threetenbp\1.3.3\3ea31c96676ff12ab56be0b1af6fff61d1a4f1f2\threetenbp-1.3.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-java\3.6.1\d06d46ecfd92ec6d0f3b423b4cd81cb38d8b924\protobuf-java-3.6.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\io.grpc\grpc-context\1.14.0\77252b5f926875891aaae5629e6ab2ef968cd6c6\grpc-context-1.14.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-compat-qual\2.5.2\dc0b20906c9e4b9724af29d11604efa574066892\checker-compat-qual-2.5.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.1.3\39b109f2cd352b2d71b52a3b5a1a9850e1dc304b\error_prone_annotations-2.1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.codehaus.mojo\animal-sniffer-annotations\1.14\775b7e22fb10026eed3f86e8dc556dfafe35f2d5\animal-sniffer-annotations-1.14.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.6\4e393793c37c77e042ccc7be5a914ae39251b365\jackson-core-2.9.6.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\db\DatabaseConnection.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\db\package-info.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\utils\math\MathUtils.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\utils\package-info.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\utils\strings\StringUtils.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\main\AppMain.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\ASOQuery.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\GoogleDocsUtils.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\ISOQuery.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQuery.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryAnswerDay.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryPostDay.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryQuestionDay.java</SrcDir>
+    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryQuestionTags.java</SrcDir>
   </Project>
   <BugInstance type="BX_BOXING_IMMEDIATELY_UNBOXED" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
     <Class classname="it.uniba.example.utils.math.MathUtils">
@@ -29,8 +74,52 @@
     </Method>
     <SourceLine classname="it.uniba.example.utils.math.MathUtils" start="32" end="32" startBytecode="7" endBytecode="7" sourcefile="MathUtils.java" sourcepath="it/uniba/example/utils/math/MathUtils.java"/>
   </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="it.uniba.main.AppMain">
+      <SourceLine classname="it.uniba.main.AppMain" start="44" end="264" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Class>
+    <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="it.uniba.main.AppMain" start="77" end="208" startBytecode="0" endBytecode="1441" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner" start="563" end="564" startBytecode="0" endBytecode="43" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.main.AppMain" start="201" end="201" startBytecode="885" endBytecode="885" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.main.AppMain">
+      <SourceLine classname="it.uniba.main.AppMain" start="44" end="264" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Class>
+    <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="it.uniba.main.AppMain" start="77" end="208" startBytecode="0" endBytecode="1441" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.main.AppMain" start="95" end="95" startBytecode="263" endBytecode="263" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="107" end="107" startBytecode="354" endBytecode="354" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="125" end="125" startBytecode="459" endBytecode="459" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="136" end="136" startBytecode="550" endBytecode="550" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="154" end="154" startBytecode="655" endBytecode="655" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.main.AppMain" start="165" end="165" startBytecode="746" endBytecode="746" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_VOID_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.main.AppMain">
+      <SourceLine classname="it.uniba.main.AppMain" start="44" end="264" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Class>
+    <Method classname="it.uniba.main.AppMain" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="it.uniba.main.AppMain" start="44" end="49" startBytecode="0" endBytecode="45" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.main.AppMain" start="49" end="49" startBytecode="11" endBytecode="11" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_VOID_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.main.AppMain">
+      <SourceLine classname="it.uniba.main.AppMain" start="44" end="264" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Class>
+    <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="it.uniba.main.AppMain" start="77" end="208" startBytecode="0" endBytecode="1441" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.main.AppMain" start="89" end="89" startBytecode="72" endBytecode="72" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+  </BugInstance>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Tue, 8 May 2018 13:08:57 +0200" total_classes="4" referenced_classes="18" total_bugs="2" total_size="70" num_packages="4" java_version="1.8.0_131" vm_version="25.131-b11" cpu_seconds="5.80" clock_seconds="3.22" peak_mbytes="105.85" alloc_mbytes="3641.00" gc_seconds="0.05" priority_2="2">
+  <FindBugsSummary timestamp="Sun, 28 Apr 2019 19:44:07 +0200" total_classes="13" referenced_classes="111" total_bugs="6" total_size="372" num_packages="5" java_version="1.8.0_211" vm_version="25.211-b12" cpu_seconds="12.53" clock_seconds="2.77" peak_mbytes="213.00" alloc_mbytes="1801.00" gc_seconds="0.12" priority_2="5" priority_1="1">
     <PackageStats package="it.uniba.example.db" total_bugs="0" total_types="1" total_size="28">
       <ClassStats class="it.uniba.example.db.DatabaseConnection" sourceFile="DatabaseConnection.java" interface="false" size="28" bugs="0"/>
     </PackageStats>
@@ -40,25 +129,38 @@
     <PackageStats package="it.uniba.example.utils.strings" total_bugs="0" total_types="1" total_size="20">
       <ClassStats class="it.uniba.example.utils.strings.StringUtils" sourceFile="StringUtils.java" interface="false" size="20" bugs="0"/>
     </PackageStats>
-    <PackageStats package="it.uniba.main" total_bugs="0" total_types="1" total_size="15">
-      <ClassStats class="it.uniba.main.AppMain" sourceFile="AppMain.java" interface="false" size="15" bugs="0"/>
+    <PackageStats package="it.uniba.main" total_bugs="4" total_types="1" total_size="90" priority_2="3" priority_1="1">
+      <ClassStats class="it.uniba.main.AppMain" sourceFile="AppMain.java" interface="false" size="90" bugs="4" priority_2="3" priority_1="1"/>
+    </PackageStats>
+    <PackageStats package="it.uniba.sotorrent" total_bugs="0" total_types="9" total_size="227">
+      <ClassStats class="it.uniba.sotorrent.ASOQuery" sourceFile="ASOQuery.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.GoogleDocsUtils" sourceFile="GoogleDocsUtils.java" interface="false" size="87" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.GoogleDocsUtils$1" sourceFile="GoogleDocsUtils.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.ISOQuery" sourceFile="ISOQuery.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQuery" sourceFile="SOQuery.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryAnswerDay" sourceFile="SOQueryAnswerDay.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryPostDay" sourceFile="SOQueryPostDay.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryQuestionDay" sourceFile="SOQueryQuestionDay.java" interface="false" size="22" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQueryQuestionTags" sourceFile="SOQueryQuestionTags.java" interface="false" size="22" bugs="0"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="562" invocations="339" avgMicrosecondsPerInvocation="1658" maxMicrosecondsPerInvocation="94693" standardDeviationMircosecondsPerInvocation="6248"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="198" invocations="340" avgMicrosecondsPerInvocation="584" maxMicrosecondsPerInvocation="11261" standardDeviationMircosecondsPerInvocation="1079"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="129" invocations="17" avgMicrosecondsPerInvocation="7639" maxMicrosecondsPerInvocation="92006" standardDeviationMircosecondsPerInvocation="22066"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="127" invocations="18" avgMicrosecondsPerInvocation="7074" maxMicrosecondsPerInvocation="33627" standardDeviationMircosecondsPerInvocation="9972"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="91" invocations="306" avgMicrosecondsPerInvocation="298" maxMicrosecondsPerInvocation="9162" standardDeviationMircosecondsPerInvocation="816"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="79" invocations="17" avgMicrosecondsPerInvocation="4695" maxMicrosecondsPerInvocation="71659" standardDeviationMircosecondsPerInvocation="16751"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="72" invocations="76" avgMicrosecondsPerInvocation="952" maxMicrosecondsPerInvocation="10457" standardDeviationMircosecondsPerInvocation="1973"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="56" invocations="36" avgMicrosecondsPerInvocation="1572" maxMicrosecondsPerInvocation="39135" standardDeviationMircosecondsPerInvocation="6423"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="53" invocations="18" avgMicrosecondsPerInvocation="2954" maxMicrosecondsPerInvocation="41125" standardDeviationMircosecondsPerInvocation="9302"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="53" invocations="18" avgMicrosecondsPerInvocation="2947" maxMicrosecondsPerInvocation="17427" standardDeviationMircosecondsPerInvocation="4701"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="52" invocations="18" avgMicrosecondsPerInvocation="2898" maxMicrosecondsPerInvocation="15090" standardDeviationMircosecondsPerInvocation="4460"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="49" invocations="17" avgMicrosecondsPerInvocation="2902" maxMicrosecondsPerInvocation="20349" standardDeviationMircosecondsPerInvocation="5648"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="44" invocations="17" avgMicrosecondsPerInvocation="2613" maxMicrosecondsPerInvocation="32290" standardDeviationMircosecondsPerInvocation="7470"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="36" invocations="17" avgMicrosecondsPerInvocation="2162" maxMicrosecondsPerInvocation="16085" standardDeviationMircosecondsPerInvocation="4542"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="36" invocations="18" avgMicrosecondsPerInvocation="2030" maxMicrosecondsPerInvocation="22355" standardDeviationMircosecondsPerInvocation="5074"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="453" invocations="935" avgMicrosecondsPerInvocation="484" maxMicrosecondsPerInvocation="9752" standardDeviationMircosecondsPerInvocation="368"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="323" invocations="932" avgMicrosecondsPerInvocation="347" maxMicrosecondsPerInvocation="19412" standardDeviationMircosecondsPerInvocation="849"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="158" invocations="218" avgMicrosecondsPerInvocation="727" maxMicrosecondsPerInvocation="86308" standardDeviationMircosecondsPerInvocation="5832"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="133" invocations="111" avgMicrosecondsPerInvocation="1204" maxMicrosecondsPerInvocation="11650" standardDeviationMircosecondsPerInvocation="2082"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="127" invocations="111" avgMicrosecondsPerInvocation="1144" maxMicrosecondsPerInvocation="15945" standardDeviationMircosecondsPerInvocation="2233"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="58" invocations="46" avgMicrosecondsPerInvocation="1276" maxMicrosecondsPerInvocation="11038" standardDeviationMircosecondsPerInvocation="2137"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="56" invocations="898" avgMicrosecondsPerInvocation="62" maxMicrosecondsPerInvocation="3004" standardDeviationMircosecondsPerInvocation="146"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="54" invocations="168" avgMicrosecondsPerInvocation="323" maxMicrosecondsPerInvocation="14722" standardDeviationMircosecondsPerInvocation="1184"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="52" invocations="47" avgMicrosecondsPerInvocation="1112" maxMicrosecondsPerInvocation="12674" standardDeviationMircosecondsPerInvocation="2305"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="49" invocations="46" avgMicrosecondsPerInvocation="1067" maxMicrosecondsPerInvocation="9951" standardDeviationMircosecondsPerInvocation="1953"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="48" invocations="46" avgMicrosecondsPerInvocation="1050" maxMicrosecondsPerInvocation="9031" standardDeviationMircosecondsPerInvocation="1929"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="47" invocations="111" avgMicrosecondsPerInvocation="425" maxMicrosecondsPerInvocation="8264" standardDeviationMircosecondsPerInvocation="954"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="46" invocations="45" avgMicrosecondsPerInvocation="1024" maxMicrosecondsPerInvocation="7398" standardDeviationMircosecondsPerInvocation="1761"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="42" invocations="49" avgMicrosecondsPerInvocation="858" maxMicrosecondsPerInvocation="33099" standardDeviationMircosecondsPerInvocation="4660"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="41" invocations="111" avgMicrosecondsPerInvocation="374" maxMicrosecondsPerInvocation="3963" standardDeviationMircosecondsPerInvocation="641"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="37" invocations="111" avgMicrosecondsPerInvocation="337" maxMicrosecondsPerInvocation="4688" standardDeviationMircosecondsPerInvocation="614"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="37" invocations="46" avgMicrosecondsPerInvocation="805" maxMicrosecondsPerInvocation="9646" standardDeviationMircosecondsPerInvocation="1569"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>
