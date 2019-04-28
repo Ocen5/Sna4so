@@ -15,6 +15,7 @@ import it.uniba.sotorrent.SOQuery;
 import it.uniba.sotorrent.SOQueryAnswerDay;
 import it.uniba.sotorrent.SOQueryPostDay;
 import it.uniba.sotorrent.SOQueryQuestionDay;
+import it.uniba.sotorrent.SOQueryQuestionTags;
 
  
 /**
@@ -80,7 +81,7 @@ public final class AppMain {
 			if(values[2] == null && values[3] != null) {          //Query con TAGLIKE
 				System.out.println("Seleziona i primi 100 id utente che hanno fatto "
 									+ "almeno una domanda su un dato argomento in un dato mese e anno");
-			soq = new SOQuery();							//SOSTITUIRE CON LA TIPOLOGIA DI QUERY APPROPRIATA E PASSARE VALUES
+			soq = new SOQueryQuestionTags();							//SOSTITUIRE CON LA TIPOLOGIA DI QUERY APPROPRIATA E PASSARE VALUES
 			break;
 			}
 			else {
