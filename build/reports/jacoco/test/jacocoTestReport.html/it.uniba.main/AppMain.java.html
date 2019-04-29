@@ -27,30 +27,64 @@ import it.uniba.sotorrent.SOQueryQuestionTags;
 
 public final class AppMain {
 
-	/*
-	 * Vector with valid parameters for queries.
-	 * At position:
-	 * 0 yyyy
-	 * 1 mm
-	 * 2 dd
-	 * 3 taglike
-	 * 4 limit.
+	/**
+	 * Valid parameters for queries.
+	 * 
+	 * yyyy 	The year for the WHERE clause of the query.
+	 * mm 		The month for the WHERE clause of the query.
+	 * dd 		The day for the WHERE clause of the query.
+	 * limit 	The limit of tuples.
 	 */
-<span class="nc" id="L39">	private static String[] values = new String[5];</span>
+	private static Integer yyyy, mm, dd, limit;
 
-	/*
-	 * Valid parameter type to choose query.
+	/**
+	 * type 	The type to choose the query.
+	 * taglike 	The argument of posts for the WHERE clause of the query.
 	 */
-<span class="nc" id="L44">	private static String type = new String();</span>
+	private static String type, taglike;
 
 
 	/**
-	 * Private constructor. Change if needed.
+	 * Private constructor. Init varibles from args input.
+	 * 
+	 * @param args The command-line arguments.
+	 * 
+	 * @throws IllegalArgumentException See stack trace for proper location.
 	 */
+<span class="nc" id="L54">	private AppMain(final String[] args)  throws IllegalArgumentException {</span>
 
-	private AppMain() {
+<span class="nc bnc" id="L56" title="All 2 branches missed.">		for (int i = 0; i &lt; args.length; i++) {</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">			if (args[i].contains(&quot;yyyy=&quot;)) {</span>
+<span class="nc" id="L58">				yyyy = Integer.valueOf(args[i].substring(5));</span>
+			} else {
+<span class="nc bnc" id="L60" title="All 2 branches missed.">				if (args[i].contains(&quot;mm=&quot;)) {</span>
+<span class="nc" id="L61">					mm = Integer.valueOf(args[i].substring(3));</span>
+				} else {
+<span class="nc bnc" id="L63" title="All 2 branches missed.">					if (args[i].contains(&quot;dd=&quot;)) {</span>
+<span class="nc" id="L64">						dd = Integer.valueOf(args[i].substring(3));</span>
+					} else {
+<span class="nc bnc" id="L66" title="All 2 branches missed.">						if (args[i].contains(&quot;taglike=&quot;)) {</span>
+<span class="nc" id="L67">							taglike = args[i].substring(8);</span>
+						} else {
+<span class="nc bnc" id="L69" title="All 2 branches missed.">							if (args[i].contains(&quot;limit=&quot;)) {</span>
+<span class="nc" id="L70">								limit = Integer.valueOf(args[i].substring(6));</span>
+							} else {
+<span class="nc bnc" id="L72" title="All 2 branches missed.">								if (args[i].contains(&quot;type=&quot;)) {</span>
+<span class="nc" id="L73">									type = args[i].substring(5);</span>
+								} else {
+<span class="nc" id="L75">									IllegalArgumentException exception = new IllegalArgumentException(</span>
+											&quot;Parametro di input non valido.&quot;);
+<span class="nc" id="L77">									throw exception;</span>
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 
-	}
+<span class="nc" id="L86">	}</span>
+
 
 	/**
 	 * 	 * This is the main entry of the application.
@@ -71,171 +105,112 @@ public final class AppMain {
 	GeneralSecurityException,
 	URISyntaxException,
 	IllegalArgumentException {
-<span class="nc" id="L74">		System.out.println(&quot;Current working dir: &quot; + System.getProperty(&quot;user.dir&quot;));</span>
+<span class="nc" id="L108">		System.out.println(&quot;Current working dir: &quot; + System.getProperty(&quot;user.dir&quot;));</span>
 
-<span class="nc" id="L76">		getInput(args);				//values 0:yyyy		1:mm	2:dd	3:taglike	4:limit</span>
+		//Take valid values from args, see AppMain constructor for further information.
+<span class="nc" id="L111">		new AppMain(args);</span>
 
 
-<span class="nc" id="L79">		ISOQuery soq = null;</span>
-<span class="nc" id="L80">		String nameQuery = new String();</span>
-<span class="nc" id="L81">		String year = values[0],</span>
-<span class="nc" id="L82">				month = values[1],</span>
-<span class="nc" id="L83">				day = values[2],</span>
-<span class="nc" id="L84">				taglike = values[3],</span>
-<span class="nc" id="L85">				limit = values[4];</span>
+<span class="nc" id="L114">		ISOQuery soq = null;</span>
+<span class="nc" id="L115">		String nameQuery = new String();</span>
 
-<span class="nc bnc" id="L87" title="All 4 branches missed.">		switch (type) {</span>
+		//choose the query type and run the query
+<span class="nc bnc" id="L118" title="All 4 branches missed.">		switch (type) {</span>
 		case &quot;question&quot; :
 
-<span class="nc bnc" id="L90" title="All 4 branches missed.">			if (day != null &amp;&amp; taglike == null) {           //Query con DAY</span>
-<span class="nc" id="L91">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
+<span class="nc bnc" id="L121" title="All 4 branches missed.">			if (dd != null &amp;&amp; taglike == null) {           //Query con DAY</span>
+<span class="nc" id="L122">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
 						+ limit
-						+ &quot;id utente che hanno fatto almeno una domanda il &quot;
-						+ year + &quot;/&quot; + month + &quot;/&quot; + day);
-<span class="nc" id="L95">				System.out.println(nameQuery);</span>
-<span class="nc" id="L96">				soq = new SOQueryQuestionDay();			</span>
-<span class="nc" id="L97">				break;</span>
+						+ &quot; id utente che hanno fatto almeno una domanda il &quot;
+						+ yyyy + &quot;/&quot; + mm + &quot;/&quot; + dd);
+<span class="nc" id="L126">				System.out.println(nameQuery);</span>
+<span class="nc" id="L127">				soq = new SOQueryQuestionDay(yyyy, mm, dd, limit);</span>
+<span class="nc" id="L128">				break;</span>
 			}
-<span class="nc bnc" id="L99" title="All 4 branches missed.">			if (day == null &amp;&amp; taglike != null) {          //Query con TAGLIKE</span>
-<span class="nc" id="L100">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
+<span class="nc bnc" id="L130" title="All 4 branches missed.">			if (dd == null &amp;&amp; taglike != null) {          //Query con TAGLIKE</span>
+<span class="nc" id="L131">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
 						+ limit
-						+ &quot; id utente che hanno fatto almeno una domanda sull' argomento&quot;
-						+ taglike + &quot; il &quot; + year + &quot;/&quot; + month);
-<span class="nc" id="L104">				System.out.println(nameQuery);</span>
-<span class="nc" id="L105">				soq = new SOQueryQuestionTags();</span>
-<span class="nc" id="L106">				break;</span>
+						+ &quot; id utente che hanno fatto almeno una domanda sull' argomento &quot;
+						+ taglike + &quot; il &quot; + yyyy + &quot;/&quot; + mm);
+<span class="nc" id="L135">				System.out.println(nameQuery);</span>
+<span class="nc" id="L136">				soq = new SOQueryQuestionTags(yyyy, mm, taglike, limit);</span>
+<span class="nc" id="L137">				break;</span>
 			} else {
-<span class="nc" id="L108">				IllegalArgumentException valuesException = new IllegalArgumentException(</span>
+<span class="nc" id="L139">				IllegalArgumentException valuesException = new IllegalArgumentException(</span>
 						&quot;Argomenti non validi.&quot;);
-<span class="nc" id="L110">				throw valuesException;</span>
+<span class="nc" id="L141">				throw valuesException;</span>
 			}
 
 		case &quot;answer&quot; :
 
-<span class="nc bnc" id="L115" title="All 4 branches missed.">			if (day != null &amp;&amp; taglike == null) {           //Query con DAY</span>
-<span class="nc" id="L116">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
+<span class="nc bnc" id="L146" title="All 4 branches missed.">			if (dd != null &amp;&amp; taglike == null) {           //Query con DAY</span>
+<span class="nc" id="L147">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
 						+ limit
 						+ &quot;id utente che hanno dato almeno una risposta il &quot;
-						+ year + &quot;/&quot; + month + &quot;/&quot; + day);
-<span class="nc" id="L120">				System.out.println(nameQuery);</span>
-<span class="nc" id="L121">				soq = new SOQueryAnswerDay();</span>
-<span class="nc" id="L122">				break;</span>
+						+ yyyy + &quot;/&quot; + mm + &quot;/&quot; + dd);
+<span class="nc" id="L151">				System.out.println(nameQuery);</span>
+<span class="nc" id="L152">				soq = new SOQueryAnswerDay(yyyy, mm, dd, limit);</span>
+<span class="nc" id="L153">				break;</span>
 			}
-<span class="nc bnc" id="L124" title="All 4 branches missed.">			if (day == null &amp;&amp; taglike != null) {          //Query con TAGLIKE</span>
-<span class="nc" id="L125">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
+<span class="nc bnc" id="L155" title="All 4 branches missed.">			if (dd == null &amp;&amp; taglike != null) {          //Query con TAGLIKE</span>
+<span class="nc" id="L156">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
 						+ limit
-						+ &quot; id utente che hanno dato almeno una risposta sull' argomento&quot;
-						+ taglike + &quot; il &quot; + year + &quot;/&quot; + month);
-<span class="nc" id="L129">				System.out.println(nameQuery);</span>
-<span class="nc" id="L130">				soq = new SOQueryAnswerTags();</span>
-<span class="nc" id="L131">				break;</span>
+						+ &quot; id utente che hanno dato almeno una risposta sull' argomento &quot;
+						+ taglike + &quot; il &quot; + yyyy + &quot;/&quot; + mm);
+<span class="nc" id="L160">				System.out.println(nameQuery);</span>
+<span class="nc" id="L161">				soq = new SOQueryAnswerTags(yyyy, mm, taglike, limit);</span>
+<span class="nc" id="L162">				break;</span>
 			} else {
-<span class="nc" id="L133">				IllegalArgumentException valuesException = new IllegalArgumentException(</span>
+<span class="nc" id="L164">				IllegalArgumentException valuesException = new IllegalArgumentException(</span>
 						&quot;Argomenti non validi.&quot;);
-<span class="nc" id="L135">				throw valuesException;</span>
+<span class="nc" id="L166">				throw valuesException;</span>
 			}
 
 		case &quot;post&quot; :
 
-<span class="nc bnc" id="L140" title="All 4 branches missed.">			if (day != null &amp;&amp; taglike == null) {           //Query con DAY</span>
-<span class="nc" id="L141">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
+<span class="nc bnc" id="L171" title="All 4 branches missed.">			if (dd != null &amp;&amp; taglike == null) {           //Query con DAY</span>
+<span class="nc" id="L172">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
 						+ limit
 						+ &quot;id utente che hanno fatto almeno un post il &quot;
-						+ year + &quot;/&quot; + month + &quot;/&quot; + day);
-<span class="nc" id="L145">				System.out.println(nameQuery);</span>
-<span class="nc" id="L146">				soq = new SOQueryPostDay();</span>
-<span class="nc" id="L147">				break;</span>
+						+ yyyy + &quot;/&quot; + mm + &quot;/&quot; + dd);
+<span class="nc" id="L176">				System.out.println(nameQuery);</span>
+<span class="nc" id="L177">				soq = new SOQueryPostDay(yyyy, mm, dd, limit);</span>
+<span class="nc" id="L178">				break;</span>
 			}
-<span class="nc bnc" id="L149" title="All 4 branches missed.">			if (day == null &amp;&amp; taglike != null) {          //Query con TAGLIKE</span>
-<span class="nc" id="L150">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
+<span class="nc bnc" id="L180" title="All 4 branches missed.">			if (dd == null &amp;&amp; taglike != null) {          //Query con TAGLIKE</span>
+<span class="nc" id="L181">				nameQuery = new String(&quot;Seleziona i primi &quot;</span>
 						+ limit
-						+ &quot; id utente che hanno fatto almeno un post sull' argomento&quot;
-						+ taglike + &quot; il &quot; + year + &quot;/&quot; + month);
-<span class="nc" id="L154">				System.out.println(nameQuery);</span>
-<span class="nc" id="L155">				soq = new SOQueryPostTags();</span>
-<span class="nc" id="L156">				break;</span>
+						+ &quot; id utente che hanno fatto almeno un post sull' argomento &quot;
+						+ taglike + &quot; il &quot; + yyyy + &quot;/&quot; + mm);
+<span class="nc" id="L185">				System.out.println(nameQuery);</span>
+<span class="nc" id="L186">				soq = new SOQueryPostTags(yyyy, mm, taglike, limit);</span>
+<span class="nc" id="L187">				break;</span>
 			} else {
-<span class="nc" id="L158">				IllegalArgumentException valuesException = new IllegalArgumentException(</span>
+<span class="nc" id="L189">				IllegalArgumentException valuesException = new IllegalArgumentException(</span>
 						&quot;Argomenti non validi.&quot;);
-<span class="nc" id="L160">				throw valuesException;</span>
+<span class="nc" id="L191">				throw valuesException;</span>
 			}
 
 		default :
 
-<span class="nc" id="L165">			IllegalArgumentException typeException = new IllegalArgumentException(</span>
+<span class="nc" id="L196">			IllegalArgumentException typeException = new IllegalArgumentException(</span>
 					&quot;Type query non valido.&quot;);
-<span class="nc" id="L167">			throw typeException;</span>
+<span class="nc" id="L198">			throw typeException;</span>
 
 		}
 
 
-<span class="nc" id="L172">		Job job = soq.runQuery(values);</span>
-<span class="nc" id="L173">		TableResult res = soq.getResults(job);</span>
+<span class="nc" id="L203">		Job job = soq.runQuery();</span>
+<span class="nc" id="L204">		TableResult res = soq.getResults(job);</span>
 
-<span class="nc" id="L175">		String name = &quot;&quot;;								//Stringa nome Sheet</span>
-<span class="nc bnc" id="L176" title="All 2 branches missed.">		for (int i = 0; i &lt; args.length; i++) {</span>
-<span class="nc" id="L177">			name += args[i] + &quot; &quot;;</span>
-		}
+<span class="nc" id="L206">		GoogleDocsUtils ut = new GoogleDocsUtils();</span>
+<span class="nc" id="L207">		String spid = ut.createSheet(&quot;SNA4SO - &quot; + nameQuery);</span>
+<span class="nc" id="L208">		ut.shareSheet(spid);</span>
+<span class="nc" id="L209">		ut.getSheetByTitle(spid);</span>
+<span class="nc" id="L210">		ut.writeSheet(spid, res);</span>
 
+<span class="nc" id="L212">	}</span>
 
-
-<span class="nc" id="L182">		GoogleDocsUtils ut = new GoogleDocsUtils();</span>
-<span class="nc" id="L183">		String spid = ut.createSheet(&quot;SNA4SO - Query Input: &quot; + name);</span>
-<span class="nc" id="L184">		ut.shareSheet(spid);</span>
-<span class="nc" id="L185">		ut.getSheetByTitle(spid);</span>
-<span class="nc" id="L186">		ut.writeSheet(spid, res);</span>
-
-<span class="nc" id="L188">	}</span>
-
-	/**
-	 * 	 * This function sets valid input values for queries.
-	 *
-	 * @param args The command-line arguments.
-	 * 
-	 * Store values, at position:
-	 * 0 year(yyyy)
-	 * 1 month(mm)
-	 * 2 day(dd)
-	 * 3 taglike
-	 * 4 limit
-	 * 
-	 * init type
-	 * 
-	 * @throws IllegalArgumentException See stack trace for proper location.
-	 */
-	private static void getInput(final String[] args)  throws IllegalArgumentException {
-
-<span class="nc bnc" id="L208" title="All 2 branches missed.">		for (int i = 0; i &lt; args.length; i++) {</span>
-<span class="nc bnc" id="L209" title="All 2 branches missed.">			if (args[i].contains(&quot;yyyy=&quot;)) {</span>
-<span class="nc" id="L210">				values[0] = args[i].substring(5);</span>
-			} else {
-<span class="nc bnc" id="L212" title="All 2 branches missed.">				if (args[i].contains(&quot;mm=&quot;)) {</span>
-<span class="nc" id="L213">					values[1] = args[i].substring(3);</span>
-				} else {
-<span class="nc bnc" id="L215" title="All 2 branches missed.">					if (args[i].contains(&quot;dd=&quot;)) {</span>
-<span class="nc" id="L216">						values[2] = args[i].substring(3);</span>
-					} else {
-<span class="nc bnc" id="L218" title="All 2 branches missed.">						if (args[i].contains(&quot;taglike=&quot;)) {</span>
-<span class="nc" id="L219">							values[3] = args[i].substring(8);</span>
-						} else {
-<span class="nc bnc" id="L221" title="All 2 branches missed.">							if (args[i].contains(&quot;limit=&quot;)) {</span>
-<span class="nc" id="L222">								values[4] = args[i].substring(6);</span>
-							} else {
-<span class="nc bnc" id="L224" title="All 2 branches missed.">								if (args[i].contains(&quot;type=&quot;)) {</span>
-<span class="nc" id="L225">									type = args[i].substring(5);</span>
-								} else {
-<span class="nc" id="L227">									IllegalArgumentException exception = new IllegalArgumentException(</span>
-											&quot;Parametro di input non valido.&quot;);
-<span class="nc" id="L229">									throw exception;</span>
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-<span class="nc" id="L238">	}</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>
