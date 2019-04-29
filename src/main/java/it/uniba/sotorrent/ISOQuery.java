@@ -13,12 +13,10 @@ public interface ISOQuery {
 	/**
 	 * Starts the query.
 	 * 
-	 * @param values Valid values for the parameters of the query.
-	 * 
 	 * @return The job for the query.
 	 * @throws InterruptedException Raised on timeouts.
 	 */
-	Job runQuery(String[] values) throws InterruptedException;
+	Job runQuery() throws InterruptedException;
 
 	/**
 	 * Returns the results from the query job.

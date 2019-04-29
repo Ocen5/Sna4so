@@ -27,30 +27,64 @@ import it.uniba.sotorrent.SOQueryQuestionTags;
 
 public final class AppMain {
 
-	/*
-	 * Vector with valid parameters for queries.
-	 * At position:
-	 * 0 yyyy
-	 * 1 mm
-	 * 2 dd
-	 * 3 taglike
-	 * 4 limit.
+	/**
+	 * Valid parameters for queries.
+	 * 
+	 * yyyy 	The year for the WHERE clause of the query.
+	 * mm 		The month for the WHERE clause of the query.
+	 * dd 		The day for the WHERE clause of the query.
+	 * limit 	The limit of tuples.
 	 */
-	private static String[] values = new String[5];
+	private static Integer yyyy, mm, dd, limit;
 
-	/*
-	 * Valid parameter type to choose query.
+	/**
+	 * type 	The type to choose the query.
+	 * taglike 	The argument of posts for the WHERE clause of the query.
 	 */
-	private static String type = new String();
+	private static String type, taglike;
 
 
 	/**
-	 * Private constructor. Change if needed.
+	 * Private constructor. Init varibles from args input.
+	 * 
+	 * @param args The command-line arguments.
+	 * 
+	 * @throws IllegalArgumentException See stack trace for proper location.
 	 */
+	private AppMain(final String[] args)  throws IllegalArgumentException {
 
-	private AppMain() {
+		for (int i = 0; i < args.length; i++) {
+			if (args[i].contains("yyyy=")) {
+				yyyy = Integer.valueOf(args[i].substring(5));
+			} else {
+				if (args[i].contains("mm=")) {
+					mm = Integer.valueOf(args[i].substring(3));
+				} else {
+					if (args[i].contains("dd=")) {
+						dd = Integer.valueOf(args[i].substring(3));
+					} else {
+						if (args[i].contains("taglike=")) {
+							taglike = args[i].substring(8);
+						} else {
+							if (args[i].contains("limit=")) {
+								limit = Integer.valueOf(args[i].substring(6));
+							} else {
+								if (args[i].contains("type=")) {
+									type = args[i].substring(5);
+								} else {
+									IllegalArgumentException exception = new IllegalArgumentException(
+											"Parametro di input non valido.");
+									throw exception;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 
 	}
+
 
 	/**
 	 * 	 * This is the main entry of the application.
@@ -73,36 +107,33 @@ public final class AppMain {
 	IllegalArgumentException {
 		System.out.println("Current working dir: " + System.getProperty("user.dir"));
 
-		getInput(args);				//values 0:yyyy		1:mm	2:dd	3:taglike	4:limit
+		//Take valid values from args, see AppMain constructor for further information.
+		new AppMain(args);
 
 
 		ISOQuery soq = null;
 		String nameQuery = new String();
-		String year = values[0],
-				month = values[1],
-				day = values[2],
-				taglike = values[3],
-				limit = values[4];
 
+		//choose the query type and run the query
 		switch (type) {
 		case "question" :
 
-			if (day != null && taglike == null) {           //Query con DAY
+			if (dd != null && taglike == null) {           //Query con DAY
 				nameQuery = new String("Seleziona i primi "
 						+ limit
-						+ "id utente che hanno fatto almeno una domanda il "
-						+ year + "/" + month + "/" + day);
+						+ " id utente che hanno fatto almeno una domanda il "
+						+ yyyy + "/" + mm + "/" + dd);
 				System.out.println(nameQuery);
-				soq = new SOQueryQuestionDay();			
+				soq = new SOQueryQuestionDay(yyyy, mm, dd, limit);
 				break;
 			}
-			if (day == null && taglike != null) {          //Query con TAGLIKE
+			if (dd == null && taglike != null) {          //Query con TAGLIKE
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ " id utente che hanno fatto almeno una domanda sull' argomento "
-						+ taglike + " il " + year + "/" + month);
+						+ taglike + " il " + yyyy + "/" + mm);
 				System.out.println(nameQuery);
-				soq = new SOQueryQuestionTags();
+				soq = new SOQueryQuestionTags(yyyy, mm, taglike, limit);
 				break;
 			} else {
 				IllegalArgumentException valuesException = new IllegalArgumentException(
@@ -112,22 +143,22 @@ public final class AppMain {
 
 		case "answer" :
 
-			if (day != null && taglike == null) {           //Query con DAY
+			if (dd != null && taglike == null) {           //Query con DAY
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ "id utente che hanno dato almeno una risposta il "
-						+ year + "/" + month + "/" + day);
+						+ yyyy + "/" + mm + "/" + dd);
 				System.out.println(nameQuery);
-				soq = new SOQueryAnswerDay();
+				soq = new SOQueryAnswerDay(yyyy, mm, dd, limit);
 				break;
 			}
-			if (day == null && taglike != null) {          //Query con TAGLIKE
+			if (dd == null && taglike != null) {          //Query con TAGLIKE
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ " id utente che hanno dato almeno una risposta sull' argomento "
-						+ taglike + " il " + year + "/" + month);
+						+ taglike + " il " + yyyy + "/" + mm);
 				System.out.println(nameQuery);
-				soq = new SOQueryAnswerTags();
+				soq = new SOQueryAnswerTags(yyyy, mm, taglike, limit);
 				break;
 			} else {
 				IllegalArgumentException valuesException = new IllegalArgumentException(
@@ -137,22 +168,22 @@ public final class AppMain {
 
 		case "post" :
 
-			if (day != null && taglike == null) {           //Query con DAY
+			if (dd != null && taglike == null) {           //Query con DAY
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ "id utente che hanno fatto almeno un post il "
-						+ year + "/" + month + "/" + day);
+						+ yyyy + "/" + mm + "/" + dd);
 				System.out.println(nameQuery);
-				soq = new SOQueryPostDay();
+				soq = new SOQueryPostDay(yyyy, mm, dd, limit);
 				break;
 			}
-			if (day == null && taglike != null) {          //Query con TAGLIKE
+			if (dd == null && taglike != null) {          //Query con TAGLIKE
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ " id utente che hanno fatto almeno un post sull' argomento "
-						+ taglike + " il " + year + "/" + month);
+						+ taglike + " il " + yyyy + "/" + mm);
 				System.out.println(nameQuery);
-				soq = new SOQueryPostTags();
+				soq = new SOQueryPostTags(yyyy, mm, taglike, limit);
 				break;
 			} else {
 				IllegalArgumentException valuesException = new IllegalArgumentException(
@@ -169,7 +200,7 @@ public final class AppMain {
 		}
 
 
-		Job job = soq.runQuery(values);
+		Job job = soq.runQuery();
 		TableResult res = soq.getResults(job);
 
 		GoogleDocsUtils ut = new GoogleDocsUtils();
@@ -180,54 +211,5 @@ public final class AppMain {
 
 	}
 
-	/**
-	 * 	 * This function sets valid input values for queries.
-	 *
-	 * @param args The command-line arguments.
-	 * 
-	 * Store values, at position:
-	 * 0 year(yyyy)
-	 * 1 month(mm)
-	 * 2 day(dd)
-	 * 3 taglike
-	 * 4 limit
-	 * 
-	 * init type
-	 * 
-	 * @throws IllegalArgumentException See stack trace for proper location.
-	 */
-	private static void getInput(final String[] args)  throws IllegalArgumentException {
-
-		for (int i = 0; i < args.length; i++) {
-			if (args[i].contains("yyyy=")) {
-				values[0] = args[i].substring(5);
-			} else {
-				if (args[i].contains("mm=")) {
-					values[1] = args[i].substring(3);
-				} else {
-					if (args[i].contains("dd=")) {
-						values[2] = args[i].substring(3);
-					} else {
-						if (args[i].contains("taglike=")) {
-							values[3] = args[i].substring(8);
-						} else {
-							if (args[i].contains("limit=")) {
-								values[4] = args[i].substring(6);
-							} else {
-								if (args[i].contains("type=")) {
-									type = args[i].substring(5);
-								} else {
-									IllegalArgumentException exception = new IllegalArgumentException(
-											"Parametro di input non valido.");
-									throw exception;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-	}
 
 }

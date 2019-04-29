@@ -40,7 +40,7 @@ abstract class ASOQuery implements ISOQuery {
 	}
 
 	@Override
-	public abstract Job runQuery(String[] values) throws InterruptedException;
+	public abstract Job runQuery() throws InterruptedException;
 
 
 	@Override
@@ -63,7 +63,7 @@ abstract class ASOQuery implements ISOQuery {
 		return result;
 	}
 
-	/*
+	/**
 	 * This function returns BigQuery API Service.
 	 * @return bigquery The BigQuery Service.
 	 */

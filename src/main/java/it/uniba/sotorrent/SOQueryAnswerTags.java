@@ -10,30 +10,54 @@ import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 
-/*
+/**
  * Class for run query from questions table with year, month, taglike, limit.
  */
 public final class SOQueryAnswerTags extends ASOQuery implements ISOQuery {
 
+	/*
+	 * Valid parameters for SOQueryAnswerTags.
+	 */
+
 	/**
-	 * Default constructor, see ASOQuery constructor.
+	 * yyyy 	The year for the WHERE clause of the query.
+	 * mm 		The month for the WHERE clause of the query.
+	 * taglike 	The argument of posts for the WHERE clause of the query.
+	 * limit 	The limit of tuples.
+	 */
+	private Integer yyyy, mm, limit;
+
+	/**
+	 * taglike 	The argument of posts for the WHERE clause of the query.
+	 */
+	private String taglike;
+
+	/**
+	 * Default constructor, init variables of the query and
+	 * see ASOQuery constructor for instance of BigQuery API service.
+	 * @param year	The year parameter to be inserted in the query.
+	 * @param month	The month parameter to be inserted in the query.
+	 * @param tags 	The taglike parameter to be inserted in the query.
+	 * @param lim 	The limit parameter to be inserted in the query.
+	 * 
 	 * @throws FileNotFoundException See stack trace for proper location.
 	 * @throws IOException  See stack trace for proper location.
 	**/
-	public SOQueryAnswerTags() throws FileNotFoundException, IOException {
+	public SOQueryAnswerTags(final Integer year, final Integer month, final String tags, final Integer lim)
+			throws FileNotFoundException, IOException {
+
+		super();	//ASOQuery constructor.
+		//Init variables
+		yyyy = year;
+		mm = month;
+		taglike = tags;
+		limit = lim;
 
 	}
 
 
 	@Override
-	public Job runQuery(final String[] values) throws InterruptedException {
-
-		//Variabili per la query.
-		Integer yyyy = Integer.valueOf(values[0]),
-				mm = Integer.valueOf(values[1]),
-				limit = Integer.valueOf(values[4]);
-		String taglike = values[3];
-
+	public Job runQuery() throws InterruptedException {
 
 		// Use standard SQL syntax for queries.
 		// See: https://cloud.google.com/bigquery/sql-reference/
