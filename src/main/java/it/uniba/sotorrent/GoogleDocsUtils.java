@@ -30,7 +30,7 @@ import com.google.api.services.sheets.v4.model.Spreadsheet;
 import com.google.api.services.sheets.v4.model.SpreadsheetProperties;
 import com.google.api.services.sheets.v4.model.UpdateCellsRequest;
 
- //Package importati per la struttura dati
+//Package importati per la struttura dati
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.TableResult;
@@ -63,7 +63,7 @@ public class GoogleDocsUtils {
 	/**
 	 * The location where the SON credential file is stored on the Internet.
 	 */
-	private static final String url = "http://neo.di.uniba.it/credentials/project-codd-we445rt.json";
+	private static final String URL = "http://neo.di.uniba.it/credentials/project-codd-we445rt.json";
 
 	/**
 	 * Default constructor, authenticates and instantiate services.
@@ -86,7 +86,7 @@ public class GoogleDocsUtils {
 	 * @throws URISyntaxException Malformed URI.
 	 */
 	private Credential authorize() throws IOException, GeneralSecurityException, URISyntaxException {
-		GoogleCredential authCred = GoogleCredential.fromStream(new URL(url).openStream()).toBuilder()
+		GoogleCredential authCred = GoogleCredential.fromStream(new URL(URL).openStream()).toBuilder()
 				.setServiceAccountScopes(SCOPES).build();
 		return authCred;
 	}
@@ -145,62 +145,63 @@ public class GoogleDocsUtils {
 	}
 
 	/**
-	 * Write results to the spreadsheet. Also, see <a href="https://developers.google.com/sheets/api/guides/values">here</a>.
+	 * Write results to the spreadsheet.
+	 * Also, see <a href="https://developers.google.com/sheets/api/guides/values">here</a>.
 	 * @param spid The spreadsheet id.
 	 * @param res The hash map of the results, with URL as key and view count as value.
 	 * @throws IOException Generic I/O error.
 	 */
 	public void writeSheet(final String spid, final TableResult res) throws IOException {
-        List<Request> requests = new ArrayList<>();
-        List<CellData> values = new ArrayList<>();
+		List<Request> requests = new ArrayList<>();
+		List<CellData> values = new ArrayList<>();
 
-        //scrive l'attributo Row 
-        values.add(new CellData().setUserEnteredValue(new ExtendedValue().setStringValue("Row")));
-        //Scrive tutti gli attributi dello schema
-        if (null != res) {
-            for(int schemaIndex=0; schemaIndex < res.getSchema().getFields().size(); schemaIndex++) 
-            {
-                values.add(new CellData().setUserEnteredValue(new ExtendedValue().setStringValue(res.getSchema().getFields().get(schemaIndex).getName())));
-            }
+		//Scrive l'attributo Row
+		values.add(new CellData().setUserEnteredValue(new ExtendedValue().setStringValue("Row")));
+		//Scrive tutti gli attributi dello schema
+		if (null != res) {
+			for (int schemaIndex = 0; schemaIndex < res.getSchema().getFields().size(); schemaIndex++) {
+				values.add(new CellData().setUserEnteredValue(new ExtendedValue().setStringValue(
+						res.getSchema().getFields().get(schemaIndex).getName())));
+			}
 
-            requests.add(new Request().setUpdateCells(
-                    new UpdateCellsRequest().setStart(new GridCoordinate().setSheetId(0).setRowIndex(0)
-                            .setColumnIndex(0))
-                            .setRows(Arrays.asList(new RowData().setValues(values)))
-                            .setFields("userEnteredValue,userEnteredFormat.backgroundColor")));
+			requests.add(new Request().setUpdateCells(
+					new UpdateCellsRequest().setStart(new GridCoordinate().setSheetId(0).setRowIndex(0)
+							.setColumnIndex(0))
+					.setRows(Arrays.asList(new RowData().setValues(values)))
+					.setFields("userEnteredValue,userEnteredFormat.backgroundColor")));
 
 
-            BatchUpdateSpreadsheetRequest batchUpdateRequest =
-                    new BatchUpdateSpreadsheetRequest().setRequests(requests);
-            sheetsService.spreadsheets().batchUpdate(spid, batchUpdateRequest).execute();
-          //scriva i valori di ogni tupla
-            int rowIndex = 1;
-            for (FieldValueList entry : res.iterateAll()) {
-                requests = new ArrayList<>();
-                values = new ArrayList<>();
-                //scrive il conteggio della tupla (Row)
-                values.add(new CellData()
-                        .setUserEnteredValue(new ExtendedValue().setStringValue(String.valueOf(rowIndex))));
-                //scrive i valori di ogni tupla per ogni attributo dello schema
-                for(int schemaIndex=0; schemaIndex < res.getSchema().getFields().size(); schemaIndex++) {
-                    FieldValue value = entry.get(schemaIndex);
-                    values.add(new CellData()
-                            .setUserEnteredValue(new ExtendedValue().setStringValue(value.getStringValue())));
-                }
-                requests.add(new Request().setUpdateCells(new UpdateCellsRequest()
-                        .setStart(new GridCoordinate().setSheetId(0).setRowIndex(rowIndex)
-                                .setColumnIndex(0))
-                        .setRows(Arrays.asList(new RowData().setValues(values)))
-                        .setFields("userEnteredValue,userEnteredFormat.backgroundColor")));
+			BatchUpdateSpreadsheetRequest batchUpdateRequest =
+					new BatchUpdateSpreadsheetRequest().setRequests(requests);
+			sheetsService.spreadsheets().batchUpdate(spid, batchUpdateRequest).execute();
+			//scriva i valori di ogni tupla
+			int rowIndex = 1;
+			for (FieldValueList entry : res.iterateAll()) {
+				requests = new ArrayList<>();
+				values = new ArrayList<>();
+				//scrive il conteggio della tupla (Row)
+				values.add(new CellData()
+						.setUserEnteredValue(new ExtendedValue().setStringValue(String.valueOf(rowIndex))));
+				//scrive i valori di ogni tupla per ogni attributo dello schema
+				for (int schemaIndex = 0; schemaIndex < res.getSchema().getFields().size(); schemaIndex++) {
+					FieldValue value = entry.get(schemaIndex);
+					values.add(new CellData()
+							.setUserEnteredValue(new ExtendedValue().setStringValue(value.getStringValue())));
+				}
+				requests.add(new Request().setUpdateCells(new UpdateCellsRequest()
+						.setStart(new GridCoordinate().setSheetId(0).setRowIndex(rowIndex)
+								.setColumnIndex(0))
+						.setRows(Arrays.asList(new RowData().setValues(values)))
+						.setFields("userEnteredValue,userEnteredFormat.backgroundColor")));
 
-                batchUpdateRequest = new BatchUpdateSpreadsheetRequest().setRequests(requests);
-                sheetsService.spreadsheets().batchUpdate(spid, batchUpdateRequest).execute();
+				batchUpdateRequest = new BatchUpdateSpreadsheetRequest().setRequests(requests);
+				sheetsService.spreadsheets().batchUpdate(spid, batchUpdateRequest).execute();
 
-                rowIndex++;
-            }
-        }
+				rowIndex++;
+			}
+		}
 
-    }
+	}
 
 	/**
 	 * Makes the spreadsheet readable to anyone with the link.
@@ -212,13 +213,13 @@ public class GoogleDocsUtils {
 	public void shareSheet(final String spid) throws IOException, GeneralSecurityException, URISyntaxException {
 		JsonBatchCallback<Permission> callback = new JsonBatchCallback<Permission>() {
 			public void onFailure(final GoogleJsonError e, final HttpHeaders responseHeaders)
-										  throws IOException {
+					throws IOException {
 				// Handle error
 				System.err.println(e.getMessage());
 			}
 
 			public void onSuccess(final Permission permission, final HttpHeaders responseHeaders)
-							    		  throws IOException {
+					throws IOException {
 				System.out.println("Permission ID: " + permission.getId());
 			}
 		};
