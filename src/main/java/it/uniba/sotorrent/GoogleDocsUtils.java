@@ -155,6 +155,8 @@ public class GoogleDocsUtils {
 		List<Request> requests = new ArrayList<>();
 		List<CellData> values = new ArrayList<>();
 
+		//Scrive l'attributo Row
+		values.add(new CellData().setUserEnteredValue(new ExtendedValue().setStringValue("Row")));
 		//Scrive tutti gli attributi dello schema
 		if (null != res) {
 			for (int schemaIndex = 0; schemaIndex < res.getSchema().getFields().size(); schemaIndex++) {
@@ -177,6 +179,9 @@ public class GoogleDocsUtils {
 			for (FieldValueList entry : res.iterateAll()) {
 				requests = new ArrayList<>();
 				values = new ArrayList<>();
+				//scrive il conteggio della tupla (Row)
+				values.add(new CellData()
+						.setUserEnteredValue(new ExtendedValue().setStringValue(String.valueOf(rowIndex))));
 				//scrive i valori di ogni tupla per ogni attributo dello schema
 				for (int schemaIndex = 0; schemaIndex < res.getSchema().getFields().size(); schemaIndex++) {
 					FieldValue value = entry.get(schemaIndex);

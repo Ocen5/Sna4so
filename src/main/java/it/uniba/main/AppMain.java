@@ -18,7 +18,6 @@ import it.uniba.sotorrent.SOQueryPostTags;
 import it.uniba.sotorrent.SOQueryQuestionDay;
 import it.uniba.sotorrent.SOQueryQuestionDayEdge;
 import it.uniba.sotorrent.SOQueryQuestionTags;
-import it.uniba.sotorrent.SOQueryQuestionUsrEdge;
 
 
 /**
@@ -37,9 +36,8 @@ public final class AppMain {
 	 * mm 		The month for the WHERE clause of the query.
 	 * dd 		The day for the WHERE clause of the query.
 	 * limit 	The limit of tuples.
-	 * user		The id of the user of a question/answer.
 	 */
-	private static Integer yyyy, mm, dd, limit,user;
+	private static Integer yyyy, mm, dd, limit;
 
 	/**
 	 * type 	The type to choose the query.
@@ -78,16 +76,13 @@ public final class AppMain {
 									type = args[i].substring(5);
 								} else {
 									if (args[i].contains("edge=")) {
-										if (args[i].substring(5).equals("yes")) 
+										if (args[i].substring(5) == "yes") {
 											edge = true;
-									} else {
-										if (args[i].contains("user=")) {
-											user= Integer.valueOf(args[i].substring(5));
-										} else {
-											IllegalArgumentException exception = new IllegalArgumentException(
-													"Parametro di input non valido.");
-											throw exception;
 										}
+									} else {
+										IllegalArgumentException exception = new IllegalArgumentException(
+												"Parametro di input non valido.");
+										throw exception;
 									}
 								}
 							}
@@ -97,7 +92,6 @@ public final class AppMain {
 			}
 		}
 	}
-
 
 
 	/**
@@ -128,15 +122,12 @@ public final class AppMain {
 		ISOQuery soq = null;
 		String nameQuery = new String();
 
-		
-		System.out.println("1"+type +"2"+ user +"3"+ edge +"4" + limit);
-		
-		
 		//choose the query type and run the query
 		switch (type) {
 		case "question" :
 
-			if (dd != null && taglike == null && !edge && user== null) {           //Query con DAY
+			if (dd != null && taglike == null) {           //Query con DAY
+				if (!edge) {									//Nodi
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ " id utente che hanno fatto almeno una domanda il "
@@ -144,8 +135,17 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionDay(yyyy, mm, dd, limit);
 				break;
+				} else {										//Archi
+					nameQuery = new String("Seleziona le prime "
+							+ limit
+							+ " coppie(from,to) di id utente che hanno fatto almeno una domanda il "
+							+ yyyy + "/" + mm + "/" + dd);
+					System.out.println(nameQuery);
+					soq = new SOQueryQuestionDayEdge(yyyy, mm, dd, limit);
+					break;
+				}
 			}
-			if (dd == null && taglike != null && !edge ) {          //Query con TAGLIKE
+			if (dd == null && taglike != null) {          //Query con TAGLIKE
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ " id utente che hanno fatto almeno una domanda sull' argomento "
@@ -153,24 +153,12 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionTags(yyyy, mm, taglike, limit);
 				break;
-			}														//Query con edge con question
-			if(edge && user== null) {
-				nameQuery = new String("Seleziona le prime "
-						+ limit
-						+ " coppie (from,to) relative a domande poste il "
-						+ yyyy + "/" + mm + "/" + dd );
-				System.out.println(nameQuery);
-				soq = new SOQueryQuestionDayEdge(yyyy, mm, dd, limit);
-				break;
-			}if (edge && user!= null ) {          //Query con edge user
-				nameQuery = new String("Seleziona le prime "
-						+ limit
-						+ " coppie (from,to) relative a domande poste dall'utente "
-						+ user);
-				System.out.println(nameQuery);
-				soq = new SOQueryQuestionUsrEdge(user,limit);
-				break;
+			} else {
+				IllegalArgumentException valuesException = new IllegalArgumentException(
+						"Argomenti non validi.");
+				throw valuesException;
 			}
+
 		case "answer" :
 
 			if (dd != null && taglike == null) {           //Query con DAY
