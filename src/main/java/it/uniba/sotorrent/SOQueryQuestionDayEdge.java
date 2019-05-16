@@ -38,7 +38,7 @@ public final class SOQueryQuestionDayEdge extends ASOQuery implements ISOQuery {
 	 * @throws FileNotFoundException See stack trace for proper location.
 	 * @throws IOException  See stack trace for proper location.
 	**/
-	SOQueryQuestionDayEdge(final Integer year, final Integer month, final Integer day, final Integer lim)
+	public SOQueryQuestionDayEdge(final Integer year, final Integer month, final Integer day, final Integer lim)
 			throws FileNotFoundException, IOException {
 
 		super();	//ASOQuery constructor.
@@ -65,12 +65,12 @@ public final class SOQueryQuestionDayEdge extends ASOQuery implements ISOQuery {
 						+ "WHERE extract(year from `bigquery-public-data.stackoverflow.posts_questions`.creation_date)=@yyyy "
 						+ "AND extract(month from `bigquery-public-data.stackoverflow.posts_questions`.creation_date)=@mm "
 						+ "AND extract(day from `bigquery-public-data.stackoverflow.posts_questions`.creation_date)=@dd "
-						+ "AND `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id > 0 "
 						+ "AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
-						+ "GROUP BY `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id, "
-						+ "`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id "
-						+ "ORDER BY `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id, "
-						+ "`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id ASC LIMIT @limit")
+						+ "AND `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id > 0 "
+						+ "GROUP BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id, "
+						+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id "
+						+ "ORDER BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id, "
+						+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id ASC LIMIT @limit")
 				.addNamedParameter("yyyy", QueryParameterValue.int64(yyyy))
 				.addNamedParameter("mm", QueryParameterValue.int64(mm))
 				.addNamedParameter("dd", QueryParameterValue.int64(dd))

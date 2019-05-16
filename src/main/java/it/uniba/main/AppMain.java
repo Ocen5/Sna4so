@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.GeneralSecurityException;
+import java.util.Scanner;
 
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.TableResult;
@@ -15,6 +16,7 @@ import it.uniba.sotorrent.SOQueryAnswerTags;
 import it.uniba.sotorrent.SOQueryPostDay;
 import it.uniba.sotorrent.SOQueryPostTags;
 import it.uniba.sotorrent.SOQueryQuestionDay;
+import it.uniba.sotorrent.SOQueryQuestionDayEdge;
 import it.uniba.sotorrent.SOQueryQuestionTags;
 
 
@@ -43,6 +45,7 @@ public final class AppMain {
 	 */
 	private static String type, taglike;
 
+	private static Boolean edge = false;
 
 	/**
 	 * Private constructor. Init varibles from args input.
@@ -72,9 +75,15 @@ public final class AppMain {
 								if (args[i].contains("type=")) {
 									type = args[i].substring(5);
 								} else {
-									IllegalArgumentException exception = new IllegalArgumentException(
-											"Parametro di input non valido.");
-									throw exception;
+									if (args[i].contains("edge=")) {
+										if (args[i].substring(5) == "yes") {
+											edge = true;
+										}
+									} else {
+										IllegalArgumentException exception = new IllegalArgumentException(
+												"Parametro di input non valido.");
+										throw exception;
+									}
 								}
 							}
 						}
@@ -82,7 +91,6 @@ public final class AppMain {
 				}
 			}
 		}
-
 	}
 
 
@@ -119,6 +127,7 @@ public final class AppMain {
 		case "question" :
 
 			if (dd != null && taglike == null) {           //Query con DAY
+				if (!edge) {									//Nodi
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ " id utente che hanno fatto almeno una domanda il "
@@ -126,6 +135,15 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionDay(yyyy, mm, dd, limit);
 				break;
+				} else {										//Archi
+					nameQuery = new String("Seleziona le prime "
+							+ limit
+							+ " coppie(from,to) di id utente che hanno fatto almeno una domanda il "
+							+ yyyy + "/" + mm + "/" + dd);
+					System.out.println(nameQuery);
+					soq = new SOQueryQuestionDayEdge(yyyy, mm, dd, limit);
+					break;
+				}
 			}
 			if (dd == null && taglike != null) {          //Query con TAGLIKE
 				nameQuery = new String("Seleziona i primi "
@@ -209,6 +227,17 @@ public final class AppMain {
 		ut.getSheetByTitle(spid);
 		ut.writeSheet(spid, res);
 
+		/*
+		 * Parte provvisioria da eliminare alla fine del progetto
+		 * elimina lo spreadsheet dopo aver premuto invio
+		 */
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Premi invio per continuare. ");
+		sc.nextLine();
+		ut.deleteSheet(spid);
+		System.out.println("Foglio eliminato");
+		sc.close();
 	}
 
 
