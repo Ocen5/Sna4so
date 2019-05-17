@@ -18,6 +18,7 @@ import it.uniba.sotorrent.SOQueryPostDay;
 import it.uniba.sotorrent.SOQueryPostTags;
 import it.uniba.sotorrent.SOQueryQuestionDay;
 import it.uniba.sotorrent.SOQueryQuestionDayEdge;
+import it.uniba.sotorrent.SOQueryQuestionDayWeight;
 import it.uniba.sotorrent.SOQueryQuestionTags;
 import it.uniba.sotorrent.SOQueryQuestionUsrEdge;
 
@@ -48,7 +49,12 @@ public final class AppMain {
 	 */
 	private static String type, taglike;
 
-	private static Boolean edge = false;
+	/**
+	 * edge 	The type to visualize the graphs.
+	 * weight 	The command to visualize the weight of the graphs.
+	 */
+
+	private static Boolean edge, weight = false;
 
 	/**
 	 * Private constructor. Init varibles from args input.
@@ -84,10 +90,15 @@ public final class AppMain {
 									} else {
 										if (args[i].contains("user=")) {
 											user= Integer.valueOf(args[i].substring(5));
-										} else {
-											IllegalArgumentException exception = new IllegalArgumentException(
-													"Parametro di input non valido.");
-											throw exception;
+										}else {
+											if (args[i].contains("weight=")) {
+												if (args[i].substring(7).equals("yes")) 
+													weight = true;
+											} else {
+												IllegalArgumentException exception = new IllegalArgumentException(
+														"Parametro di input non valido.");
+												throw exception;
+											}
 										}
 									}
 								}
@@ -129,8 +140,8 @@ public final class AppMain {
 		ISOQuery soq = null;
 		String nameQuery = new String();
 
-		
-		
+
+
 		//choose the query type and run the query
 		switch (type) {
 		case "question" :
@@ -153,7 +164,7 @@ public final class AppMain {
 				soq = new SOQueryQuestionTags(yyyy, mm, taglike, limit);
 				break;
 			}														//Query con edge con question
-			if(edge && user== null) {
+			if(edge && user== null && !weight) {
 				nameQuery = new String("Seleziona le prime "
 						+ limit
 						+ " coppie (from,to) relative a domande poste il "
@@ -169,6 +180,18 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionUsrEdge(user,limit);
 				break;
+			}if (edge && user== null &&weight ) {          //Query con edge user
+				nameQuery = new String("Seleziona le prime "
+						+ limit
+						+ " triple (from,to,weight) relative a domande poste il \"\r\n" + 
+						+ yyyy + "/" + mm + "/" + dd); 
+				System.out.println(nameQuery);
+				soq = new SOQueryQuestionDayWeight(yyyy, mm, dd, limit);
+				break;
+			}else {
+				IllegalArgumentException valuesException = new IllegalArgumentException(
+						"Argomenti non validi.");
+				throw valuesException;
 			}
 		case "answer" :
 
