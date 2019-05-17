@@ -13,6 +13,7 @@ import it.uniba.sotorrent.GoogleDocsUtils;
 import it.uniba.sotorrent.ISOQuery;
 import it.uniba.sotorrent.SOQueryAnswerDay;
 import it.uniba.sotorrent.SOQueryAnswerTags;
+import it.uniba.sotorrent.SOQueryAnswerUsrEdge;
 import it.uniba.sotorrent.SOQueryPostDay;
 import it.uniba.sotorrent.SOQueryPostTags;
 import it.uniba.sotorrent.SOQueryQuestionDay;
@@ -188,7 +189,17 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryAnswerTags(yyyy, mm, taglike, limit);
 				break;
-			} else {
+			}
+			if (edge && user!= null ) {          //Query con edge user
+
+				nameQuery = new String("Seleziona le prime "
+						+ limit
+						+ " coppie (from,to) relative a domande poste dall'utente "
+						+ user);
+				System.out.println(nameQuery);
+				soq = new SOQueryAnswerUsrEdge(user,limit);
+				break;
+			}else {
 				IllegalArgumentException valuesException = new IllegalArgumentException(
 						"Argomenti non validi.");
 				throw valuesException;
