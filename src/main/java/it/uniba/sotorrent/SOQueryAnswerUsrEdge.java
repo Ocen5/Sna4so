@@ -11,16 +11,17 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryParameterValue;
 
 /**
- * Class for run query from questions table with user, limit.
+ * Class for run query from answers table with user, limit.
  */
-public final class SOQueryQuestionUsrEdge extends ASOQuery implements ISOQuery {
+
+public class SOQueryAnswerUsrEdge  extends ASOQuery{
 
 	/*
-	 * Valid parameters for SOQueryQuestionUsrEdge.
+	 * Valid parameters for SOQueryAnswersUsrEdge.
 	 */
 
 	/**
-	 * usr 		The user who made the Question of the query
+	 * usr 		The user who made the Answer of the query
 	 * limit 	The limit of tuples.
 	 */
 	private Integer usr, limit;
@@ -34,7 +35,7 @@ public final class SOQueryQuestionUsrEdge extends ASOQuery implements ISOQuery {
 	 * @throws FileNotFoundException See stack trace for proper location.
 	 * @throws IOException  See stack trace for proper location.
 	 **/
-	public SOQueryQuestionUsrEdge(Integer user, Integer lim) throws FileNotFoundException, IOException {
+	public SOQueryAnswerUsrEdge(Integer user, Integer lim) throws FileNotFoundException, IOException {
 
 		super();	//ASOQuery constructor.
 		//Init variables
@@ -43,8 +44,7 @@ public final class SOQueryQuestionUsrEdge extends ASOQuery implements ISOQuery {
 
 	}
 
-	@Override
-	public Job runQuery() throws InterruptedException {
+	public Job runQuery() throws InterruptedException{
 
 		// Use standard SQL syntax for queries.
 		// See: https://cloud.google.com/bigquery/sql-reference/
@@ -55,7 +55,7 @@ public final class SOQueryQuestionUsrEdge extends ASOQuery implements ISOQuery {
 				+ "INNER JOIN `bigquery-public-data.stackoverflow.posts_answers` "
 				+ "ON `bigquery-public-data.stackoverflow.posts_questions`.id "
 				+ "= `bigquery-public-data.stackoverflow.posts_answers`.parent_id "
-				+ "WHERE `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id="+usr 
+				+ "WHERE `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id= "+usr 
 				+ " AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
 				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id > 0 "
 				+ "GROUP BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id, "
@@ -85,3 +85,4 @@ public final class SOQueryQuestionUsrEdge extends ASOQuery implements ISOQuery {
 	}
 
 }
+
