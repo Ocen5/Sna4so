@@ -55,8 +55,8 @@ public final class SOQueryQuestionUsrEdge extends ASOQuery implements ISOQuery {
 				+ "INNER JOIN `bigquery-public-data.stackoverflow.posts_answers` "
 				+ "ON `bigquery-public-data.stackoverflow.posts_questions`.id "
 				+ "= `bigquery-public-data.stackoverflow.posts_answers`.parent_id "
-				+ "WHERE `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id="+usr 
-				+ " AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
+				+ "WHERE `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id=@usr " 
+				+ "AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
 				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id > 0 "
 				+ "GROUP BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id, "
 				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id "
