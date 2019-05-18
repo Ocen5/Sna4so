@@ -21,6 +21,7 @@ import it.uniba.sotorrent.SOQueryQuestionDayEdge;
 import it.uniba.sotorrent.SOQueryQuestionDayWeight;
 import it.uniba.sotorrent.SOQueryQuestionTags;
 import it.uniba.sotorrent.SOQueryQuestionUsrEdge;
+import it.uniba.sotorrent.SOQueryQuestionUsrWeight;
 
 
 /**
@@ -172,7 +173,7 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionDayEdge(yyyy, mm, dd, limit);
 				break;
-			}if (edge && user!= null ) {          //Query con edge user
+			}if (edge && user!= null && !weight ) {          //Query con edge user
 				nameQuery = new String("Seleziona le prime "
 						+ limit
 						+ " coppie (from,to) relative a domande poste dall'utente "
@@ -188,11 +189,20 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionDayWeight(yyyy, mm, dd, limit);
 				break;
+			}if (edge && user!= null &&weight ) {          //Query con weight user
+				nameQuery = new String("Seleziona le prime "
+						+ limit
+						+ " triple (from,to,weight) relative a domande poste dall'utente "
+						+ user);
+				System.out.println(nameQuery);
+				soq = new SOQueryQuestionUsrWeight(user,limit);
+				break;
 			}else {
 				IllegalArgumentException valuesException = new IllegalArgumentException(
 						"Argomenti non validi.");
 				throw valuesException;
 			}
+
 		case "answer" :
 
 			if (dd != null && taglike == null) {           //Query con DAY
