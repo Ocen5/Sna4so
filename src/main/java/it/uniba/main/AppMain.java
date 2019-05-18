@@ -14,6 +14,7 @@ import it.uniba.sotorrent.ISOQuery;
 import it.uniba.sotorrent.SOQueryAnswerDay;
 import it.uniba.sotorrent.SOQueryAnswerTags;
 import it.uniba.sotorrent.SOQueryAnswerUsrEdge;
+import it.uniba.sotorrent.SOQueryAnswerUsrWeight;
 import it.uniba.sotorrent.SOQueryPostDay;
 import it.uniba.sotorrent.SOQueryPostTags;
 import it.uniba.sotorrent.SOQueryQuestionDay;
@@ -111,8 +112,6 @@ public final class AppMain {
 		}
 	}
 
-
-
 	/**
 	 * 	 * This is the main entry of the application.
 	 *
@@ -137,11 +136,8 @@ public final class AppMain {
 		//Take valid values from args, see AppMain constructor for further information.
 		new AppMain(args);
 
-
 		ISOQuery soq = null;
 		String nameQuery = new String();
-
-
 
 		//choose the query type and run the query
 		switch (type) {
@@ -156,7 +152,7 @@ public final class AppMain {
 				soq = new SOQueryQuestionDay(yyyy, mm, dd, limit);
 				break;
 			}
-			if (dd == null && taglike != null && !edge ) {          //Query con TAGLIKE
+			if (dd == null && taglike != null && !edge ) {         					//Query con TAGLIKE
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ " id utente che hanno fatto almeno una domanda sull' argomento "
@@ -164,8 +160,8 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionTags(yyyy, mm, taglike, limit);
 				break;
-			}														//Query con edge con question
-			if(edge && user== null && !weight) {
+			}																		
+			if(edge && user== null && !weight) {									//Query con EDGE
 				nameQuery = new String("Seleziona le prime "
 						+ limit
 						+ " coppie (from,to) relative a domande poste il "
@@ -173,7 +169,7 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionDayEdge(yyyy, mm, dd, limit);
 				break;
-			}if (edge && user!= null && !weight ) {          //Query con edge user
+			}if (edge && user!= null && !weight ) {          						//Query con EDGE e USER
 				nameQuery = new String("Seleziona le prime "
 						+ limit
 						+ " coppie (from,to) relative a domande poste dall'utente "
@@ -181,15 +177,15 @@ public final class AppMain {
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionUsrEdge(user,limit);
 				break;
-			}if (edge && user== null &&weight ) {          //Query con edge user
+			}if (edge && user== null &&weight ) {          							//Query con EDGE e WEIGHT
 				nameQuery = new String("Seleziona le prime "
 						+ limit
-						+ " triple (from,to,weight) relative a domande poste il \"\r\n" + 
+						+ " triple (from,to,weight) relative a domande poste il " + 
 						+ yyyy + "/" + mm + "/" + dd); 
 				System.out.println(nameQuery);
 				soq = new SOQueryQuestionDayWeight(yyyy, mm, dd, limit);
 				break;
-			}if (edge && user!= null &&weight ) {          //Query con weight user
+			}if (edge && user!= null &&weight ) {          							//Query con EDGE e USER e WEIGHT
 				nameQuery = new String("Seleziona le prime "
 						+ limit
 						+ " triple (from,to,weight) relative a domande poste dall'utente "
@@ -205,7 +201,7 @@ public final class AppMain {
 
 		case "answer" :
 
-			if (dd != null && taglike == null) {           //Query con DAY
+			if (dd != null && taglike == null) {           							//Query con DAY
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ "id utente che hanno dato almeno una risposta il "
@@ -214,7 +210,7 @@ public final class AppMain {
 				soq = new SOQueryAnswerDay(yyyy, mm, dd, limit);
 				break;
 			}
-			if (dd == null && taglike != null) {          //Query con TAGLIKE
+			if (dd == null && taglike != null) {          							//Query con TAGLIKE
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ " id utente che hanno dato almeno una risposta sull' argomento "
@@ -223,14 +219,22 @@ public final class AppMain {
 				soq = new SOQueryAnswerTags(yyyy, mm, taglike, limit);
 				break;
 			}
-			if (edge && user!= null ) {          //Query con edge user
-
+			if (edge && user!= null && !weight) {         							//Query con EDGE e USER
 				nameQuery = new String("Seleziona le prime "
 						+ limit
-						+ " coppie (from,to) relative a domande poste dall'utente "
+						+ " coppie (from,to) relative a risposte date dall'utente "
 						+ user);
 				System.out.println(nameQuery);
 				soq = new SOQueryAnswerUsrEdge(user,limit);
+				break;
+			}
+			if (edge && user!= null && weight) {          							//Query con EDGE e USER e WEIGHT
+				nameQuery = new String("Seleziona le prime "
+						+ limit
+						+ " triple (from,to,weight) relative a risposte date dall'utente "
+						+ user);
+				System.out.println(nameQuery);
+				soq = new SOQueryAnswerUsrWeight(user,limit);
 				break;
 			}else {
 				IllegalArgumentException valuesException = new IllegalArgumentException(
@@ -240,7 +244,7 @@ public final class AppMain {
 
 		case "post" :
 
-			if (dd != null && taglike == null) {           //Query con DAY
+			if (dd != null && taglike == null) {           							//Query con DAY
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ "id utente che hanno fatto almeno un post il "
@@ -249,7 +253,7 @@ public final class AppMain {
 				soq = new SOQueryPostDay(yyyy, mm, dd, limit);
 				break;
 			}
-			if (dd == null && taglike != null) {          //Query con TAGLIKE
+			if (dd == null && taglike != null) {         							//Query con TAGLIKE
 				nameQuery = new String("Seleziona i primi "
 						+ limit
 						+ " id utente che hanno fatto almeno un post sull' argomento "
