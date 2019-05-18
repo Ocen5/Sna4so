@@ -1,4 +1,4 @@
-package it.uniba.sotorrent;
+package soquery;
 
 import com.google.cloud.bigquery.JobException;
 
@@ -6,6 +6,7 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.TableResult;
 
 /**
+ * <entity>
  * Interface for running a query on Stack Overflow via Google's BigQuery service.
  */
 public interface ISOQuery {

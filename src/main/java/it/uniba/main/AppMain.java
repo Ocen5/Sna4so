@@ -10,19 +10,19 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.TableResult;
 
 import it.uniba.sotorrent.GoogleDocsUtils;
-import it.uniba.sotorrent.ISOQuery;
-import it.uniba.sotorrent.SOQueryAnswerDay;
-import it.uniba.sotorrent.SOQueryAnswerTags;
-import it.uniba.sotorrent.SOQueryAnswerUsrEdge;
-import it.uniba.sotorrent.SOQueryAnswerUsrWeight;
-import it.uniba.sotorrent.SOQueryPostDay;
-import it.uniba.sotorrent.SOQueryPostTags;
-import it.uniba.sotorrent.SOQueryQuestionDay;
-import it.uniba.sotorrent.SOQueryQuestionDayEdge;
-import it.uniba.sotorrent.SOQueryQuestionDayWeight;
-import it.uniba.sotorrent.SOQueryQuestionTags;
-import it.uniba.sotorrent.SOQueryQuestionUsrEdge;
-import it.uniba.sotorrent.SOQueryQuestionUsrWeight;
+import soquery.ISOQuery;
+import soquery.SOQueryAnswerDay;
+import soquery.SOQueryAnswerTags;
+import soquery.SOQueryAnswerUsrEdge;
+import soquery.SOQueryAnswerUsrWeight;
+import soquery.SOQueryPostDay;
+import soquery.SOQueryPostTags;
+import soquery.SOQueryQuestionDay;
+import soquery.SOQueryQuestionDayEdge;
+import soquery.SOQueryQuestionDayWeight;
+import soquery.SOQueryQuestionTags;
+import soquery.SOQueryQuestionUsrEdge;
+import soquery.SOQueryQuestionUsrWeight;
 
 
 /**

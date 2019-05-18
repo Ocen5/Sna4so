@@ -1,8 +1,9 @@
-package it.uniba.sotorrent;
+package soquery;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.UUID;
 
 import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.bigquery.BigQuery;
@@ -10,9 +11,13 @@ import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobException;
+import com.google.cloud.bigquery.JobId;
+import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 
 /**
+ * <entity>
  * Abstract class for running a query on Stack Overflow via Google's BigQuery service.
  * Inherits for running new query.
  */
@@ -40,7 +45,29 @@ abstract class ASOQuery implements ISOQuery {
 	}
 
 	@Override
-	public abstract Job runQuery() throws InterruptedException;
+	public Job runQuery() throws InterruptedException {
+		// Use standard SQL syntax for queries.
+		// See: https://cloud.google.com/bigquery/sql-reference/
+		QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(getStringQuery())
+				.setUseLegacySql(false).build();
+
+		// Create a job ID so that we can safely retry.
+		JobId jobId = JobId.of(UUID.randomUUID().toString());
+		Job queryJob = bigquery.create(JobInfo.newBuilder(queryConfig).setJobId(jobId).build());
+
+		// Wait for the query to complete.
+		queryJob = queryJob.waitFor();
+
+		// Check for errors
+		if (queryJob == null) {
+			throw new RuntimeException("Job no longer exists");
+		} else if (queryJob.getStatus().getError() != null) {
+			// You can also look at queryJob.getStatus().getExecutionErrors() for all
+			// errors, not just the latest one.
+			throw new RuntimeException(queryJob.getStatus().getError().toString());
+		}
+		return queryJob;
+	}
 
 
 	@Override
@@ -64,12 +91,10 @@ abstract class ASOQuery implements ISOQuery {
 	}
 
 	/**
-	 * This function returns BigQuery API Service.
-	 * @return bigquery The BigQuery Service.
+	 * This function returns the query in string format.
+	 * @return the query in string format.
 	 */
-	public final BigQuery getQuery() {
-		return bigquery;
-	}
+	abstract String getStringQuery();
 
 
 }
