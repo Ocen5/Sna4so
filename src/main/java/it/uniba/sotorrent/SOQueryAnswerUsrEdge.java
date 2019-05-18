@@ -62,7 +62,7 @@ public class SOQueryAnswerUsrEdge  extends ASOQuery{
 				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id "
 				+ "ORDER BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id, "
 				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id ASC LIMIT @limit")
-				.addNamedParameter("yyyy", QueryParameterValue.int64(usr))
+				.addNamedParameter("usr", QueryParameterValue.int64(usr))
 				.addNamedParameter("limit", QueryParameterValue.int64(limit))
 				.setUseLegacySql(false).build();
 
