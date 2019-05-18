@@ -1,5 +1,4 @@
-package soquery;
-
+package it.uniba.sotorrent.soquery;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,10 +8,10 @@ import java.io.IOException;
  * Class for run query from answers table with user, limit.
  */
 
-public class SOQueryAnswerUsrWeight  extends ASOQuery{
+public class SOQueryAnswerUsrEdge  extends ASOQuery{
 
 	/*
-	 * Valid parameters for SOQueryAnswersUsrWeight.
+	 * Valid parameters for SOQueryAnswersUsrEdge.
 	 */
 
 	/**
@@ -30,7 +29,7 @@ public class SOQueryAnswerUsrWeight  extends ASOQuery{
 	 * @throws FileNotFoundException See stack trace for proper location.
 	 * @throws IOException  See stack trace for proper location.
 	 **/
-	public SOQueryAnswerUsrWeight(Integer user, Integer limit) throws FileNotFoundException, IOException {
+	public SOQueryAnswerUsrEdge(Integer user, Integer limit) throws FileNotFoundException, IOException {
 
 		super();	//ASOQuery constructor.
 		//Init variables
@@ -42,9 +41,8 @@ public class SOQueryAnswerUsrWeight  extends ASOQuery{
 	@Override
 	String getStringQuery() {
 		String query = new String("SELECT "
-				+ "`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id as `from`, "
-				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id as `to`, "
-				+ "COUNT(`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id) as weight "
+				+ "`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id  as `from`, "
+				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id as `to` "
 				+ "FROM `bigquery-public-data.stackoverflow.posts_questions` "
 				+ "INNER JOIN `bigquery-public-data.stackoverflow.posts_answers` "
 				+ "ON `bigquery-public-data.stackoverflow.posts_questions`.id "
@@ -52,13 +50,11 @@ public class SOQueryAnswerUsrWeight  extends ASOQuery{
 				+ "WHERE `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id=" + user
 				+ " AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
 				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id > 0 "
-				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.answer_count > 0 "
 				+ "GROUP BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id, "
 				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id "
 				+ "ORDER BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id, "
-				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id ASC LIMIT " + limit);
+				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id ASC LIMIT" + limit);
 		return query;
 	}
 }
-
 

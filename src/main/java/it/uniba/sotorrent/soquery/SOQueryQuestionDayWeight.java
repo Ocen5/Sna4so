@@ -1,4 +1,4 @@
-package soquery;
+package it.uniba.sotorrent.soquery;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

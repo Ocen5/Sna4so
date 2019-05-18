@@ -1,16 +1,16 @@
-package soquery;
+package it.uniba.sotorrent.soquery;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
  * <entity>
- * Class for run query from posts table with year, month, day, limit.
+ * Class for run query from questions table with year, month, day, limit.
  */
-public final class SOQueryPostDay extends ASOQuery implements ISOQuery {
+public final class SOQueryQuestionDay extends ASOQuery implements ISOQuery {
 
 	/*
-	 * Valid parameters for SOQueryPostDay.
+	 * Valid parameters for SOQueryQuestionDay.
 	 */
 
 	/**
@@ -32,7 +32,7 @@ public final class SOQueryPostDay extends ASOQuery implements ISOQuery {
 	 * @throws FileNotFoundException See stack trace for proper location.
 	 * @throws IOException  See stack trace for proper location.
 	**/
-	public SOQueryPostDay(final Integer year, final Integer month, final Integer day, final Integer lim)
+	public SOQueryQuestionDay(final Integer year, final Integer month, final Integer day, final Integer lim)
 			throws FileNotFoundException, IOException {
 
 		super();	//ASOQuery constructor.
@@ -44,15 +44,16 @@ public final class SOQueryPostDay extends ASOQuery implements ISOQuery {
 
 	}
 
+
 	@Override
 	String getStringQuery() {
 		String query = new String("SELECT "
 				+ "owner_user_id "
-				+ "FROM `bigquery-public-data.stackoverflow.stackoverflow_posts` "
-				+ "WHERE extract(year FROM creation_date)=" + yyyy
-				+ " AND extract(month FROM creation_date)=" + mm
-				+ " AND extract(day FROM creation_date)=" + dd
-				+ " AND owner_user_id>0 "
+				+ "FROM `bigquery-public-data.stackoverflow.posts_questions` "
+				+ "WHERE extract(year from creation_date)=" + yyyy
+				+ " AND extract(month from creation_date)=" + mm
+				+ " AND extract(day from creation_date)=" + dd
+				+ " AND owner_user_id > 0 "
 				+ "GROUP BY owner_user_id "
 				+ "ORDER BY owner_user_id ASC LIMIT " + limit);
 		return query;

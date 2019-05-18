@@ -1,4 +1,4 @@
-package soquery;
+package it.uniba.sotorrent.soquery;
 
 import com.google.cloud.bigquery.JobException;
 
