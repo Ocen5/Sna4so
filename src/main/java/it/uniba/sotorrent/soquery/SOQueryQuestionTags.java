@@ -57,7 +57,7 @@ public final class SOQueryQuestionTags extends ASOQuery implements ISOQuery {
 				+ "FROM `bigquery-public-data.stackoverflow.posts_questions` "
 				+ "WHERE extract(year from creation_date)=" + yyyy
 				+ " AND extract(month from creation_date)=" + mm
-				+ " AND tags like CONCAT('%' ," + taglike + ", '%') "
+				+ " AND tags like CONCAT('%"+ taglike +"%') "
 				+ "AND owner_user_id > 0 "
 				+ "GROUP BY owner_user_id "
 				+ "ORDER BY owner_user_id ASC LIMIT " + limit);

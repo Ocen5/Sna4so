@@ -18,7 +18,6 @@ public class SOQuerySelector {
 		
 	public SOQuerySelector(Map<String,Object>parameters) throws FileNotFoundException, IOException {
 		
-		System.out.println(parameters.toString());
 
 		//Query yyyy mm dd limit
 		if(parameters.containsKey("yyyy") && parameters.containsKey("mm") && parameters.containsKey("dd") && parameters.containsKey("limit")) {
