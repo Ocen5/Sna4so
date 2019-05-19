@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- * <entity>
+ * <<entity>>
  * Class for run query from questions table with year, month, day, limit.
  */
 public final class SOQueryQuestionDay extends ASOQuery implements ISOQuery {

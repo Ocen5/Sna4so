@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- * <entity>
+ * <<entity>>
  * Class for run query from posts table with year, month, day, limit.
  */
 public final class SOQueryPostDay extends ASOQuery implements ISOQuery {

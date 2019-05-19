@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- * <entity>
+ * <<entity>>
  * Class for run query from questions table with user, limit.
  */
 public final class SOQueryQuestionUsrWeight extends ASOQuery implements ISOQuery {

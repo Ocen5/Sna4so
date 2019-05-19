@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- * <entity>
+ * <<entity>>
  * Class for run query from questions table with year, month, taglike, limit.
  */
 public final class SOQueryPostTags extends ASOQuery implements ISOQuery {
