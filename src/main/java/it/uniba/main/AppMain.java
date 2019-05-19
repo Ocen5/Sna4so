@@ -4,25 +4,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.GeneralSecurityException;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.TableResult;
 
 import it.uniba.sotorrent.GoogleDocsUtils;
+import it.uniba.sotorrent.SOQuerySelector;
 import it.uniba.sotorrent.soquery.ISOQuery;
-import it.uniba.sotorrent.soquery.SOQueryAnswerDay;
-import it.uniba.sotorrent.soquery.SOQueryAnswerTags;
-import it.uniba.sotorrent.soquery.SOQueryAnswerUsrEdge;
-import it.uniba.sotorrent.soquery.SOQueryAnswerUsrWeight;
-import it.uniba.sotorrent.soquery.SOQueryPostDay;
-import it.uniba.sotorrent.soquery.SOQueryPostTags;
-import it.uniba.sotorrent.soquery.SOQueryQuestionDay;
-import it.uniba.sotorrent.soquery.SOQueryQuestionDayEdge;
-import it.uniba.sotorrent.soquery.SOQueryQuestionDayWeight;
-import it.uniba.sotorrent.soquery.SOQueryQuestionTags;
-import it.uniba.sotorrent.soquery.SOQueryQuestionUsrEdge;
-import it.uniba.sotorrent.soquery.SOQueryQuestionUsrWeight;
 
 
 /**
@@ -135,146 +125,11 @@ public final class AppMain {
 
 		//Take valid values from args, see AppMain constructor for further information.
 		new AppMain(args);
-
-		ISOQuery soq = null;
-		String nameQuery = new String();
-
-		//choose the query type and run the query
-		switch (type) {
-		case "question" :
-
-			if (dd != null && taglike == null && !edge && user== null) {           //Query con DAY
-				nameQuery = new String("Seleziona i primi "
-						+ limit
-						+ " id utente che hanno fatto almeno una domanda il "
-						+ yyyy + "/" + mm + "/" + dd);
-				System.out.println(nameQuery);
-				soq = new SOQueryQuestionDay(yyyy, mm, dd, limit);
-				break;
-			}
-			if (dd == null && taglike != null && !edge ) {         					//Query con TAGLIKE
-				nameQuery = new String("Seleziona i primi "
-						+ limit
-						+ " id utente che hanno fatto almeno una domanda sull' argomento "
-						+ taglike + " il " + yyyy + "/" + mm);
-				System.out.println(nameQuery);
-				soq = new SOQueryQuestionTags(yyyy, mm, taglike, limit);
-				break;
-			}																		
-			if(edge && user== null && !weight) {									//Query con EDGE
-				nameQuery = new String("Seleziona le prime "
-						+ limit
-						+ " coppie (from,to) relative a domande poste il "
-						+ yyyy + "/" + mm + "/" + dd );
-				System.out.println(nameQuery);
-				soq = new SOQueryQuestionDayEdge(yyyy, mm, dd, limit);
-				break;
-			}if (edge && user!= null && !weight ) {          						//Query con EDGE e USER
-				nameQuery = new String("Seleziona le prime "
-						+ limit
-						+ " coppie (from,to) relative a domande poste dall'utente "
-						+ user);
-				System.out.println(nameQuery);
-				soq = new SOQueryQuestionUsrEdge(user,limit);
-				break;
-			}if (edge && user== null &&weight ) {          							//Query con EDGE e WEIGHT
-				nameQuery = new String("Seleziona le prime "
-						+ limit
-						+ " triple (from,to,weight) relative a domande poste il " + 
-						+ yyyy + "/" + mm + "/" + dd); 
-				System.out.println(nameQuery);
-				soq = new SOQueryQuestionDayWeight(yyyy, mm, dd, limit);
-				break;
-			}if (edge && user!= null &&weight ) {          							//Query con EDGE e USER e WEIGHT
-				nameQuery = new String("Seleziona le prime "
-						+ limit
-						+ " triple (from,to,weight) relative a domande poste dall'utente "
-						+ user);
-				System.out.println(nameQuery);
-				soq = new SOQueryQuestionUsrWeight(user,limit);
-				break;
-			}else {
-				IllegalArgumentException valuesException = new IllegalArgumentException(
-						"Argomenti non validi.");
-				throw valuesException;
-			}
-
-		case "answer" :
-
-			if (dd != null && taglike == null) {           							//Query con DAY
-				nameQuery = new String("Seleziona i primi "
-						+ limit
-						+ "id utente che hanno dato almeno una risposta il "
-						+ yyyy + "/" + mm + "/" + dd);
-				System.out.println(nameQuery);
-				soq = new SOQueryAnswerDay(yyyy, mm, dd, limit);
-				break;
-			}
-			if (dd == null && taglike != null) {          							//Query con TAGLIKE
-				nameQuery = new String("Seleziona i primi "
-						+ limit
-						+ " id utente che hanno dato almeno una risposta sull' argomento "
-						+ taglike + " il " + yyyy + "/" + mm);
-				System.out.println(nameQuery);
-				soq = new SOQueryAnswerTags(yyyy, mm, taglike, limit);
-				break;
-			}
-			if (edge && user!= null && !weight) {         							//Query con EDGE e USER
-				nameQuery = new String("Seleziona le prime "
-						+ limit
-						+ " coppie (from,to) relative a risposte date dall'utente "
-						+ user);
-				System.out.println(nameQuery);
-				soq = new SOQueryAnswerUsrEdge(user,limit);
-				break;
-			}
-			if (edge && user!= null && weight) {          							//Query con EDGE e USER e WEIGHT
-				nameQuery = new String("Seleziona le prime "
-						+ limit
-						+ " triple (from,to,weight) relative a risposte date dall'utente "
-						+ user);
-				System.out.println(nameQuery);
-				soq = new SOQueryAnswerUsrWeight(user,limit);
-				break;
-			}else {
-				IllegalArgumentException valuesException = new IllegalArgumentException(
-						"Argomenti non validi.");
-				throw valuesException;
-			}
-
-		case "post" :
-
-			if (dd != null && taglike == null) {           							//Query con DAY
-				nameQuery = new String("Seleziona i primi "
-						+ limit
-						+ "id utente che hanno fatto almeno un post il "
-						+ yyyy + "/" + mm + "/" + dd);
-				System.out.println(nameQuery);
-				soq = new SOQueryPostDay(yyyy, mm, dd, limit);
-				break;
-			}
-			if (dd == null && taglike != null) {         							//Query con TAGLIKE
-				nameQuery = new String("Seleziona i primi "
-						+ limit
-						+ " id utente che hanno fatto almeno un post sull' argomento "
-						+ taglike + " il " + yyyy + "/" + mm);
-				System.out.println(nameQuery);
-				soq = new SOQueryPostTags(yyyy, mm, taglike, limit);
-				break;
-			} else {
-				IllegalArgumentException valuesException = new IllegalArgumentException(
-						"Argomenti non validi.");
-				throw valuesException;
-			}
-
-		default :
-
-			IllegalArgumentException typeException = new IllegalArgumentException(
-					"Type query non valido.");
-			throw typeException;
-
-		}
-
+		
+		//selector prende in input una HashMap vuota temporanea finchè non sarà implementata la classe CLI4SOQuery
+		SOQuerySelector selector= new SOQuerySelector(new HashMap<String,Object>() ) ;
+		ISOQuery soq = selector.getQuery();
+		String nameQuery = selector.getNameQuery();
 
 		Job job = soq.runQuery();
 		TableResult res = soq.getResults(job);
