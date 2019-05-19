@@ -57,7 +57,7 @@ public final class SOQueryPostTags extends ASOQuery implements ISOQuery {
 				+ "WHERE extract(year FROM `bigquery-public-data.stackoverflow.stackoverflow_posts`.creation_date)=" + yyyy
 				+ " AND extract(month FROM `bigquery-public-data.stackoverflow.stackoverflow_posts`.creation_date)=" + mm
 				+ " AND `bigquery-public-data.stackoverflow.stackoverflow_posts`.tags like "
-				+ "CONCAT('%' ," + taglike + ", '%') "
+				+ "CONCAT('%"+ taglike +"%') "
 				+ "AND `bigquery-public-data.stackoverflow.stackoverflow_posts`.owner_user_id  > 0 "
 				+ "UNION DISTINCT "
 				+ "SELECT `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id "
@@ -68,7 +68,7 @@ public final class SOQueryPostTags extends ASOQuery implements ISOQuery {
 				+ "WHERE extract(year FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=" + yyyy
 				+ " AND extract(month FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=" + mm
 				+ " AND `bigquery-public-data.stackoverflow.posts_questions`.tags like "
-				+ "CONCAT('%' ," + taglike + ", '%') "
+				+ "CONCAT('%"+ taglike +"%') "
 				+ "AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id  > 0 "
 				+ "ORDER BY owner_user_id ASC LIMIT " + limit);
 		return query;

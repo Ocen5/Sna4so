@@ -61,7 +61,7 @@ public final class SOQueryAnswerTags extends ASOQuery implements ISOQuery {
 				+ "WHERE extract(year FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=" + yyyy
 				+ " AND extract(month FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=" + mm
 				+ " AND `bigquery-public-data.stackoverflow.posts_questions`.tags like "
-				+ "CONCAT('%' ," + taglike + ", '%') "
+				+ "CONCAT('%"+ taglike +"%') "
 				+ "AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
 				+ "GROUP BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id "
 				+ "ORDER BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id ASC "

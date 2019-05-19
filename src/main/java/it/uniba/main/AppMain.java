@@ -4,8 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.GeneralSecurityException;
-import java.util.Scanner;
-
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.TableResult;
 
@@ -78,14 +76,14 @@ public final class AppMain {
 		 * Parte provvisioria da eliminare alla fine del progetto
 		 * elimina lo spreadsheet dopo aver premuto invio
 		 */
-		
+		/*
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Premi invio per continuare. ");
 		sc.nextLine();
 		ut.deleteSheet(spid);
 		System.out.println("Foglio eliminato");
 		sc.close();
-		 
+		 */
 	}
 
 
