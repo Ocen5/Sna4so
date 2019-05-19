@@ -17,7 +17,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 
 /**
- * <entity>
+ * <<entity>>
  * Abstract class for running a query on Stack Overflow via Google's BigQuery service.
  * Inherits for running new query.
  */

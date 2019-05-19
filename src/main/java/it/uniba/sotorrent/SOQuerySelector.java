@@ -5,6 +5,12 @@ import java.io.IOException;
 import java.util.Map;
 import it.uniba.sotorrent.soquery.*;
 
+/**
+ * <<control>>
+ * This class creates the right query by checking the passed parameters' type (key).
+ * 
+ */
+
 public class SOQuerySelector {
 
 	String nameQuery;

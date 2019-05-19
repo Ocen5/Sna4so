@@ -6,7 +6,7 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.TableResult;
 
 /**
- * <entity>
+ * <<entity>>
  * Interface for running a query on Stack Overflow via Google's BigQuery service.
  */
 public interface ISOQuery {

@@ -36,6 +36,7 @@ import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.TableResult;
 
 /**
+ * <<noECB>>
  * Utility class for creating, sharing, and deleting Google spreadsheets.
  * For more, refer to <a href="https://developers.google.com/sheets/api/samples/">this documentation</a>.
  */
