@@ -1,17 +1,11 @@
-package it.uniba.sotorrent;
+package it.uniba.sotorrent.soquery;
 
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.UUID;
-
-import com.google.cloud.bigquery.Job;
-import com.google.cloud.bigquery.JobId;
-import com.google.cloud.bigquery.JobInfo;
-import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryParameterValue;
 
 /**
+ * <entity>
  * Class for run query from answers table with user, limit.
  */
 
@@ -25,7 +19,7 @@ public class SOQueryAnswerUsrWeight  extends ASOQuery{
 	 * usr 		The user who made the Answer of the query
 	 * limit 	The limit of tuples.
 	 */
-	private Integer usr, limit;
+	private Integer user, limit;
 
 	/**
 	 * Default constructor, init variables of the query and
@@ -36,20 +30,18 @@ public class SOQueryAnswerUsrWeight  extends ASOQuery{
 	 * @throws FileNotFoundException See stack trace for proper location.
 	 * @throws IOException  See stack trace for proper location.
 	 **/
-	public SOQueryAnswerUsrWeight(Integer user, Integer lim) throws FileNotFoundException, IOException {
+	public SOQueryAnswerUsrWeight(Integer user, Integer limit) throws FileNotFoundException, IOException {
 
 		super();	//ASOQuery constructor.
 		//Init variables
-		this.usr = user;
-		this.limit = lim;
+		this.user = user;
+		this.limit = limit;
 
 	}
 
-	public Job runQuery() throws InterruptedException{
-
-		// Use standard SQL syntax for queries.
-		// See: https://cloud.google.com/bigquery/sql-reference/
-		QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder("SELECT "
+	@Override
+	String getStringQuery() {
+		String query = new String("SELECT "
 				+ "`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id as `from`, "
 				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id as `to`, "
 				+ "COUNT(`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id) as weight "
@@ -57,36 +49,16 @@ public class SOQueryAnswerUsrWeight  extends ASOQuery{
 				+ "INNER JOIN `bigquery-public-data.stackoverflow.posts_answers` "
 				+ "ON `bigquery-public-data.stackoverflow.posts_questions`.id "
 				+ "= `bigquery-public-data.stackoverflow.posts_answers`.parent_id "
-				+ "WHERE `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id=@usr " 
-				+ "AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
+				+ "WHERE `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id=" + user
+				+ " AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
 				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.owner_user_id > 0 "
 				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.answer_count > 0 "
 				+ "GROUP BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id, "
 				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id "
 				+ "ORDER BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id, "
-				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id ASC LIMIT @limit")
-				.addNamedParameter("usr", QueryParameterValue.int64(usr))
-				.addNamedParameter("limit", QueryParameterValue.int64(limit))
-				.setUseLegacySql(false).build();
-
-		// Create a job ID so that we can safely retry.
-		JobId jobId = JobId.of(UUID.randomUUID().toString());
-		Job queryJob = getQuery().create(JobInfo.newBuilder(queryConfig).setJobId(jobId).build());
-
-		// Wait for the query to complete.
-		queryJob = queryJob.waitFor();
-
-		// Check for errors
-		if (queryJob == null) {
-			throw new RuntimeException("Job no longer exists");
-		} else if (queryJob.getStatus().getError() != null) {
-			// You can also look at queryJob.getStatus().getExecutionErrors() for all
-			// errors, not just the latest one.
-			throw new RuntimeException(queryJob.getStatus().getError().toString());
-		}
-		return queryJob;
+				+ "`bigquery-public-data.stackoverflow.posts_questions`.owner_user_id ASC LIMIT " + limit);
+		return query;
 	}
-
 }
 
 
