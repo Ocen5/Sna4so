@@ -1,61 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="3.0.1" sequence="0" timestamp="1556489743785" analysisTimestamp="1556489743817" release="">
+<BugCollection version="3.0.1" sequence="0" timestamp="1559142312875" analysisTimestamp="1559142313108" release="">
   <Project projectName="">
-    <Jar>C:\Users\Giovanni Marcello Al\progetto1819-codd\build\classes\java\main</Jar>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-bigquery\1.64.0\5f36ee28621b7eaccbfb98cf2fab1d68b51d4bef\google-cloud-bigquery-1.64.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-sheets\v4-rev516-1.23.0\27be18389c71171d9248a0c1c84c41d57bba3267\google-api-services-sheets-v4-rev516-1.23.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-drive\v3-rev154-1.25.0\b840aeb45c31b97e28f365667f93bbd86fd8790d\google-api-services-drive-v3-rev154-1.25.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-core-http\1.64.0\f45925e04324207d766dbcb12f4d58a1f86e58d9\google-cloud-core-http-1.64.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-bigquery\v2-rev20181104-1.27.0\d539fb4b7ac318cadc344579fa6f80ae6cb8070e\google-api-services-bigquery-v2-rev20181104-1.27.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.27.0\7d498c11db92fb72521784212c953612a42e50db\google-api-client-1.27.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client-jetty\1.23.0\e0deaf34371e9ca09f9a04bcbaa854243283cae4\google-oauth-client-jetty-1.23.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-core\1.64.0\22175a6506b6a6c76b226a98005095ca0dc51ec2\google-cloud-core-1.64.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api\gax-httpjson\0.57.0\db33a8de6ac64a9265472c386b7b2efb5c0a7bbc\gax-httpjson-0.57.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api\gax\1.40.0\5c041bfeab54fcd309cb0653df16f0edf9e14be4\gax-1.40.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-java-util\3.6.1\35f62815e87c32b01bf1ed8c5aa3f9e33a08c2f3\protobuf-java-util-3.6.1.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.auth\google-auth-library-oauth2-http\0.13.0\c93cc4307226014ab6b7554af71308ba1a8f4f54\google-auth-library-oauth2-http-0.13.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-appengine\1.28.0\3f3f6869fcd4080e17aa37c24a1144a55bbd64e7\google-http-client-appengine-1.28.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.28.0\ff58559c28960a7988aeab3d66dbe3a07e983187\google-http-client-jackson2-1.28.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client-java6\1.23.0\7acbddf56c4ad04efc9d3b48fe015e6250241bf0\google-oauth-client-java6-1.23.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.27.0\1979e3b499f1ef49959005ca59101791361abca9\google-oauth-client-1.27.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.28.0\cc5f55b32dd3458329a92ca9b3cdedfa7fbc03ef\google-http-client-1.28.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\io.opencensus\opencensus-contrib-http-util\0.18.0\76a37e4a931d5801a9e25b0c0353e5f37c4d1e8e\opencensus-contrib-http-util-0.18.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api.grpc\proto-google-iam-v1\0.12.0\ea312c0250a5d0a7cdd1b20bc2c3259938b79855\proto-google-iam-v1-0.12.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api\api-common\1.7.0\ea59fb8b2450999345035dec8a6f472543391766\api-common-1.7.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\26.0-android\ef69663836b339db335fde0df06fb3cd84e3742b\guava-26.0-android.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\javax.annotation\javax.annotation-api\1.3.2\934c04d3cfef185a8008e7bf34331b79730a9d43\javax.annotation-api-1.3.2.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\jetty\6.1.26\2f546e289fddd5b1fab1d4199fbb6e9ef43ee4b0\jetty-6.1.26.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.api.grpc\proto-google-common-protos\1.14.0\ad60859aff00b10176d00f277d9bf7474f966916\proto-google-common-protos-1.14.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.auth\google-auth-library-credentials\0.13.0\aaaef2cea944d272259f3a0315bc5deb296f5171\google-auth-library-credentials-0.13.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\io.opencensus\opencensus-api\0.18.0\b89a8f8dfd1e1e0d68d83c82a855624814b19a6e\opencensus-api-0.18.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\jetty-util\6.1.26\e5642fe0399814e1687d55a3862aa5a3417226a9\jetty-util-6.1.26.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\servlet-api\2.5-20081211\22bff70037e1e6fa7e6413149489552ee2064702\servlet-api-2.5-20081211.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.1\976d8d30bebc251db406f2bdb3eb01962b5685b3\j2objc-annotations-1.1.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.threeten\threetenbp\1.3.3\3ea31c96676ff12ab56be0b1af6fff61d1a4f1f2\threetenbp-1.3.3.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-java\3.6.1\d06d46ecfd92ec6d0f3b423b4cd81cb38d8b924\protobuf-java-3.6.1.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\io.grpc\grpc-context\1.14.0\77252b5f926875891aaae5629e6ab2ef968cd6c6\grpc-context-1.14.0.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-compat-qual\2.5.2\dc0b20906c9e4b9724af29d11604efa574066892\checker-compat-qual-2.5.2.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.1.3\39b109f2cd352b2d71b52a3b5a1a9850e1dc304b\error_prone_annotations-2.1.3.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\org.codehaus.mojo\animal-sniffer-annotations\1.14\775b7e22fb10026eed3f86e8dc556dfafe35f2d5\animal-sniffer-annotations-1.14.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Giovanni Marcello Al\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.6\4e393793c37c77e042ccc7be5a914ae39251b365\jackson-core-2.9.6.jar</AuxClasspathEntry>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\db\DatabaseConnection.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\db\package-info.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\utils\math\MathUtils.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\utils\package-info.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\example\utils\strings\StringUtils.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\main\AppMain.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\ASOQuery.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\GoogleDocsUtils.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\ISOQuery.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryAnswerDay.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryAnswerTags.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryPostDay.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryPostTags.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryQuestionDay.java</SrcDir>
-    <SrcDir>C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQueryQuestionTags.java</SrcDir>
+    <Jar>C:\Users\Administrator\progetto1819-codd\build\classes\java\main</Jar>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-bigquery\1.64.0\5f36ee28621b7eaccbfb98cf2fab1d68b51d4bef\google-cloud-bigquery-1.64.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-sheets\v4-rev516-1.23.0\27be18389c71171d9248a0c1c84c41d57bba3267\google-api-services-sheets-v4-rev516-1.23.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-drive\v3-rev154-1.25.0\b840aeb45c31b97e28f365667f93bbd86fd8790d\google-api-services-drive-v3-rev154-1.25.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-core-http\1.64.0\f45925e04324207d766dbcb12f4d58a1f86e58d9\google-cloud-core-http-1.64.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.apis\google-api-services-bigquery\v2-rev20181104-1.27.0\d539fb4b7ac318cadc344579fa6f80ae6cb8070e\google-api-services-bigquery-v2-rev20181104-1.27.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.api-client\google-api-client\1.27.0\7d498c11db92fb72521784212c953612a42e50db\google-api-client-1.27.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client-jetty\1.23.0\e0deaf34371e9ca09f9a04bcbaa854243283cae4\google-oauth-client-jetty-1.23.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.cloud\google-cloud-core\1.64.0\22175a6506b6a6c76b226a98005095ca0dc51ec2\google-cloud-core-1.64.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.api\gax-httpjson\0.57.0\db33a8de6ac64a9265472c386b7b2efb5c0a7bbc\gax-httpjson-0.57.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.api\gax\1.40.0\5c041bfeab54fcd309cb0653df16f0edf9e14be4\gax-1.40.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-java-util\3.6.1\35f62815e87c32b01bf1ed8c5aa3f9e33a08c2f3\protobuf-java-util-3.6.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.auth\google-auth-library-oauth2-http\0.13.0\c93cc4307226014ab6b7554af71308ba1a8f4f54\google-auth-library-oauth2-http-0.13.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-appengine\1.28.0\3f3f6869fcd4080e17aa37c24a1144a55bbd64e7\google-http-client-appengine-1.28.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client-jackson2\1.28.0\ff58559c28960a7988aeab3d66dbe3a07e983187\google-http-client-jackson2-1.28.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client-java6\1.23.0\7acbddf56c4ad04efc9d3b48fe015e6250241bf0\google-oauth-client-java6-1.23.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.oauth-client\google-oauth-client\1.27.0\1979e3b499f1ef49959005ca59101791361abca9\google-oauth-client-1.27.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.http-client\google-http-client\1.28.0\cc5f55b32dd3458329a92ca9b3cdedfa7fbc03ef\google-http-client-1.28.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.opencensus\opencensus-contrib-http-util\0.18.0\76a37e4a931d5801a9e25b0c0353e5f37c4d1e8e\opencensus-contrib-http-util-0.18.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.api.grpc\proto-google-iam-v1\0.12.0\ea312c0250a5d0a7cdd1b20bc2c3259938b79855\proto-google-iam-v1-0.12.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.api\api-common\1.7.0\ea59fb8b2450999345035dec8a6f472543391766\api-common-1.7.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\26.0-android\ef69663836b339db335fde0df06fb3cd84e3742b\guava-26.0-android.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\javax.annotation\javax.annotation-api\1.3.2\934c04d3cfef185a8008e7bf34331b79730a9d43\javax.annotation-api-1.3.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\jetty\6.1.26\2f546e289fddd5b1fab1d4199fbb6e9ef43ee4b0\jetty-6.1.26.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.api.grpc\proto-google-common-protos\1.14.0\ad60859aff00b10176d00f277d9bf7474f966916\proto-google-common-protos-1.14.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.auth\google-auth-library-credentials\0.13.0\aaaef2cea944d272259f3a0315bc5deb296f5171\google-auth-library-credentials-0.13.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.opencensus\opencensus-api\0.18.0\b89a8f8dfd1e1e0d68d83c82a855624814b19a6e\opencensus-api-0.18.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\jetty-util\6.1.26\e5642fe0399814e1687d55a3862aa5a3417226a9\jetty-util-6.1.26.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.mortbay.jetty\servlet-api\2.5-20081211\22bff70037e1e6fa7e6413149489552ee2064702\servlet-api-2.5-20081211.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.1\976d8d30bebc251db406f2bdb3eb01962b5685b3\j2objc-annotations-1.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.threeten\threetenbp\1.3.3\3ea31c96676ff12ab56be0b1af6fff61d1a4f1f2\threetenbp-1.3.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.protobuf\protobuf-java\3.6.1\d06d46ecfd92ec6d0f3b423b4cd81cb38d8b924\protobuf-java-3.6.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\io.grpc\grpc-context\1.14.0\77252b5f926875891aaae5629e6ab2ef968cd6c6\grpc-context-1.14.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-compat-qual\2.5.2\dc0b20906c9e4b9724af29d11604efa574066892\checker-compat-qual-2.5.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.1.3\39b109f2cd352b2d71b52a3b5a1a9850e1dc304b\error_prone_annotations-2.1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.codehaus.mojo\animal-sniffer-annotations\1.14\775b7e22fb10026eed3f86e8dc556dfafe35f2d5\animal-sniffer-annotations-1.14.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.6\4e393793c37c77e042ccc7be5a914ae39251b365\jackson-core-2.9.6.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\example\db\DatabaseConnection.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\example\db\package-info.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\example\utils\math\MathUtils.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\example\utils\package-info.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\example\utils\strings\StringUtils.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\main\AppMain.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\CLI4SOQuery.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\GoogleDocsUtils.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleBigQueryI.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleBigQueryUtils.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleDocI.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleDocUtils.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\ASOQuery.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\ISOQuery.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryAnswerDay.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryAnswerTags.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryAnswerUsrEdge.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryAnswerUsrWeight.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryPostDay.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryPostTags.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryQuestionDay.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryQuestionDayEdge.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryQuestionDayWeight.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryQuestionTags.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryQuestionUsrEdge.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\soquery\SOQueryQuestionUsrWeight.java</SrcDir>
+    <SrcDir>C:\Users\Administrator\progetto1819-codd\src\main\java\it\uniba\sotorrent\SOQuerySelector.java</SrcDir>
   </Project>
   <BugInstance type="BX_BOXING_IMMEDIATELY_UNBOXED" priority="2" rank="18" abbrev="Bx" category="PERFORMANCE">
     <Class classname="it.uniba.example.utils.math.MathUtils">
@@ -75,49 +87,156 @@
     </Method>
     <SourceLine classname="it.uniba.example.utils.math.MathUtils" start="32" end="32" startBytecode="7" endBytecode="7" sourcefile="MathUtils.java" sourcepath="it/uniba/example/utils/math/MathUtils.java"/>
   </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="it.uniba.sotorrent.CLI4SOQuery">
+      <SourceLine classname="it.uniba.sotorrent.CLI4SOQuery" start="13" end="88" sourcefile="CLI4SOQuery.java" sourcepath="it/uniba/sotorrent/CLI4SOQuery.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.CLI4SOQuery" name="&lt;init&gt;" signature="([Ljava/lang/String;)V" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.CLI4SOQuery" start="15" end="84" startBytecode="0" endBytecode="863" sourcefile="CLI4SOQuery.java" sourcepath="it/uniba/sotorrent/CLI4SOQuery.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.CLI4SOQuery" start="35" end="78" startBytecode="326" endBytecode="531" sourcefile="CLI4SOQuery.java" sourcepath="it/uniba/sotorrent/CLI4SOQuery.java"/>
+  </BugInstance>
   <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
-    <Class classname="it.uniba.main.AppMain">
-      <SourceLine classname="it.uniba.main.AppMain" start="39" end="238" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <Class classname="it.uniba.sotorrent.SOQuerySelector">
+      <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="19" end="184" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java"/>
     </Class>
-    <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
-      <SourceLine classname="it.uniba.main.AppMain" start="74" end="188" startBytecode="0" endBytecode="1454" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <Method classname="it.uniba.sotorrent.SOQuerySelector" name="&lt;init&gt;" signature="(Ljava/util/Map;)V" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="19" end="177" startBytecode="0" endBytecode="2299" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java"/>
     </Method>
-    <SourceLine classname="it.uniba.main.AppMain" start="91" end="91" startBytecode="259" endBytecode="259" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="100" end="100" startBytecode="344" endBytecode="344" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="116" end="116" startBytecode="443" endBytecode="443" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="125" end="125" startBytecode="528" endBytecode="528" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="141" end="141" startBytecode="627" endBytecode="627" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
-    <SourceLine classname="it.uniba.main.AppMain" start="150" end="150" startBytecode="712" endBytecode="712" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="39" end="39" startBytecode="343" endBytecode="343" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="46" end="46" startBytecode="446" endBytecode="446" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="54" end="54" startBytecode="549" endBytecode="549" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="63" end="63" startBytecode="628" endBytecode="628" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="71" end="71" startBytecode="707" endBytecode="707" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="96" end="96" startBytecode="1017" endBytecode="1017" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="104" end="104" startBytecode="1096" endBytecode="1096" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="112" end="112" startBytecode="1175" endBytecode="1175" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="136" end="136" startBytecode="1447" endBytecode="1447" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="143" end="143" startBytecode="1526" endBytecode="1526" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="156" end="156" startBytecode="1635" endBytecode="1635" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="163" end="163" startBytecode="1714" endBytecode="1714" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
   </BugInstance>
-  <BugInstance type="DM_STRING_VOID_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
-    <Class classname="it.uniba.main.AppMain">
-      <SourceLine classname="it.uniba.main.AppMain" start="39" end="238" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE">
+    <Class classname="it.uniba.sotorrent.SOQuerySelector">
+      <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="19" end="184" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java"/>
     </Class>
-    <Method classname="it.uniba.main.AppMain" name="&lt;clinit&gt;" signature="()V" isStatic="true">
-      <SourceLine classname="it.uniba.main.AppMain" start="39" end="44" startBytecode="0" endBytecode="45" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <Method classname="it.uniba.sotorrent.SOQuerySelector" name="&lt;init&gt;" signature="(Ljava/util/Map;)V" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="19" end="177" startBytecode="0" endBytecode="2299" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java"/>
     </Method>
-    <SourceLine classname="it.uniba.main.AppMain" start="44" end="44" startBytecode="11" endBytecode="11" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="33" end="75" startBytecode="211" endBytecode="729" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="93" end="116" startBytecode="939" endBytecode="1197" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="it.uniba.sotorrent.SOQuerySelector" start="130" end="167" startBytecode="1335" endBytecode="1732" sourcefile="SOQuerySelector.java" sourcepath="it/uniba/sotorrent/SOQuerySelector.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
   </BugInstance>
-  <BugInstance type="DM_STRING_VOID_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
-    <Class classname="it.uniba.main.AppMain">
-      <SourceLine classname="it.uniba.main.AppMain" start="39" end="238" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryAnswerDay">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerDay" start="10" end="58" sourcefile="SOQueryAnswerDay.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerDay.java"/>
     </Class>
-    <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
-      <SourceLine classname="it.uniba.main.AppMain" start="74" end="188" startBytecode="0" endBytecode="1454" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryAnswerDay" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerDay" start="49" end="58" startBytecode="0" endBytecode="123" sourcefile="SOQueryAnswerDay.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerDay.java"/>
     </Method>
-    <SourceLine classname="it.uniba.main.AppMain" start="80" end="80" startBytecode="39" endBytecode="39" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerDay" start="49" end="49" startBytecode="62" endBytecode="62" sourcefile="SOQueryAnswerDay.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerDay.java"/>
   </BugInstance>
-  <BugInstance type="SBSC_USE_STRINGBUFFER_CONCATENATION" priority="2" rank="18" abbrev="SBSC" category="PERFORMANCE">
-    <Class classname="it.uniba.main.AppMain">
-      <SourceLine classname="it.uniba.main.AppMain" start="39" end="238" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryAnswerTags">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerTags" start="10" end="69" sourcefile="SOQueryAnswerTags.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerTags.java"/>
     </Class>
-    <Method classname="it.uniba.main.AppMain" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
-      <SourceLine classname="it.uniba.main.AppMain" start="74" end="188" startBytecode="0" endBytecode="1454" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryAnswerTags" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerTags" start="55" end="69" startBytecode="0" endBytecode="123" sourcefile="SOQueryAnswerTags.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerTags.java"/>
     </Method>
-    <SourceLine classname="it.uniba.main.AppMain" start="177" end="177" startBytecode="797" endBytecode="797" sourcefile="AppMain.java" sourcepath="it/uniba/main/AppMain.java"/>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerTags" start="55" end="55" startBytecode="62" endBytecode="62" sourcefile="SOQueryAnswerTags.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerTags.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrEdge">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrEdge" start="11" end="57" sourcefile="SOQueryAnswerUsrEdge.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerUsrEdge.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrEdge" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrEdge" start="43" end="57" startBytecode="0" endBytecode="99" sourcefile="SOQueryAnswerUsrEdge.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerUsrEdge.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrEdge" start="43" end="43" startBytecode="38" endBytecode="38" sourcefile="SOQueryAnswerUsrEdge.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerUsrEdge.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrWeight">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrWeight" start="12" end="60" sourcefile="SOQueryAnswerUsrWeight.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerUsrWeight.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrWeight" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrWeight" start="44" end="60" startBytecode="0" endBytecode="99" sourcefile="SOQueryAnswerUsrWeight.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerUsrWeight.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryAnswerUsrWeight" start="44" end="44" startBytecode="38" endBytecode="38" sourcefile="SOQueryAnswerUsrWeight.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryAnswerUsrWeight.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryPostDay">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryPostDay" start="10" end="58" sourcefile="SOQueryPostDay.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryPostDay.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryPostDay" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryPostDay" start="49" end="58" startBytecode="0" endBytecode="123" sourcefile="SOQueryPostDay.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryPostDay.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryPostDay" start="49" end="49" startBytecode="62" endBytecode="62" sourcefile="SOQueryPostDay.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryPostDay.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryPostTags">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryPostTags" start="10" end="74" sourcefile="SOQueryPostTags.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryPostTags.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryPostTags" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryPostTags" start="54" end="74" startBytecode="0" endBytecode="159" sourcefile="SOQueryPostTags.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryPostTags.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryPostTags" start="54" end="54" startBytecode="98" endBytecode="98" sourcefile="SOQueryPostTags.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryPostTags.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryQuestionDay">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionDay" start="10" end="59" sourcefile="SOQueryQuestionDay.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionDay.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryQuestionDay" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionDay" start="50" end="59" startBytecode="0" endBytecode="123" sourcefile="SOQueryQuestionDay.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionDay.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionDay" start="50" end="50" startBytecode="62" endBytecode="62" sourcefile="SOQueryQuestionDay.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionDay.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayEdge">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayEdge" start="10" end="66" sourcefile="SOQueryQuestionDayEdge.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionDayEdge.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayEdge" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayEdge" start="50" end="66" startBytecode="0" endBytecode="123" sourcefile="SOQueryQuestionDayEdge.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionDayEdge.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayEdge" start="50" end="50" startBytecode="62" endBytecode="62" sourcefile="SOQueryQuestionDayEdge.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionDayEdge.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayWeight">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayWeight" start="10" end="58" sourcefile="SOQueryQuestionDayWeight.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionDayWeight.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayWeight" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayWeight" start="41" end="58" startBytecode="0" endBytecode="123" sourcefile="SOQueryQuestionDayWeight.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionDayWeight.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionDayWeight" start="41" end="41" startBytecode="62" endBytecode="62" sourcefile="SOQueryQuestionDayWeight.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionDayWeight.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryQuestionTags">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionTags" start="10" end="64" sourcefile="SOQueryQuestionTags.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionTags.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryQuestionTags" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionTags" start="55" end="64" startBytecode="0" endBytecode="123" sourcefile="SOQueryQuestionTags.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionTags.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionTags" start="55" end="55" startBytecode="62" endBytecode="62" sourcefile="SOQueryQuestionTags.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionTags.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrEdge">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrEdge" start="10" end="57" sourcefile="SOQueryQuestionUsrEdge.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionUsrEdge.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrEdge" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrEdge" start="43" end="57" startBytecode="0" endBytecode="99" sourcefile="SOQueryQuestionUsrEdge.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionUsrEdge.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrEdge" start="43" end="43" startBytecode="38" endBytecode="38" sourcefile="SOQueryQuestionUsrEdge.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionUsrEdge.java"/>
+  </BugInstance>
+  <BugInstance type="DM_STRING_CTOR" priority="2" rank="18" abbrev="Dm" category="PERFORMANCE">
+    <Class classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrWeight">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrWeight" start="10" end="57" sourcefile="SOQueryQuestionUsrWeight.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionUsrWeight.java"/>
+    </Class>
+    <Method classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrWeight" name="getStringQuery" signature="()Ljava/lang/String;" isStatic="false">
+      <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrWeight" start="42" end="57" startBytecode="0" endBytecode="99" sourcefile="SOQueryQuestionUsrWeight.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionUsrWeight.java"/>
+    </Method>
+    <SourceLine classname="it.uniba.sotorrent.soquery.SOQueryQuestionUsrWeight" start="42" end="42" startBytecode="38" endBytecode="38" sourcefile="SOQueryQuestionUsrWeight.java" sourcepath="it/uniba/sotorrent/soquery/SOQueryQuestionUsrWeight.java"/>
   </BugInstance>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Mon, 29 Apr 2019 00:15:43 +0200" total_classes="14" referenced_classes="111" total_bugs="6" total_size="405" num_packages="5" java_version="1.8.0_211" vm_version="25.211-b12" cpu_seconds="11.64" clock_seconds="2.49" peak_mbytes="211.97" alloc_mbytes="1801.00" gc_seconds="0.12" priority_2="6">
+  <FindBugsSummary timestamp="Wed, 29 May 2019 17:05:12 +0200" total_classes="27" referenced_classes="124" total_bugs="17" total_size="630" num_packages="7" java_version="1.8.0_211" vm_version="25.211-b12" cpu_seconds="39.41" clock_seconds="11.84" peak_mbytes="191.01" alloc_mbytes="1579.00" gc_seconds="0.75" priority_2="17">
     <PackageStats package="it.uniba.example.db" total_bugs="0" total_types="1" total_size="28">
       <ClassStats class="it.uniba.example.db.DatabaseConnection" sourceFile="DatabaseConnection.java" interface="false" size="28" bugs="0"/>
     </PackageStats>
@@ -127,41 +246,60 @@
     <PackageStats package="it.uniba.example.utils.strings" total_bugs="0" total_types="1" total_size="20">
       <ClassStats class="it.uniba.example.utils.strings.StringUtils" sourceFile="StringUtils.java" interface="false" size="20" bugs="0"/>
     </PackageStats>
-    <PackageStats package="it.uniba.main" total_bugs="4" total_types="1" total_size="86" priority_2="4">
-      <ClassStats class="it.uniba.main.AppMain" sourceFile="AppMain.java" interface="false" size="86" bugs="4" priority_2="4"/>
+    <PackageStats package="it.uniba.main" total_bugs="0" total_types="1" total_size="18">
+      <ClassStats class="it.uniba.main.AppMain" sourceFile="AppMain.java" interface="false" size="18" bugs="0"/>
     </PackageStats>
-    <PackageStats package="it.uniba.sotorrent" total_bugs="0" total_types="10" total_size="264">
-      <ClassStats class="it.uniba.sotorrent.ASOQuery" sourceFile="ASOQuery.java" interface="false" size="24" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.GoogleDocsUtils" sourceFile="GoogleDocsUtils.java" interface="false" size="88" bugs="0"/>
+    <PackageStats package="it.uniba.sotorrent" total_bugs="3" total_types="4" total_size="195" priority_2="3">
+      <ClassStats class="it.uniba.sotorrent.CLI4SOQuery" sourceFile="CLI4SOQuery.java" interface="false" size="33" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.GoogleDocsUtils" sourceFile="GoogleDocsUtils.java" interface="false" size="85" bugs="0"/>
       <ClassStats class="it.uniba.sotorrent.GoogleDocsUtils$1" sourceFile="GoogleDocsUtils.java" interface="false" size="11" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.ISOQuery" sourceFile="ISOQuery.java" interface="true" size="3" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryAnswerDay" sourceFile="SOQueryAnswerDay.java" interface="false" size="23" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryAnswerTags" sourceFile="SOQueryAnswerTags.java" interface="false" size="23" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryPostDay" sourceFile="SOQueryPostDay.java" interface="false" size="23" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryPostTags" sourceFile="SOQueryPostTags.java" interface="false" size="23" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryQuestionDay" sourceFile="SOQueryQuestionDay.java" interface="false" size="23" bugs="0"/>
-      <ClassStats class="it.uniba.sotorrent.SOQueryQuestionTags" sourceFile="SOQueryQuestionTags.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.SOQuerySelector" sourceFile="SOQuerySelector.java" interface="false" size="66" bugs="2" priority_2="2"/>
+    </PackageStats>
+    <PackageStats package="it.uniba.sotorrent.googleutils" total_bugs="0" total_types="5" total_size="138">
+      <ClassStats class="it.uniba.sotorrent.googleutils.GoogleBigQueryI" sourceFile="GoogleBigQueryI.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.googleutils.GoogleBigQueryUtils" sourceFile="GoogleBigQueryUtils.java" interface="false" size="34" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.googleutils.GoogleDocI" sourceFile="GoogleDocI.java" interface="true" size="4" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.googleutils.GoogleDocUtils" sourceFile="GoogleDocUtils.java" interface="false" size="86" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.googleutils.GoogleDocUtils$1" sourceFile="GoogleDocUtils.java" interface="false" size="11" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="it.uniba.sotorrent.soquery" total_bugs="12" total_types="14" total_size="224" priority_2="12">
+      <ClassStats class="it.uniba.sotorrent.soquery.ASOQuery" sourceFile="ASOQuery.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.ISOQuery" sourceFile="ISOQuery.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryAnswerDay" sourceFile="SOQueryAnswerDay.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryAnswerTags" sourceFile="SOQueryAnswerTags.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryAnswerUsrEdge" sourceFile="SOQueryAnswerUsrEdge.java" interface="false" size="13" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryAnswerUsrWeight" sourceFile="SOQueryAnswerUsrWeight.java" interface="false" size="13" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryPostDay" sourceFile="SOQueryPostDay.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryPostTags" sourceFile="SOQueryPostTags.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryQuestionDay" sourceFile="SOQueryQuestionDay.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryQuestionDayEdge" sourceFile="SOQueryQuestionDayEdge.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryQuestionDayWeight" sourceFile="SOQueryQuestionDayWeight.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryQuestionTags" sourceFile="SOQueryQuestionTags.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryQuestionUsrEdge" sourceFile="SOQueryQuestionUsrEdge.java" interface="false" size="13" bugs="1" priority_2="1"/>
+      <ClassStats class="it.uniba.sotorrent.soquery.SOQueryQuestionUsrWeight" sourceFile="SOQueryQuestionUsrWeight.java" interface="false" size="13" bugs="1" priority_2="1"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="371" invocations="918" avgMicrosecondsPerInvocation="404" maxMicrosecondsPerInvocation="2982" standardDeviationMircosecondsPerInvocation="180"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="288" invocations="915" avgMicrosecondsPerInvocation="314" maxMicrosecondsPerInvocation="17959" standardDeviationMircosecondsPerInvocation="894"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="146" invocations="49" avgMicrosecondsPerInvocation="2995" maxMicrosecondsPerInvocation="103325" standardDeviationMircosecondsPerInvocation="14589"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="108" invocations="111" avgMicrosecondsPerInvocation="974" maxMicrosecondsPerInvocation="11089" standardDeviationMircosecondsPerInvocation="1730"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="85" invocations="111" avgMicrosecondsPerInvocation="768" maxMicrosecondsPerInvocation="8401" standardDeviationMircosecondsPerInvocation="1205"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="60" invocations="48" avgMicrosecondsPerInvocation="1266" maxMicrosecondsPerInvocation="12404" standardDeviationMircosecondsPerInvocation="2507"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="59" invocations="213" avgMicrosecondsPerInvocation="278" maxMicrosecondsPerInvocation="4037" standardDeviationMircosecondsPerInvocation="501"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="56" invocations="48" avgMicrosecondsPerInvocation="1178" maxMicrosecondsPerInvocation="11312" standardDeviationMircosecondsPerInvocation="2345"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="56" invocations="167" avgMicrosecondsPerInvocation="337" maxMicrosecondsPerInvocation="14957" standardDeviationMircosecondsPerInvocation="1429"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="50" invocations="48" avgMicrosecondsPerInvocation="1057" maxMicrosecondsPerInvocation="11457" standardDeviationMircosecondsPerInvocation="2197"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="45" invocations="881" avgMicrosecondsPerInvocation="51" maxMicrosecondsPerInvocation="1101" standardDeviationMircosecondsPerInvocation="93"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="43" invocations="47" avgMicrosecondsPerInvocation="934" maxMicrosecondsPerInvocation="7814" standardDeviationMircosecondsPerInvocation="1631"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="41" invocations="51" avgMicrosecondsPerInvocation="812" maxMicrosecondsPerInvocation="33092" standardDeviationMircosecondsPerInvocation="4569"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="37" invocations="111" avgMicrosecondsPerInvocation="342" maxMicrosecondsPerInvocation="5407" standardDeviationMircosecondsPerInvocation="750"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="37" invocations="48" avgMicrosecondsPerInvocation="777" maxMicrosecondsPerInvocation="9465" standardDeviationMircosecondsPerInvocation="1534"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="35" invocations="111" avgMicrosecondsPerInvocation="323" maxMicrosecondsPerInvocation="4231" standardDeviationMircosecondsPerInvocation="601"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="32" invocations="40" avgMicrosecondsPerInvocation="805" maxMicrosecondsPerInvocation="7363" standardDeviationMircosecondsPerInvocation="1462"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="29" invocations="111" avgMicrosecondsPerInvocation="265" maxMicrosecondsPerInvocation="7875" standardDeviationMircosecondsPerInvocation="802"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="29" invocations="111" avgMicrosecondsPerInvocation="262" maxMicrosecondsPerInvocation="3344" standardDeviationMircosecondsPerInvocation="493"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="1431" invocations="916" avgMicrosecondsPerInvocation="1562" maxMicrosecondsPerInvocation="17416" standardDeviationMircosecondsPerInvocation="858"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="1125" invocations="913" avgMicrosecondsPerInvocation="1233" maxMicrosecondsPerInvocation="56078" standardDeviationMircosecondsPerInvocation="2786"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="499" invocations="124" avgMicrosecondsPerInvocation="4029" maxMicrosecondsPerInvocation="129354" standardDeviationMircosecondsPerInvocation="12205"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="493" invocations="124" avgMicrosecondsPerInvocation="3977" maxMicrosecondsPerInvocation="90952" standardDeviationMircosecondsPerInvocation="9334"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="414" invocations="92" avgMicrosecondsPerInvocation="4504" maxMicrosecondsPerInvocation="155416" standardDeviationMircosecondsPerInvocation="17392"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="410" invocations="27" avgMicrosecondsPerInvocation="15208" maxMicrosecondsPerInvocation="378544" standardDeviationMircosecondsPerInvocation="71273"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="293" invocations="274" avgMicrosecondsPerInvocation="1072" maxMicrosecondsPerInvocation="15920" standardDeviationMircosecondsPerInvocation="1826"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="291" invocations="94" avgMicrosecondsPerInvocation="3101" maxMicrosecondsPerInvocation="61782" standardDeviationMircosecondsPerInvocation="8637"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="291" invocations="78" avgMicrosecondsPerInvocation="3732" maxMicrosecondsPerInvocation="40259" standardDeviationMircosecondsPerInvocation="8098"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="289" invocations="80" avgMicrosecondsPerInvocation="3618" maxMicrosecondsPerInvocation="63464" standardDeviationMircosecondsPerInvocation="9722"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="285" invocations="92" avgMicrosecondsPerInvocation="3105" maxMicrosecondsPerInvocation="63246" standardDeviationMircosecondsPerInvocation="9027"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="269" invocations="879" avgMicrosecondsPerInvocation="306" maxMicrosecondsPerInvocation="68360" standardDeviationMircosecondsPerInvocation="2327"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="221" invocations="92" avgMicrosecondsPerInvocation="2408" maxMicrosecondsPerInvocation="59103" standardDeviationMircosecondsPerInvocation="6779"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUseOfNonSerializableValue" totalMilliseconds="199" invocations="27" avgMicrosecondsPerInvocation="7371" maxMicrosecondsPerInvocation="174770" standardDeviationMircosecondsPerInvocation="32886"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="197" invocations="124" avgMicrosecondsPerInvocation="1596" maxMicrosecondsPerInvocation="41484" standardDeviationMircosecondsPerInvocation="4150"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="195" invocations="181" avgMicrosecondsPerInvocation="1079" maxMicrosecondsPerInvocation="55526" standardDeviationMircosecondsPerInvocation="4363"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="182" invocations="82" avgMicrosecondsPerInvocation="2229" maxMicrosecondsPerInvocation="40909" standardDeviationMircosecondsPerInvocation="6082"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="180" invocations="100" avgMicrosecondsPerInvocation="1801" maxMicrosecondsPerInvocation="137097" standardDeviationMircosecondsPerInvocation="13623"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="169" invocations="124" avgMicrosecondsPerInvocation="1368" maxMicrosecondsPerInvocation="32311" standardDeviationMircosecondsPerInvocation="3555"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="139" invocations="124" avgMicrosecondsPerInvocation="1124" maxMicrosecondsPerInvocation="17651" standardDeviationMircosecondsPerInvocation="2242"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="114" invocations="124" avgMicrosecondsPerInvocation="927" maxMicrosecondsPerInvocation="37611" standardDeviationMircosecondsPerInvocation="3481"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>
