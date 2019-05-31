@@ -2,22 +2,34 @@ package soqueries.day.decorator;
 
 import soqueries.day.Day;
 import soqueries.day.component.QuestionEdgeDay;
-
-
+/**
+ * <<entity>>
+ * This class extends Day for run query from questions table with year, month, day, limit (weight).
+ */
 public class QuestionWeightDay extends Day {
-
-
-	public QuestionWeightDay(Integer year, Integer month, Integer day, Integer lim) {// da chiamare DayWeight
+	/**
+	 * Default constructor, init variables of the query.
+	 * @param year	The year parameter to be inserted in the query.
+	 * @param month	The month parameter to be inserted in the query.
+	 * @param day 	The day parameter to be inserted in the query.
+	 * @param lim 	The limit parameter to be inserted in the query.
+	**/
+public QuestionWeightDay(final Integer year, final Integer month, final Integer day, final Integer lim) {
 
 		super(year, month, day, lim);
+
 	}
 
-
+	/**
+	 * @return String with field weight of query
+	 */
 	public String getQueryString() {
-		QuestionEdgeDay edge=new QuestionEdgeDay(getYear(),getMonth(),getDay(),getLim());
-		edge.getQuery().setSelect(edge.getQuery().getSelect() 
-				+ ", COUNT(`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id) as weight");
+
+		QuestionEdgeDay edge = new QuestionEdgeDay(getYear(), getMonth(), getDay(), getLim());
+		edge.getQuery().setSelect(edge.getQuery().getSelect()
+		 + ", COUNT(`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id) as weight");
 		return edge.getQuery().toString();
+
 	}
 }
 

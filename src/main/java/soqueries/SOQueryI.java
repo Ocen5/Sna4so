@@ -6,5 +6,5 @@ package soqueries;
  */
 public interface SOQueryI {
 
-	public String getQueryString();
+	String getQueryString();
 }

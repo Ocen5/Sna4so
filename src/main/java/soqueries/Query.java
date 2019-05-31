@@ -1,5 +1,8 @@
 package soqueries;
-
+/**
+ * <<entity>>
+ * This class contains getter and setter of the keywords SQL to compose the queries.
+ */
 public class Query {
 
 	private String select = "";
@@ -7,7 +10,7 @@ public class Query {
 	private String where = "";
 
 	/**
-	 * @return select That contain SELECT of the query
+	 * @return select That contain SELECT of the query.
 	 */
 	public final String getSelect() {
 
@@ -16,7 +19,7 @@ public class Query {
 	}
 
 	/**
-	 * @param slc That contain SELECT of the query
+	 * @param slc That contain SELECT of the query.
 	 */
 	public void setSelect(final String slc) {
 
@@ -25,7 +28,7 @@ public class Query {
 	}
 
 	/**
-	 * @return from That contain the table of the query
+	 * @return from That contain the table of the query.
 	 */
 	public String getFrom() {
 
@@ -34,7 +37,7 @@ public class Query {
 	}
 
 	/**
-	 * @param frm That contain the table of the query
+	 * @param frm That contain the table of the query.
 	 */
 	public void setFrom(final String frm) {
 
@@ -43,7 +46,7 @@ public class Query {
 	}
 
 	/**
-	 * @return where That contain condition of the query
+	 * @return where That contain condition of the query.
 	 */
 	public String getWhere() {
 
@@ -52,7 +55,7 @@ public class Query {
 	}
 
 	/**
-	 * @param whr That contain condition of the query
+	 * @param whr That contain condition of the query.
 	 */
 	public void setWhere(final String whr) {
 
@@ -61,7 +64,7 @@ public class Query {
 	}
 
 	/**
-	 * @return group That contain GROUP BY of the query
+	 * @return group That contain GROUP BY of the query.
 	 */
 	public String getGroup() {
 
@@ -70,7 +73,7 @@ public class Query {
 	}
 
 	/**
-	 * @param grp That contain GROUP BY of the query
+	 * @param grp That contain GROUP BY of the query.
 	 */
 	public void setGroup(final String grp) {
 
@@ -79,7 +82,7 @@ public class Query {
 	}
 
 	/**
-	 * @return order That contain ORDER BY of the query
+	 * @return order That contain ORDER BY of the query.
 	 */
 	public String getOrder() {
 
@@ -88,7 +91,7 @@ public class Query {
 	}
 
 	/**
-	 * @param ord That contain ORDER BY of the query
+	 * @param ord That contain ORDER BY of the query.
 	 */
 	public void setOrder(final String ord) {
 
@@ -114,32 +117,41 @@ public class Query {
 
 	}
 
-	private String having = "";
 	private String group = "";
 	private String order = "";
 	private Integer limit = 0;
 
+	/**
+	 * @return Query string concatenation.
+	 */
 	public String toString() {
+
 		return "SELECT " + select + " "
-				+"FROM " + from + " "
-				+"WHERE " + where + " "
-				+"GROUP BY " + group + " "
-				+"ORDER BY " + order + " "
-				+"LIMIT " + limit;
+				+ "FROM " + from + " "
+				+ "WHERE " + where + " "
+				+ "GROUP BY " + group + " "
+				+ "ORDER BY " + order + " "
+				+ "LIMIT " + limit;
 
 	}
 
-	public String toUnionDistinct(Query query2) {
-		return "SELECT " + select 	+ " " 
-				+"FROM " + from + " " 
-				+"WHERE " + where + " " 
-				+"UNION DISTINCT "
-				+"SELECT " + query2.select 	+ " " 
-				+"FROM " + query2.from + " " 
-				+"WHERE " + query2.where + " " 
-				+"GROUP BY " + query2.group + " " 
-				+"ORDER BY " + query2.order + " " 
-				+"LIMIT " + query2.limit; 
+/**
+ * @param query2
+ * @return Query string concatenate with query2.
+ */
+	public String toUnionDistinct(final Query query2) {
+
+		return "SELECT " + select + " "
+				+ "FROM " + from + " "
+				+ "WHERE " + where + " "
+				+ "UNION DISTINCT "
+				+ "SELECT " + query2.select + " "
+				+ "FROM " + query2.from + " "
+				+ "WHERE " + query2.where + " "
+				+ "GROUP BY " + query2.group + " "
+				+ "ORDER BY " + query2.order + " "
+				+ "LIMIT " + query2.limit;
+
 	}
 
 }
