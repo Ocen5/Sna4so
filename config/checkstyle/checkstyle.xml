@@ -58,7 +58,6 @@
 	<!-- <property name="fileExtensions" value="java"/> -->
 	<!-- </module> -->
 
-
 	<module name="TreeWalker">
 
 		<!-- Checks for Javadoc comments. -->
@@ -67,8 +66,11 @@
 		<module name="JavadocType" />
 		<!-- <module name="JavadocVariable" /> -->
 		<!-- <module name="JavadocStyle" /> -->
+<<<<<<< HEAD
 
 		<!-- Checks for Naming Conventions. -->
+=======
+>>>>>>> da7f5c32a3e385c01ddc42bab44a4fef9c80ab63
 		<!-- See http://checkstyle.sf.net/config_naming.html -->
 		<module name="ConstantName" />
 		<module name="LocalFinalVariableName" />
