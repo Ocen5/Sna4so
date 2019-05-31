@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="it.uniba.example.utils.test.MathUtilsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-05-29T15:05:33" hostname="privato-PC" time="0.089">
+<testsuite name="it.uniba.example.utils.test.MathUtilsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-05-31T08:22:07" hostname="LAPTOP-9OEVE5N9" time="0.03">
   <properties/>
-  <testcase name="Testing sum of integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.069"/>
-  <testcase name="Testing division between integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.017"/>
+  <testcase name="Testing sum of integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.021"/>
+  <testcase name="Testing division between integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.008"/>
   <system-out><![CDATA[setUpAll
 setUpEach
 teadDownEach
