@@ -1,4 +1,4 @@
-package soqueries;
+package it.uniba.sotorrent.soqueries;
 /**
  * <<Entity>>
  * Abstract class for compose the queries.

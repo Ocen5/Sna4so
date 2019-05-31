@@ -1,7 +1,7 @@
-package soqueries.day.component;
+package it.uniba.sotorrent.soqueries.day.component;
 
-import soqueries.Query;
-import soqueries.day.Day;
+import it.uniba.sotorrent.soqueries.Query;
+import it.uniba.sotorrent.soqueries.day.Day;
 /**
  * <<entity>>
  * This class extends Day for run query from questions table with year, month, day, limit (edge).

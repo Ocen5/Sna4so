@@ -1,8 +1,8 @@
-package soqueries.taglike.decorator;
+package it.uniba.sotorrent.soqueries.taglike.decorator;
 
-import soqueries.taglike.TagLike;
-import soqueries.taglike.component.AnswerTagLike;
-import soqueries.taglike.component.QuestionTagLike;
+import it.uniba.sotorrent.soqueries.taglike.TagLike;
+import it.uniba.sotorrent.soqueries.taglike.component.AnswerTagLike;
+import it.uniba.sotorrent.soqueries.taglike.component.QuestionTagLike;
 /**
  * <<entity>>
  * This class extends TagLike for run query from posts table with year, month, taglike, limit.

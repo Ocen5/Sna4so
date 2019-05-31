@@ -1,8 +1,8 @@
-package soqueries.day.decorator;
+package it.uniba.sotorrent.soqueries.day.decorator;
 
-import soqueries.day.Day;
-import soqueries.day.component.AnswerDay;
-import soqueries.day.component.QuestionDay;
+import it.uniba.sotorrent.soqueries.day.Day;
+import it.uniba.sotorrent.soqueries.day.component.AnswerDay;
+import it.uniba.sotorrent.soqueries.day.component.QuestionDay;
 /**
  * <<entity>>
  * This class extends Day for run query from posts table with year, month, day, limit.

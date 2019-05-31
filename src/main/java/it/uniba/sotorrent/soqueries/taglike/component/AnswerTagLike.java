@@ -1,7 +1,7 @@
-package soqueries.taglike.component;
+package it.uniba.sotorrent.soqueries.taglike.component;
 
-import soqueries.Query;
-import soqueries.taglike.TagLike;
+import it.uniba.sotorrent.soqueries.Query;
+import it.uniba.sotorrent.soqueries.taglike.TagLike;
 /**
  * <<entity>>
  * This class extends TagLike for run query from answers table with year, month, taglike, limit.

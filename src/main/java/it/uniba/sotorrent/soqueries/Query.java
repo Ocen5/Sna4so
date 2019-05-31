@@ -1,4 +1,4 @@
-package soqueries;
+package it.uniba.sotorrent.soqueries;
 /**
  * <<entity>>
  * This class contains getter and setter of the keywords SQL to compose the queries.

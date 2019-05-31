@@ -1,7 +1,7 @@
-package soqueries.user.decorator;
+package it.uniba.sotorrent.soqueries.user.decorator;
 
-import soqueries.SOQueryI;
-import soqueries.user.User;
+import it.uniba.sotorrent.soqueries.SOQueryI;
+import it.uniba.sotorrent.soqueries.user.User;
 /**
  * <<entity>>
  * This class implements SOQueryI for queries with user, limit.

@@ -1,7 +1,7 @@
-package soqueries.user.component;
+package it.uniba.sotorrent.soqueries.user.component;
 
-import soqueries.Query;
-import soqueries.user.User;
+import it.uniba.sotorrent.soqueries.Query;
+import it.uniba.sotorrent.soqueries.user.User;
 /**
  * <<entity>>
  * This class extends User for run query from questions table with userId, limit.

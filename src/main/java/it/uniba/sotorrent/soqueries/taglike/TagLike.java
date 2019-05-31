@@ -1,6 +1,6 @@
-package soqueries.taglike;
+package it.uniba.sotorrent.soqueries.taglike;
 
-import soqueries.SOQueryI;
+import it.uniba.sotorrent.soqueries.SOQueryI;
 /**
  * <<entity>>
  * This class implements SOQueryI for queries with tags.

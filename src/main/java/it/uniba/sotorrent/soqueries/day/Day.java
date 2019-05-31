@@ -1,6 +1,6 @@
-package soqueries.day;
+package it.uniba.sotorrent.soqueries.day;
 
-import soqueries.SOQueryI;
+import it.uniba.sotorrent.soqueries.SOQueryI;
 /**
  * <<entity>>
  * This class implements SOQueryI for queries with day.
