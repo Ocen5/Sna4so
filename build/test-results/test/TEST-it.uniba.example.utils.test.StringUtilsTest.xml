@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="it.uniba.example.utils.test.StringUtilsTest" tests="7" skipped="1" failures="0" errors="0" timestamp="2019-05-31T08:22:34" hostname="LAPTOP-155BODB5" time="0.021">
+=======
+<testsuite name="it.uniba.example.utils.test.StringUtilsTest" tests="7" skipped="1" failures="0" errors="0" timestamp="2019-05-31T08:22:07" hostname="LAPTOP-9OEVE5N9" time="0.018">
+>>>>>>> 75757dc46a84abc72d4595a806fc7a413fe5bf1f
   <properties/>
   <testcase name="testConvertToDoubleWithNullArgument()" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.003"/>
   <testcase name="testIsNullOrBlankOK()" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.001"/>
   <testcase name="testConcatWithAllNullInput()" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.0">
     <skipped/>
   </testcase>
+<<<<<<< HEAD
   <testcase name="Convert to double pass" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.009"/>
   <testcase name="testConvertToDoubleThrowException()" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.002"/>
   <testcase name="testConcatWithRegularInput()" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.001"/>
   <testcase name="testConcatWithNullInput()" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.001"/>
+=======
+  <testcase name="Convert to double pass" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.007"/>
+  <testcase name="testConvertToDoubleThrowException()" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.002"/>
+  <testcase name="testConcatWithRegularInput()" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.0"/>
+  <testcase name="testConcatWithNullInput()" classname="it.uniba.example.utils.test.StringUtilsTest" time="0.0"/>
+>>>>>>> 75757dc46a84abc72d4595a806fc7a413fe5bf1f
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

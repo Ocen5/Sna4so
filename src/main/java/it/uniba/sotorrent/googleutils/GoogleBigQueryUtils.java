@@ -38,7 +38,7 @@ public class GoogleBigQueryUtils implements GoogleBigQueryI {
 	 * @throws FileNotFoundException The remote JSON file with credential is 404
 	 * @throws IOException Malformed JSON file
 	 */
-	GoogleBigQueryUtils() throws FileNotFoundException, IOException {
+	public GoogleBigQueryUtils() throws FileNotFoundException, IOException {
 
 		bigquery = BigQueryOptions.newBuilder().setProjectId("sna4so-237908")
 				.setCredentials(ServiceAccountCredentials.fromStream(new URL(URL).openStream())).build()

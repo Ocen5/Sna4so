@@ -16,6 +16,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -49,39 +50,39 @@ class GoogleDocsUtilsTest {
 	private static final String APPLICATION_NAME = "sna4so-237908";
 
 
-	private GoogleDocUtils ut= new GoogleDocUtils();
-	private Sheets sheetsService = null;
+	private static GoogleDocUtils ut= new GoogleDocUtils();
+	private static Sheets sheetsService = null;
 
-	private TableResult res;
-	private Credential authCred;
-	private Drive driveService;
-	private String spid;
+	private static TableResult res;
+	private static Credential authCred;
+	private static Drive driveService;
+	private static String spid;
 
-	@BeforeEach
-	void Set() throws JobException, InterruptedException, FileNotFoundException, IOException, GeneralSecurityException, URISyntaxException {
+	@BeforeAll
+	static void Set() throws JobException, InterruptedException, FileNotFoundException, IOException, GeneralSecurityException, URISyntaxException {
 		//query fasulla per provare la scrittura sul foglio
 
 		
 		spid = ut.createSheet("non nullo");
-		this.authCred= GoogleCredential.fromStream(new URL(URL).openStream()).toBuilder()
+		authCred= GoogleCredential.fromStream(new URL(URL).openStream()).toBuilder()
 				.setServiceAccountScopes(SCOPES).build();
 
-		this.sheetsService = new Sheets.Builder(GoogleNetHttpTransport.newTrustedTransport(),
+		sheetsService = new Sheets.Builder(GoogleNetHttpTransport.newTrustedTransport(),
 				JacksonFactory.getDefaultInstance(), authCred)
 				.setApplicationName(APPLICATION_NAME).build();
 
-		this.driveService = new Drive.Builder(GoogleNetHttpTransport.newTrustedTransport(),
+		driveService = new Drive.Builder(GoogleNetHttpTransport.newTrustedTransport(),
 				JacksonFactory.getDefaultInstance(), authCred)
 				.setApplicationName(APPLICATION_NAME).build();
 
 		//query fasulla per provare la scrittura sul foglio
 		SOQueryQuestionUsrEdge soqf= new SOQueryQuestionUsrEdge(1111,10);
 		Job queryJobf = soqf.runQuery();
-		this.res= queryJobf.getQueryResults();
+		res= queryJobf.getQueryResults();
 		try {
-			this.ut.shareSheet(spid);
-			this.ut.getSheetByTitle(spid);
-			this.ut.writeSheet(sheetsService.spreadsheets().get(spid).getSpreadsheetId() , res);
+			ut.shareSheet(spid);
+			ut.getSheetByTitle(spid);
+			ut.writeSheet(sheetsService.spreadsheets().get(spid).getSpreadsheetId() , res);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -111,8 +112,8 @@ class GoogleDocsUtilsTest {
 		assertThrows( IOException.class, () -> ut.shareSheet(""));
 	}
 
-	@AfterEach
-	void tearDown() throws Exception {
+	@AfterAll
+	static void tearDown() throws Exception {
 	spid=null;
 	authCred=null;
 	sheetsService=null;

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="it.uniba.example.db.test.LocalDatabaseConnectionTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2019-05-31T08:22:33" hostname="LAPTOP-155BODB5" time="0.0">
+=======
+<testsuite name="it.uniba.example.db.test.LocalDatabaseConnectionTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2019-05-31T08:22:07" hostname="LAPTOP-9OEVE5N9" time="0.001">
+>>>>>>> 75757dc46a84abc72d4595a806fc7a413fe5bf1f
   <properties/>
-  <testcase name="testSomething()" classname="it.uniba.example.db.test.LocalDatabaseConnectionTest" time="0.0">
+  <testcase name="testSomething()" classname="it.uniba.example.db.test.LocalDatabaseConnectionTest" time="0.001">
     <skipped/>
   </testcase>
   <system-out><![CDATA[]]></system-out>
