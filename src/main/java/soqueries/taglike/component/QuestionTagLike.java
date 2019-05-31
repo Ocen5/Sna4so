@@ -60,4 +60,3 @@ public class QuestionTagLike extends TagLike {
 
 	}
 }
-

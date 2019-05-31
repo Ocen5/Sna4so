@@ -29,6 +29,7 @@ public class PostTagLike extends TagLike {
 
 		QuestionTagLike question = new QuestionTagLike(getYear(), getMonth(), getTaglike(), getLim());
 		AnswerTagLike answer = new AnswerTagLike(getYear(), getMonth(), getTaglike(), getLim());
+		answer.getQuery().setOrder("owner_user_id");
 		return question.getQuery().toUnionDistinct(answer.getQuery());
 
 	}

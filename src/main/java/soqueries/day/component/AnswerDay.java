@@ -54,4 +54,3 @@ public class AnswerDay extends Day {
 	}
 
 }
-

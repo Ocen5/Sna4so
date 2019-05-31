@@ -34,4 +34,3 @@ public class PostDay extends Day {
 	}
 
 }
-

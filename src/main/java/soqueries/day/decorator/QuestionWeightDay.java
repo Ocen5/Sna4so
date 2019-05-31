@@ -32,4 +32,3 @@ public QuestionWeightDay(final Integer year, final Integer month, final Integer 
 
 	}
 }
-

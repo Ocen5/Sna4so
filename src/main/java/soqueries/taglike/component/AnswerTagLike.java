@@ -63,4 +63,3 @@ public class AnswerTagLike extends TagLike {
 
 	}
 }
-

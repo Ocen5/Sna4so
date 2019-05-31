@@ -64,4 +64,3 @@ public class QuestionEdgeDay extends Day {
 
 	}
 }
-
