@@ -93,7 +93,7 @@ public class GoogleDocUtils implements GoogleDocI {
 	 * @throws GeneralSecurityException Failed authentication
 	 * @throws URISyntaxException Malformed URI
 	 */
-	private Credential authorize() throws IOException, GeneralSecurityException, URISyntaxException {
+	private Credential authorize() throws IOException, URISyntaxException, GeneralSecurityException {
 		GoogleCredential authCred = GoogleCredential.fromStream(new URL(URL).openStream()).toBuilder()
 					.setServiceAccountScopes(SCOPES).build();
 		return authCred;

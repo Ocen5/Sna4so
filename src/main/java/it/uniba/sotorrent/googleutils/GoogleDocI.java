@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.GeneralSecurityException;
 
+import com.google.cloud.bigquery.TableResult;
+
 /**
  * <<boundary>>
  * Utility interface for creating, sharing, and deleting Google spreadsheets.
@@ -26,6 +28,15 @@ public interface GoogleDocI {
 	 * @throws IOException Generic I/O error
 	 */
 	void getSheetByTitle(String spid) throws IOException;
+
+	/**
+	 * Write results to the spreadsheet.
+	 * Also, see <a href="https://developers.google.com/sheets/api/guides/values">here</a>.
+	 * @param spid The spreadsheet id
+	 * @param res The hash map of the results, with URL as key and view count as value
+	 * @throws IOException Generic I/O error
+	 */
+	void writeSheet(String spid, TableResult res) throws IOException;
 
 	/**
 	 * Makes the spreadsheet readable to anyone with the link.
