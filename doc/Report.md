@@ -75,7 +75,7 @@ Eseguendo il comando:
 
 il risultato è una lista di owner_user_id univoci e non nulli, ordinati in modo crescente come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory1-Sprint-1.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory1-Sprint-1.png)
 
 - ***User Story 2:***
 
@@ -89,7 +89,7 @@ Eseguendo il comando:
 
 il risultato è una lista di owner_user_id univoci e non nulli, ordinati in modo crescente come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory2-Sprint-1.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory2-Sprint-1.png)
 
 - ***User Story 3:***
 
@@ -103,7 +103,7 @@ Eseguendo il comando:
 
 il risultato è una lista di owner_user_id univoci e non nulli, ordinati in modo crescente come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory3-Sprint-1.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory3-Sprint-1.png)
 
 - ***User Story 4:***
 
@@ -117,7 +117,7 @@ Eseguendo il comando:
 
 il risultato è una lista di owner_user_id univoci e non nulli, ordinati in modo crescente come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory4-Sprint-1.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory4-Sprint-1.png)
 
 - ***User Story 5:***
 
@@ -131,7 +131,7 @@ Eseguendo il comando:
 
 il risultato è una lista di owner_user_id univoci e non nulli, ordinati in modo crescente come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory5-Sprint-1.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory5-Sprint-1.png)
 
 - ***User Story 6:***
 
@@ -145,7 +145,7 @@ Eseguendo il comando:
 
 il risultato è una lista di owner_user_id univoci e non nulli, ordinati in modo crescente come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory6-Sprint-1.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory6-Sprint-1.png)
 
 Nello **Sprint 2** ci è stato chiesto di visualizzare gli archi diretti in forma tabulare (gli archi diretti partono dall'utente che risponde e arrivano all'utente che ha posto una domanda), fornendoci le seguenti User Story:
 
@@ -161,7 +161,7 @@ Eseguendo il comando:
 
 il risultato è una lista come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory1-Sprint-2.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory1-Sprint-2.png)
 
 -Verificare che per ogni domanda e risposta sia visualizzata una riga con la coppia (from, to) dove to è l'id dell'utente che ha posto la domanda e from è l'id dell'utente che ha risposto.
 -Verificare che le coppie (from, to) non contengano valori nulli.
@@ -180,7 +180,7 @@ Eseguendo il comando:
 
 il risultato è una lista come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory2-Sprint-2.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory2-Sprint-2.png)
 
 -Verificare che per ogni domanda e risposta sia visualizzata una riga con la coppia (from, to) dove to è l'id dell'utente che ha posto la domanda, specificato come valore di user, e from è l'id dell'utente che ha risposto.
 -Verificare che le coppie (from, to) non contengano valori nulli.
@@ -199,7 +199,7 @@ Eseguendo il comando:
 
 il risultato è una lista come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory3-Sprint-2.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory3-Sprint-2.png)
 
 -Verificare che per ogni domanda e risposta sia visualizzata una riga con la coppia (from, to) dove to è l'id dell'utente che ha posto la domanda e from è l'id dell'utente che ha risposto, specificato come valore di user.
 -Verificare che le coppie (from, to) non contengano valori nulli.
@@ -218,7 +218,7 @@ Eseguendo il comando:
 
 il risultato è una lista come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory4-Sprint-2.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory4-Sprint-2.png)
 
 -Verificare che per ogni domanda e risposta sia visualizzata una riga con la tripla (from, to, weight) dove to è l'id dell'utente che ha posto la domanda, from è l'id dell'utente che ha risposto e weight è il peso associato al numero di volte che l'utente from ha risposto all'utente to.
 -Verificare che le triple (from, to, weight) non contengano valori nulli.
@@ -237,7 +237,7 @@ Eseguendo il comando:
 
 il risultato è una lista come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory5-Sprint-2.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory5-Sprint-2.png)
 
 -Verificare che per ogni domanda e risposta sia visualizzata una riga con la tripla (from, to, weight) dove to è l'id dell'utente che ha posto la domanda, specificato come valore di user, from è l'id dell'utente che ha risposto e weight è il peso associato al numero di volte che l'utente from ha risposto all'utente to.
 -Verificare che le triple (from, to, weight) non contengano valori nulli.
@@ -256,7 +256,7 @@ Eseguendo il comando:
 
 il risultato è una lista come da esempio in figura:
 
-![](doc/drawings/userStory/UserStory6-Sprint-2.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/userStory/UserStory6-Sprint-2.png)
 
 -Verificare che per ogni domanda e risposta sia visualizzata una riga con la tripla (from, to, weight) dove to è l'id dell'utente che ha posto la domanda, from è l'id dell'utente che ha risposto, specificato come valore di user, e weight è il peso associato al numero di volte che l'utente from ha risposto all'utente to.
 -Verificare che le triple (from, to, weight) non contengano valori nulli.
