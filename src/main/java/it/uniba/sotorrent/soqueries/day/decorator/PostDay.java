@@ -5,13 +5,14 @@ import it.uniba.sotorrent.soqueries.day.component.AnswerDay;
 import it.uniba.sotorrent.soqueries.day.component.QuestionDay;
 
 /**
- * <<entity>>
- * This class extends Day for run query from posts table with year, month, day, limit.
+ * <<Entity>>
+ * This class extends Day to run query from posts table with year, month, day and limit.
  */
 public class PostDay extends Day {
 
 	/**
-	 * Default constructor, init variables of the query.
+	 * Constructor initializes variables for the query.
+	 * 
 	 * @param year	The year parameter to be inserted in the query.
 	 * @param month	The month parameter to be inserted in the query.
 	 * @param day 	The day parameter to be inserted in the query.
@@ -24,7 +25,7 @@ public class PostDay extends Day {
 	}
 
 	/**
-	 * @return String that is union of two queries
+	 * @return String that is the union of answer and question queries.
 	 */
 	public String getQueryString() {
 

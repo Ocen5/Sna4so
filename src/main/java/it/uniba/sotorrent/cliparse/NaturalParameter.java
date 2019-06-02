@@ -10,7 +10,9 @@ class NaturalParameter extends Parameter {
 
 	/**
 	 * Constructor sets attribute.
-	 * @param attribute The integer value of parameter
+	 * 
+	 * @param attribute The integer attribute of the parameter.
+	 * @param value The integer value of parameter.
 	 */
 	NaturalParameter(final NaturalAttribute attribute, final Integer value) {
 

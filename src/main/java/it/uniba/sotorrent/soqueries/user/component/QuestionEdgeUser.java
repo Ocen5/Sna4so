@@ -4,16 +4,19 @@ import it.uniba.sotorrent.soqueries.Query;
 import it.uniba.sotorrent.soqueries.user.User;
 
 /**
- * <<entity>>
- * This class extends User for run query from questions table with userId, limit.
+ * <<Entity>>
+ * This class extends User to run query from questions table with userId and limit.
  */
 public class QuestionEdgeUser extends User {
 
-
+	/**
+	 * The query.
+	 */
 	private Query query = new Query();
 
 	/**
-	 * Default constructor, init variables of the query.
+	 * Constructor initializes variables for the query.
+	 * 
 	 * @param userId The user parameter to be inserted in the query.
 	 * @param lim The limit parameter to be inserted in the query.
 	**/
@@ -25,7 +28,7 @@ public class QuestionEdgeUser extends User {
 	}
 
 	/**
-	 * This method create the query QuestionEdgeUser
+	 * This method create the query QuestionEdgeUser.
 	 */
 	public void buildQuery() {
 
@@ -47,7 +50,7 @@ public class QuestionEdgeUser extends User {
 	}
 
 	/**
-	 * @return query That is the query QuestionEdgeUser
+	 * @return query That is the query QuestionEdgeUser.
 	 */
 	public Query getQuery() {
 
@@ -56,12 +59,12 @@ public class QuestionEdgeUser extends User {
 	}
 
 	/**
-	 * @return method toString of the query
+	 * @return method toString of the query.
 	 */
-	@Override
 	public String getQueryString() {
 
 		return query.toString();
 
 	}
+
 }

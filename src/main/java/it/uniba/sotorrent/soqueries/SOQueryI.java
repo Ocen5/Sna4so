@@ -1,4 +1,5 @@
 package it.uniba.sotorrent.soqueries;
+
 /**
  * <<Entity>>
  * Abstract class for compose the queries.
@@ -7,4 +8,5 @@ package it.uniba.sotorrent.soqueries;
 public interface SOQueryI {
 
 	String getQueryString();
+
 }

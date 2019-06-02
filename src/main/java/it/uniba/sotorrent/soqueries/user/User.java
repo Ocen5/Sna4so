@@ -5,15 +5,23 @@ import it.uniba.sotorrent.soqueries.SOQueryI;
 
 /**
  * <<entity>>
- * This class implements SOQueryI for queries with user, limit.
+ * This class implements SOQueryI for queries with user and limit.
  */
 public abstract class User implements SOQueryI {
 
+	/**
+	 * The user id value.
+	 */
 	private Integer userId;
+
+	/**
+	 * The limit value.
+	 */
 	private Integer lim;
 
 	/**
-	 * Default constructor, init variables of the query.
+	 * Constructor initializes variables for the query.
+	 * 
 	 * @param usrId The user parameter to be inserted in the query.
 	 * @param lim The limit parameter to be inserted in the query.
 	**/
@@ -26,7 +34,7 @@ public abstract class User implements SOQueryI {
 	}
 
 	/**
-	 * @return userId To indicate the user of query's tuples.
+	 * @return userId Indicates the user of query's tuples.
 	 */
 	public Integer getUserId() {
 
@@ -35,7 +43,7 @@ public abstract class User implements SOQueryI {
 	}
 
 	/**
-	 * @return lim To indicate the limit of query's tuples.
+	 * @return limit Indicates the limit of query's tuples.
 	 */
 	public Integer getLim() {
 
@@ -44,7 +52,8 @@ public abstract class User implements SOQueryI {
 	}
 
 	/**
-	 * Inherithed query need this method for decorators.
+	 * Inherited query needs this method for decorators.
+	 * 
 	 * @return the builded query.
 	 */
 	public abstract Query getQuery();

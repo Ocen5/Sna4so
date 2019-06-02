@@ -4,15 +4,19 @@ import it.uniba.sotorrent.soqueries.Query;
 import it.uniba.sotorrent.soqueries.day.Day;
 
 /**
- * <<entity>>
- * This class extends Day for run query from answers table with year, month, day, limit.
+ * <<Entity>>
+ * This class extends Day to run query from answers table with year, month, day and limit.
  */
 public class AnswerDay extends Day {
 
-
-	private Query query = new Query();
 	/**
-	 * Default constructor, init variables of the query.
+	 * The query.
+	 */
+	private Query query = new Query();
+
+	/**
+	 * Constructor initializes variables for the query.
+	 *
 	 * @param year	The year parameter to be inserted in the query.
 	 * @param month	The month parameter to be inserted in the query.
 	 * @param day 	The day parameter to be inserted in the query.
@@ -25,6 +29,9 @@ public class AnswerDay extends Day {
 
 	}
 
+	/**
+	 * This method builds the query.
+	 */
 	private void buildQuery() {
 		query.setSelect("owner_user_id");
 		query.setFrom("`bigquery-public-data.stackoverflow.posts_answers`");
@@ -38,7 +45,7 @@ public class AnswerDay extends Day {
 	}
 
 	/**
-	 * @return query That is the query AnswerDay
+	 * @return query That is the query AnswerDay.
 	 */
 	public Query getQuery() {
 
@@ -47,9 +54,8 @@ public class AnswerDay extends Day {
 	}
 
 	/**
-	 * @return method toString of the query
+	 * @return method toString of the query.
 	 */
-	@Override
 	public String getQueryString() {
 
 		return query.toString();

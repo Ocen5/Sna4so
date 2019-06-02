@@ -1,13 +1,40 @@
 package it.uniba.sotorrent.soqueries;
+
 /**
- * <<entity>>
+ * <<Entity>>
  * This class contains getter and setter of the keywords SQL to compose the queries.
  */
 public class Query {
 
+	/**
+	 * The argument of the SELECT statement.
+	 */
 	private String select = "";
+
+	/**
+	 * The argument of the FROM statement.
+	 */
 	private String from = "";
+
+	/**
+	 * The argument of the WHERE statement.
+	 */
 	private String where = "";
+
+	/**
+	 * The argument of the GROUP BY statement.
+	 */
+	private String group = "";
+
+	/**
+	 * The argument of the ORDER BY statement.
+	 */
+	private String order = "";
+
+	/**
+	 * The argument of the LIMIT statement.
+	 */
+	private Integer limit = 0;
 
 	/**
 	 * @return select That contain SELECT of the query.
@@ -117,12 +144,10 @@ public class Query {
 
 	}
 
-	private String group = "";
-	private String order = "";
-	private Integer limit = 0;
-
 	/**
-	 * @return Query string concatenation.
+	 * This method composes the statements of the query.
+	 * 
+	 * @return string concatenation.
 	 */
 	public String toString() {
 
@@ -135,10 +160,13 @@ public class Query {
 
 	}
 
-/**
- * @param query2 The query to add.
- * @return Query string concatenate with query2.
- */
+	/**
+	 * This method gets the string of the UNION DISTINCT of this query
+	 * with another query.
+	 * 
+	 * @param query2 The query to add.
+	 * @return string concatenation with query2.
+	 */
 	public String toUnionDistinct(final Query query2) {
 
 		return "SELECT " + select + " "

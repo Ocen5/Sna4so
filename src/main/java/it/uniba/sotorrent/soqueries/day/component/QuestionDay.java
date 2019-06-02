@@ -4,15 +4,19 @@ import it.uniba.sotorrent.soqueries.Query;
 import it.uniba.sotorrent.soqueries.day.Day;
 
 /**
- * <<entity>>
- * This class extends Day for run query from questions table with year, month, day, limit.
+ * <<Entity>>
+ * This class extends Day to run query from questions table with year, month, day and limit.
  */
 public class QuestionDay extends Day {
 
-
-	private Query query = new Query();
 	/**
-	 * Default constructor, init variables of the query.
+	 * The query.
+	 */
+	private Query query = new Query();
+
+	/**
+	 * Constructor initializes variables for the query.
+	 * 
 	 * @param year	The year parameter to be inserted in the query.
 	 * @param month	The month parameter to be inserted in the query.
 	 * @param day 	The day parameter to be inserted in the query.
@@ -26,7 +30,7 @@ public class QuestionDay extends Day {
 	}
 
 	/**
-	 * This method create the query QuestionDay
+	 * This method builds the query.
 	 */
 	public void buildQuery() {
 
@@ -44,7 +48,7 @@ public class QuestionDay extends Day {
 	}
 
 	/**
-	 * @return query That is the query QuestionDay
+	 * @return query That is the query QuestionDay.
 	 */
 	public Query getQuery() {
 
@@ -53,9 +57,8 @@ public class QuestionDay extends Day {
 	}
 
 	/**
-	 * @return method toString of the query
+	 * @return method toString of the query.
 	 */
-	@Override
 	public String getQueryString() {
 
 		return query.toString();

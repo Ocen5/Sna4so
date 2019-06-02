@@ -4,18 +4,22 @@ import it.uniba.sotorrent.soqueries.Query;
 import it.uniba.sotorrent.soqueries.taglike.TagLike;
 
 /**
- * <<entity>>
- * This class extends TagLike for run query from questions table with year, month, taglike, limit.
+ * <<Entity>>
+ * This class extends TagLike to run query from questions table with year, month, tags and limit.
  */
 public class QuestionTagLike extends TagLike {
 
+	/**
+	 * The query.
+	 */
 	private Query query = new Query();
 
 	/**
-	 * Default constructor, init variables of the query.
+	 * Constructor initializes variables for the query.
+	 * 
 	 * @param year	The year parameter to be inserted in the query.
 	 * @param month	The month parameter to be inserted in the query.
-	 * @param taglike The taglike parameter to be inserted in the query.
+	 * @param taglike The tag parameter to be inserted in the query.
 	 * @param lim 	The limit parameter to be inserted in the query.
 	**/
 	public QuestionTagLike(final Integer year, final Integer month, final String taglike, final Integer lim) {
@@ -26,7 +30,7 @@ public class QuestionTagLike extends TagLike {
 	}
 
 	/**
-	 * This method create the query QuestionTagLike
+	 * This method builds the query.
 	 */
 	public void buildQuery() {
 
@@ -34,7 +38,7 @@ public class QuestionTagLike extends TagLike {
 		query.setFrom("`bigquery-public-data.stackoverflow.posts_questions`");
 		query.setWhere("extract(year from creation_date)=" + getYear()
 				+ " AND " + "extract(month from creation_date)=" + getMonth()
-				+ " AND " + "tags like CONCAT('%\"" + getTaglike() + "\"%')"
+				+ " AND " + "tags like CONCAT('%" + getTaglike() + "%')"
 				+ " AND " + "owner_user_id > 0");
 		query.setGroup("owner_user_id");
 		query.setOrder("owner_user_id ASC");
@@ -54,10 +58,10 @@ public class QuestionTagLike extends TagLike {
 	/**
 	 * @return method toString of the query.
 	 */
-	@Override
 	public String getQueryString() {
 
 		return query.toString();
 
 	}
+
 }

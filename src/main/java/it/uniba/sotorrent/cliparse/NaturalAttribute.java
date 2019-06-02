@@ -20,9 +20,10 @@ class NaturalAttribute extends Attribute {
 
 	/**
 	 * Constructor sets this attribute name and the domain of range.
-	 * @param name The name of the attribute
-	 * @param max Max value of the integer attribute
-	 * @param min Min value of the integer attribute
+	 * 
+	 * @param name The name of the attribute.
+	 * @param maxValue Max value of the integer attribute.
+	 * @param minValue Min value of the integer attribute.
 	 */
 	NaturalAttribute(final String name, final Integer maxValue, final Integer minValue) {
 
@@ -34,7 +35,8 @@ class NaturalAttribute extends Attribute {
 
 	/**
 	 * The max domain of range.
-	 * @return max Max value of the attribute
+	 * 
+	 * @return max Max value of the attribute.
 	 */
 	Integer getMax() {
 
@@ -44,7 +46,8 @@ class NaturalAttribute extends Attribute {
 
 	/**
 	 * The min domain of range.
-	 * @return min Min value of the attribute
+	 * 
+	 * @return min Min value of the attribute.
 	 */
 	Integer getMin() {
 

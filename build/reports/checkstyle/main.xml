@@ -1,82 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.8">
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\main\AppMain.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\main\AppMain.java">
+<error line="3" column="8" severity="error" message="Unused import - java.io.FileNotFoundException." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="8" column="8" severity="error" message="Unused import - com.google.cloud.bigquery.BigQueryException." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="10" column="8" severity="error" message="Unused import - com.google.cloud.bigquery.JobException." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="46" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
+<error line="47" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
+<error line="48" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
+<error line="49" severity="error" message="Line has trailing spaces." source="com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineCheck"/>
+<error line="52" severity="error" message="Line is longer than 120 characters (found 141)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\Attribute.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\Attribute.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\BooleanAttribute.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\BooleanAttribute.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\BooleanParameter.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\BooleanParameter.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\CLItoParameters.java">
-<error line="19" column="63" severity="error" message="&apos;2019&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="19" column="69" severity="error" message="&apos;2008&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="22" column="62" severity="error" message="&apos;12&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="25" column="60" severity="error" message="&apos;31&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="31" column="63" severity="error" message="&apos;11142405&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="34" column="65" severity="error" message="&apos;500&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
-<error line="49" column="9" severity="error" message="Class &apos;CLItoParameters&apos; looks like designed for extension (can be subclassed), but the method &apos;parseCLI&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;CLItoParameters&apos; final or making the method &apos;parseCLI&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\CLItoParameters.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\CLItoParametersI.java">
-<error line="3" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\CLItoParametersI.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\NaturalAttribute.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\NaturalAttribute.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\NaturalParameter.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\NaturalParameter.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\Parameter.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\Parameter.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\ParameterSet.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\ParameterSet.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\QuerySelector.java">
-<error line="16" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
-<error line="24" column="9" severity="error" message="Class &apos;QuerySelector&apos; looks like designed for extension (can be subclassed), but the method &apos;selectQuery&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;QuerySelector&apos; final or making the method &apos;selectQuery&apos; static/final/abstract/empty, or adding allowed annotation for the method." source="com.puppycrawl.tools.checkstyle.checks.design.DesignForExtensionCheck"/>
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\QuerySelector.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\QuerySelectorI.java">
-<error line="5" severity="error" message="Missing a Javadoc comment." source="com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck"/>
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\QuerySelectorI.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\StringAttribute.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\StringAttribute.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\StringParameter.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\StringParameter.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleBigQueryI.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleBigQueryI.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleBigQueryUtils.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleBigQueryUtils.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleDocI.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleDocI.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleDocUtils.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleDocUtils.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\Query.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\Query.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\SOQueryI.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\SOQueryI.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\Day.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\Day.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\component\AnswerDay.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\component\AnswerDay.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\component\QuestionDay.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\component\QuestionDay.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\component\QuestionEdgeDay.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\component\QuestionEdgeDay.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\decorator\PostDay.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\decorator\PostDay.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\decorator\QuestionWeightDay.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\decorator\QuestionWeightDay.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\TagLike.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\TagLike.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\component\AnswerTagLike.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\component\AnswerTagLike.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\component\QuestionTagLike.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\component\QuestionTagLike.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\decorator\PostTagLike.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\decorator\PostTagLike.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\User.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\User.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\component\AnswerEdgeUser.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\component\AnswerEdgeUser.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\component\QuestionEdgeUser.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\component\QuestionEdgeUser.java">
 </file>
-<file name="C:\Users\Giovanni Marcello Al\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\decorator\WeightUser.java">
+<file name="C:\Users\Master\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\decorator\WeightUser.java">
 </file>
 </checkstyle>

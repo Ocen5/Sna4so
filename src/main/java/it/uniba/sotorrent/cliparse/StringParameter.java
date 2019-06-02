@@ -10,7 +10,9 @@ class StringParameter extends Parameter {
 
 	/**
 	 * Constructor sets attribute.
-	 * @param attribute
+	 * 
+	 * @param attribute The boolean attribute of the parameter.
+	 * @param value The integer value of parameter.
 	 */
 	StringParameter(final StringAttribute attribute, final String value) {
 

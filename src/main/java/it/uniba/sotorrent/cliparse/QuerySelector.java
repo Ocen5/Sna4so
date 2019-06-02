@@ -13,15 +13,38 @@ import it.uniba.sotorrent.soqueries.user.component.QuestionEdgeUser;
 import it.uniba.sotorrent.soqueries.user.component.AnswerEdgeUser;
 import it.uniba.sotorrent.soqueries.user.decorator.WeightUser;
 
+/**
+ * <<Control>>
+ * This class implements QuerySelectorI and selects the right query based on
+ * the parameters.
+ * @author codd
+ *
+ */
 public class QuerySelector implements QuerySelectorI {
 
+	/**
+	 * Parameter set for the selection of the query.
+	 */
 	private final ParameterSet parameters;
 
+	/**
+	 * The constructor selects query according to parameter set.
+	 * 
+	 * @param params Parameter set for query.
+	 */
 	public QuerySelector(final ParameterSet params) {
+
 		parameters = params;
+
 	}
 
-	public  SOQueryI selectQuery() throws IllegalArgumentException {
+	/**
+	 * Selects the right query.
+	 * 
+	 * @return SOQueryI The selected query.
+	 * @throws IllegalArgumentException Wrong parameters passed.
+	 */
+	public SOQueryI selectQuery() throws IllegalArgumentException {
 
 		/* WARNING!
 		 * For each type of query check if there aren't attribute of other query.
@@ -59,7 +82,12 @@ public class QuerySelector implements QuerySelectorI {
 
 	}
 
-
+	/**
+	 * Gets the query on users connected to a specific user.
+	 * 
+	 * @return SOQueryI The selected query.
+	 * @throws IllegalArgumentException Wrong parameters passed.
+	 */
 	private SOQueryI getQueryUser() throws IllegalArgumentException {
 
 		if (containsParameter("type")) {
@@ -140,8 +168,12 @@ public class QuerySelector implements QuerySelectorI {
 		return null;
 	}
 
-
-
+	/**
+	 * Gets the query on users about a tag in a specific month.
+	 * 
+	 * @return SOQueryI The selected query.
+	 * @throws IllegalArgumentException Wrong parameters passed.
+	 */
 	private SOQueryI getQueryTaglike() throws IllegalArgumentException {
 
 		if (containsParameter("type")) {
@@ -214,8 +246,12 @@ public class QuerySelector implements QuerySelectorI {
 		return null;
 	}
 
-
-
+	/**
+	 * Gets the query on users of a specific day.
+	 * 
+	 * @return SOQueryI The selected query.
+	 * @throws IllegalArgumentException Wrong parameters passed.
+	 */
 	private SOQueryI getQueryDay() throws IllegalArgumentException {
 
 		if (containsParameter("type")) {
@@ -315,8 +351,12 @@ public class QuerySelector implements QuerySelectorI {
 		return null;
 	}
 
-
-
+	/**
+	 * This method checks if there's the passed name parameter in the parameter set.
+	 * 
+	 * @param nameParameter The name of the parameter to check.
+	 * @return true If there's the parameter name.
+	 */
 	private Boolean containsParameter(final String nameParameter) {
 
 		for (Parameter p : parameters) {
@@ -328,8 +368,13 @@ public class QuerySelector implements QuerySelectorI {
 		return false;
 	}
 
-
-
+	/**
+	 * This method gets the parameter by its name.
+	 * 
+	 * @param nameParameter The name of the parameter.
+	 * @return Parameter Gets the parameter.
+	 * @throws IllegalArgumentException Parameter not found.
+	 */
 	private Parameter getParameter(final String nameParameter) {
 
 		for (Parameter p : parameters) {

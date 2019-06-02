@@ -17,9 +17,8 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 
 /**
- * <<boundary>>
- * Class for running a query on Stack Overflow via Google's BigQuery service.
- * Inherits for running new query.
+ * <<Boundary>>
+ * Class to run a query on Stack Overflow via Google's BigQuery service.
  */
 public class GoogleBigQueryUtils implements GoogleBigQueryI {
 
@@ -35,8 +34,9 @@ public class GoogleBigQueryUtils implements GoogleBigQueryI {
 
 	/**
 	 * Default constructor, instantiates BigQuery API service.
-	 * @throws FileNotFoundException The remote JSON file with credential is 404
-	 * @throws IOException Malformed JSON file
+	 * 
+	 * @throws FileNotFoundException The remote JSON file with credential is 404.
+	 * @throws IOException Malformed JSON file.
 	 */
 	public GoogleBigQueryUtils() throws FileNotFoundException, IOException {
 
@@ -47,9 +47,10 @@ public class GoogleBigQueryUtils implements GoogleBigQueryI {
 
 	/**
 	 * Starts the query.
-	 * @param query Query to run
-	 * @return Job The job associated to the query
-	 * @throws InterruptedException Raised on timeouts
+	 * 
+	 * @param query Query to run.
+	 * @return Job The job associated to the query.
+	 * @throws InterruptedException Raised on timeouts.
 	 */
 	public Job runQuery(final String query) throws InterruptedException {
 
@@ -80,10 +81,11 @@ public class GoogleBigQueryUtils implements GoogleBigQueryI {
 
 	/**
 	 * Returns the results from the query job.
-	 * @param queryJob The job associated to the query
-	 * @return Results as a hash map, with URL as key and view count as value
-	 * @throws JobException Generic error occurred
-	 * @throws InterruptedException Raised on timeouts
+	 * 
+	 * @param queryJob The job associated to the query.
+	 * @return Results as a hash map, with URL as key and view count as value.
+	 * @throws JobException Generic error occurred.
+	 * @throws InterruptedException Raised on timeouts.
 	 */
 	@Override
 	public final TableResult getResults(final Job queryJob) throws JobException, InterruptedException {

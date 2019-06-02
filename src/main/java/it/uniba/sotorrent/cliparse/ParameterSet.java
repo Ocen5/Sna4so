@@ -19,8 +19,8 @@ public class ParameterSet implements Iterable<Parameter> {
 
 	/**
 	 * Add parameters to an hashSet.
-	 * @param p
-	 * @return parameters
+	 * 
+	 * @param param The parameter to add.
 	 */
 	void add(final Parameter param) {
 
@@ -30,13 +30,13 @@ public class ParameterSet implements Iterable<Parameter> {
 
 	/**
 	 * Iterator for parameters of attribute.
-	 * @return parameters
+	 * 
+	 * @return an iterator over the parameters in this set.
 	 */
 	public Iterator<Parameter> iterator() {
 
 		return parameters.iterator();
 
 	}
-
 
 }

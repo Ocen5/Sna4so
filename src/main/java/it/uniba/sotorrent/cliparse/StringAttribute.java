@@ -17,8 +17,9 @@ class StringAttribute extends Attribute implements Iterable<String> {
 
 	/**
 	 * Constructor sets this attribute name and valid values of the domain.
-	 * @param name The name of the attribute
-	 * @param validValues Valid values for the attribute
+	 * 
+	 * @param name The name of the attribute.
+	 * @param values Valid values for the attribute.
 	 */
 	StringAttribute(final String name, final String[] values) {
 
@@ -33,7 +34,8 @@ class StringAttribute extends Attribute implements Iterable<String> {
 
 	/**
 	 * Iterator for valid values.
-	 * @return validValues Valid values of the attribute
+	 * 
+	 * @return an iterator over the valid values in this set.
 	 */
 	public Iterator<String> iterator() {
 

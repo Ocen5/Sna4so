@@ -4,12 +4,14 @@ import it.uniba.sotorrent.soqueries.day.Day;
 import it.uniba.sotorrent.soqueries.day.component.QuestionEdgeDay;
 
 /**
- * <<entity>>
- * This class extends Day for run query from questions table with year, month, day, limit (weight).
+ * <<Entity>>
+ * This class extends Day to run query from questions table with year, month, day and limit (weight).
  */
 public class QuestionWeightDay extends Day {
+
 	/**
-	 * Default constructor, init variables of the query.
+	 * Constructor initializes variables for the query.
+	 * 
 	 * @param year	The year parameter to be inserted in the query.
 	 * @param month	The month parameter to be inserted in the query.
 	 * @param day 	The day parameter to be inserted in the query.
@@ -22,7 +24,7 @@ public QuestionWeightDay(final Integer year, final Integer month, final Integer 
 	}
 
 	/**
-	 * @return String with field weight of query
+	 * @return String with field weight of query.
 	 */
 	public String getQueryString() {
 
@@ -32,4 +34,5 @@ public QuestionWeightDay(final Integer year, final Integer month, final Integer 
 		return edge.getQuery().toString();
 
 	}
+
 }

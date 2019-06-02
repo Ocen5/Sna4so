@@ -5,40 +5,47 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * 
+ * <<Control>>
+ * This class implements CLItoParametersI. It takes parameters for the
+ * query, parses them and finally give back the query.
  * @author codd
  *
  */
 public class CLItoParameters implements CLItoParametersI {
 
 	/**
-	 * A List of Attribute
+	 * The List of Attributes.
 	 */
 	private List<Attribute> attributeSet = new ArrayList<Attribute>();
 
 	/**
-	 * Default Constructor wich build and add 9 type of Attribute : 
-	 * year, month, day, taglike, user, limit, type, edge and weight
+	 * Default Constructor which build and add 9 type of Attribute:
+	 * year, month, day, taglike, user, limit, type, edge and weight.
 	 */
 	public CLItoParameters() {
 
 		//create attributeSet
-		Attribute year = new NaturalAttribute("yyyy", 2019, 2008);
+		final Integer maxYear = 2019, minYear = 2008;
+		Attribute year = new NaturalAttribute("yyyy", maxYear, minYear);
 		attributeSet.add(year);
 
-		Attribute month = new NaturalAttribute("mm", 12, 1);
+		final Integer maxMonth = 12, minMonth = 1;
+		Attribute month = new NaturalAttribute("mm", maxMonth, minMonth);
 		attributeSet.add(month);
 
-		Attribute day = new NaturalAttribute("dd", 31, 1);
+		final Integer maxDay = 31, minDay = 1;
+		Attribute day = new NaturalAttribute("dd", maxDay, minDay);
 		attributeSet.add(day);
 
 		Attribute taglike = new StringAttribute("taglike", new String[0]);
 		attributeSet.add(taglike);
 
-		Attribute user = new NaturalAttribute("user", 11142405, 1);
+		final Integer maxUser = 11142405, minUser = 1;
+		Attribute user = new NaturalAttribute("user", maxUser, minUser);
 		attributeSet.add(user);
 
-		Attribute limit = new NaturalAttribute("limit", 500, 0);
+		final Integer maxLimit = 500, minLimit = 0;
+		Attribute limit = new NaturalAttribute("limit", maxLimit, minLimit);
 		attributeSet.add(limit);
 
 		Attribute type = new StringAttribute("type", new String[] {"question", "answer", "post"});
@@ -54,7 +61,11 @@ public class CLItoParameters implements CLItoParametersI {
 	}
 
 	/**
-	 * @return paramSet ParameterSet which contains the input parameters to the query
+	 * This method parses the parameter got from CLI.
+	 * 
+	 * @param args The command line inputs.
+	 * @return paramSet ParameterSet which contains the input parameters to the query.
+	 * @throws IllegalArgumentException Wrong parameter passed from CLI.
 	 */
 	public ParameterSet parseCLI(final String[] args) throws IllegalArgumentException {
 
@@ -120,11 +131,12 @@ public class CLItoParameters implements CLItoParametersI {
 	}
 
 	/**
+	* This method checks passed value and builds the natural parameter.
 	* 
- 	* @param attribute
- 	* @param value
- 	* @return
- 	* @throws IllegalArgumentException
+ 	* @param attribute The natural attribute.
+ 	* @param value The natural value.
+ 	* @return NaturalParameter The natural parameter parses.
+ 	* @throws IllegalArgumentException Wrong value passed from CLI.
  	*/
 	private NaturalParameter buildNaturalParameter(final NaturalAttribute attribute, final Integer value)
 			throws IllegalArgumentException {
@@ -138,8 +150,14 @@ public class CLItoParameters implements CLItoParametersI {
 
 	}
 
-
-
+	/**
+	 * This method checks passed value and builds the string parameter.
+	 * 
+	 * @param attribute The string attribute.
+	 * @param value value The string value.
+	 * @return StringParameter The string parameter parses.
+	 * @throws IllegalArgumentException Wrong value passed from CLI.
+	 */
 	private StringParameter buildStringParameter(final StringAttribute attribute, final String value)
 			throws IllegalArgumentException {
 
@@ -159,6 +177,14 @@ public class CLItoParameters implements CLItoParametersI {
 
 	}
 
+	/**
+	 * This method checks passed value and builds the boolean parameter.
+	 * 
+	 * @param attribute The boolean attribute.
+	 * @param value The boolean value.
+	 * @return BooleanParameter The boolean parameter parses.
+	 * @throws IllegalArgumentException Wrong value passed from CLI.
+	 */
 	private BooleanParameter buildBooleanParameter(final BooleanAttribute attribute, final String value)
 			throws IllegalArgumentException {
 

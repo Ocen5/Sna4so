@@ -4,21 +4,21 @@ import it.uniba.sotorrent.soqueries.SOQueryI;
 import it.uniba.sotorrent.soqueries.user.User;
 
 /**
- * <<entity>>
- * This class implements SOQueryI for queries with user, limit.
+ * <<Entity>>
+ * This class implements SOQueryI for queries with user and limit.
  */
 public class WeightUser implements SOQueryI {
 
 	/**
-	 * The edge user query needed for add the weight of edge
+	 * The edge value.
 	 */
 	private User edge;
-	
+
 	/**
-	 * Constructor that set User parameter
-	 * @param query the user query with edge
+	 * Constructor sets User query.
+	 * 
+	 * @param query The user query with edge.
 	 */
-	
 	public WeightUser(final User query) {
 
 		super();
@@ -27,7 +27,7 @@ public class WeightUser implements SOQueryI {
 	}
 
 	/**
-	 * @return String with field weight of query
+	 * @return the query in string format.
 	 */
 	public String getQueryString() {
 

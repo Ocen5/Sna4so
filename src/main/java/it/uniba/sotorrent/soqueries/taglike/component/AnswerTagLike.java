@@ -4,19 +4,23 @@ import it.uniba.sotorrent.soqueries.Query;
 import it.uniba.sotorrent.soqueries.taglike.TagLike;
 
 /**
- * <<entity>>
- * This class extends TagLike for run query from answers table with year, month, taglike, limit.
+ * <<Entity>>
+ * This class extends TagLike to run query from answers table with year, month, tags and limit.
  */
 public class AnswerTagLike extends TagLike {
 
+	/**
+	 * The query.
+	 */
 	private Query query = new Query();
 
 	/**
-	 * Default constructor, init variables of the query.
+	 * Constructor initializes variables for the query.
+	 * 
 	 * @param year	The year parameter to be inserted in the query.
 	 * @param month	The month parameter to be inserted in the query.
-	 * @param taglike The taglike parameter to be inserted in the query.
-	 * @param lim 	The limit parameter to be inserted in the query.
+	 * @param taglike The tag parameter to be inserted in the query.
+	 * @param lim The limit parameter to be inserted in the query.
 	**/
 	public AnswerTagLike(final Integer year, final Integer month, final String taglike, final Integer lim) {
 
@@ -25,6 +29,9 @@ public class AnswerTagLike extends TagLike {
 
 	}
 
+	/**
+	 * This method builds the query.
+	 */
 	private void buildQuery() {
 
 		query.setSelect("`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id");
@@ -37,7 +44,7 @@ public class AnswerTagLike extends TagLike {
 			+ "extract(month FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)="
 			+ getMonth()
 			+ " AND " + "`bigquery-public-data.stackoverflow.posts_questions`.tags like"
-			+ " CONCAT('%\"" + getTaglike() + "\"%')"
+			+ " CONCAT('%" + getTaglike() + "%')"
 			+ " AND " + "`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0");
 		query.setGroup("`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id");
 		query.setOrder("`bigquery-public-data.stackoverflow.posts_answers`.owner_user_id ASC");
@@ -46,7 +53,7 @@ public class AnswerTagLike extends TagLike {
 	}
 
 	/**
-	 * @return query That is the query AnswerTagLike
+	 * @return query That is the query AnswerTagLike.
 	 */
 	public Query getQuery() {
 
@@ -55,12 +62,12 @@ public class AnswerTagLike extends TagLike {
 	}
 
 	/**
-	 * @return method toString of the query
+	 * @return method toString of the query.
 	 */
-	@Override
 	public String getQueryString() {
 
 		return query.toString();
 
 	}
+
 }

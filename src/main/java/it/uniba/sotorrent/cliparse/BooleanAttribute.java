@@ -20,7 +20,8 @@ class BooleanAttribute extends Attribute {
 
 	/**
 	 * Constructor sets this attribute name and boolean values of the domain.
-	 * @param name The boolean value for the attribute
+	 * 
+	 * @param name The boolean value for the attribute.
 	 */
 	BooleanAttribute(final String name) {
 
@@ -30,7 +31,8 @@ class BooleanAttribute extends Attribute {
 
 	/**
 	 * Get true value for attribute.
-	 * @return ifTrue True value of the attribute
+	 * 
+	 * @return ifTrue True value of the attribute.
 	 */
 	String getTrue() {
 
@@ -40,7 +42,8 @@ class BooleanAttribute extends Attribute {
 
 	/**
 	 * Get false value for attribute.
-	 * @return ifFalse False value for the attribute
+	 * 
+	 * @return ifFalse False value for the attribute.
 	 */
 	String getFalse() {
 

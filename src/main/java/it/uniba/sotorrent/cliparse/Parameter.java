@@ -1,6 +1,5 @@
 package it.uniba.sotorrent.cliparse;
 
-
 /**
  * <<Entity>>
  * This class represents a parameter with an attribute and a value.
@@ -21,8 +20,9 @@ abstract class Parameter {
 
 	/**
 	 * Constructor sets this Parameter.
-	 * @param attribute of Parameter.
-	 * @param value of Parameter.
+	 * 
+	 * @param att The attribute of Parameter.
+	 * @param val The value of Parameter.
 	 */
 	Parameter(final Attribute att, final Object val) {
 
@@ -33,7 +33,8 @@ abstract class Parameter {
 
 	/**
 	 * Get attribute.
-	 * @return attribute Attribute value
+	 * 
+	 * @return attribute Attribute value.
 	 */
 	Attribute getAttribute() {
 
@@ -43,34 +44,51 @@ abstract class Parameter {
 
 	/**
 	 * Gets the value of parameter.
-	 * @return value
+	 * 
+	 * @return value.
 	 */
 	Object getValue() {
+
 		return value;
+
 	}
 
-
+	/**
+	 * This method returns the parameter name, it's the attribute name.
+	 * 
+	 * @return String The parameter name.
+	 */
 	public String toString() {
 
 		return attribute.toString();
 
 	}
 
+	/**
+	 * This method checks if parameter names are equal.
+	 * 
+	 * @param parameter The parameter to compare.
+	 * @return boolean True when passed parameter name equals to this parameter name.
+	 */
+	public boolean equals(final Object parameter) {
 
-	//serve solo a parameter set (per l'hashset)
-	public boolean equals(final Object o) {
-
-		if (o != null) {
-			return (toString().equals(o.toString()));
+		if (parameter != null) {
+			return (toString().equals(parameter.toString()));
 		}
 
 		return false;
 
 	}
 
-
+	/**
+	 * This method is supported for the benefit of hashset.
+	 * 
+	 * @return int The hashcode value for parameter.
+	 */
 	public int hashCode() {
-	    return attribute.hashCode();
+
+		return attribute.hashCode();
+
 	  }
 
 }

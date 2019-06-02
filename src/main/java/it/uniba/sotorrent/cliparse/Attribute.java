@@ -15,7 +15,8 @@ abstract class Attribute {
 
 	/**
 	 * Constructor sets this name with parameter.
-	 * @param name The name of the attribute
+	 *
+	 * @param attributeName The name of the attribute.
 	 */
 	Attribute(final String attributeName) {
 
@@ -25,7 +26,8 @@ abstract class Attribute {
 
 	/**
 	 * Get name of attribute.
-	 * @return name The name of the attribute
+	 *
+	 * @return name The name of the attribute.
 	 */
 	String getAttribute() {
 
@@ -34,7 +36,7 @@ abstract class Attribute {
 	}
 
 	/**
-	 * @return name String with the name of attribute
+	 * @return name String with the name of attribute.
 	 */
 	public String toString() {
 
@@ -43,12 +45,15 @@ abstract class Attribute {
 	}
 
 	/**
-	 * @return true if attribute in input is equal to this, false otherwise
+	 * This method checks if attribute names are equal.
+	 * 
+	 * @param attribute The attribute to compare.
+	 * @return true if attribute in input is equal to this, false otherwise.
 	 */
-	public boolean equals(final Object o) {
+	public boolean equals(final Object attribute) {
 
-		if (o != null) {
-			return toString().equals(o.toString());
+		if (attribute != null) {
+			return toString().equals(attribute.toString());
 		}
 
 		return false;
@@ -56,10 +61,14 @@ abstract class Attribute {
 	}
 
 	/**
-	 * @return name.hashCode() the hash code computed on the name of attribute
+	 * This method is supported for the benefit of hashset.
+	 *
+	 * @return The hashcode value for attribute.
 	 */
 	public int hashCode() {
+
 	    return name.hashCode();
+
 	  }
 
 }
