@@ -4,19 +4,28 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.security.GeneralSecurityException;
+
+import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobException;
 import com.google.cloud.bigquery.TableResult;
 
-import it.uniba.sotorrent.CLI4SOQuery;
-import it.uniba.sotorrent.GoogleDocsUtils;
-import it.uniba.sotorrent.SOQuerySelector;
-import it.uniba.sotorrent.soquery.ISOQuery;
+import it.uniba.sotorrent.googleutils.GoogleBigQueryI;
+import it.uniba.sotorrent.googleutils.GoogleBigQueryUtils;
+import it.uniba.sotorrent.googleutils.GoogleDocI;
+import it.uniba.sotorrent.googleutils.GoogleDocUtils;
+
+import it.uniba.sotorrent.cliparse.CLItoParameters;
+import it.uniba.sotorrent.cliparse.CLItoParametersI;
+import it.uniba.sotorrent.cliparse.ParameterSet;
+import it.uniba.sotorrent.cliparse.QuerySelector;
+import it.uniba.sotorrent.cliparse.QuerySelectorI;
+import it.uniba.sotorrent.soqueries.SOQueryI;
 
 
 /**
- * <<control>>
- * The main class for the project. It must be customized to meet the project
- * assignment specifications.
+ * <<Control>>
+ * The main class of SNA4SO.
  * 
  * <b>DO NOT RENAME</b>
  */
@@ -24,67 +33,71 @@ import it.uniba.sotorrent.soquery.ISOQuery;
 public final class AppMain {
 
 	/**
-	 * Private constructor. Change if needed.
+	 * Default constructor.
 	 */
 	private AppMain() {
 
 	}
 
 	/**
-	 * 	 * This is the main entry of the application.
+	 * This is the main entry of the application.
 	 *
-	 * @param args The command-line arguments. 
+	 * @param args The command-line arguments.
+	 * @throws IOException 
+	 * @throws InterruptedException 
+	 * @throws URISyntaxException 
+	 * @throws GeneralSecurityException 
 	 * 
-	 * @throws FileNotFoundException See stack trace for proper location.
-	 * @throws IOException  See stack trace for proper location.
-	 * @throws InterruptedException  See stack trace for proper location.
-	 * @throws GeneralSecurityException  See stack trace for proper location.
-	 * @throws URISyntaxException  See stack trace for proper location.
-	 * @throws Exception located in CLI4SOQuery.
-	 *
 	 */
-
-	public static void main(final String[] args) throws FileNotFoundException, IOException, InterruptedException, Exception
-	{
+	public static void main(final String[] args) throws IOException, InterruptedException, GeneralSecurityException, URISyntaxException {
 
 		System.out.println("Current working dir: " + System.getProperty("user.dir"));
 
+		//Build query
+		String query = "";
+
 		//Take valid values from args.
-		CLI4SOQuery params = new CLI4SOQuery(args);
+		CLItoParametersI parse = new CLItoParameters();
+		ParameterSet params = parse.parseCLI(args);
 
 		//Select the right query by parameters
-		SOQuerySelector selector = new SOQuerySelector(params.getParameters());
+		QuerySelectorI selector = new QuerySelector(params);
 
 		//Get query
-		ISOQuery soq = selector.getQuery();
-		String nameQuery = selector.getNameQuery();
+		SOQueryI soq = selector.selectQuery();
+		query = soq.getQueryString();
+
+		//Take the result of query job
+		TableResult res = null;
+
+		//BigQuery Service
+		GoogleBigQueryI bigquery = new GoogleBigQueryUtils();
 
 		//Run query
-		Job job = soq.runQuery();
+		Job job = bigquery.runQuery(query);
 
 		//Get result
-		TableResult res = soq.getResults(job);
+		res = bigquery.getResults(job);
+
+
+		//Set name sheet
+		StringBuffer buf = new StringBuffer();
+		for (int i = 0; i < args.length; i++) {
+			buf.append(args[i]);
+		}
+		String sheetName = buf.toString();
+
 
 		//Write sheet with results
-		GoogleDocsUtils ut = new GoogleDocsUtils();
-		String spid = ut.createSheet("SNA4SO - " + nameQuery);
+		GoogleDocI ut = new GoogleDocUtils();
+
+		String spid = ut.createSheet("SNA4SO - " + sheetName);
+
 		ut.shareSheet(spid);
 		ut.getSheetByTitle(spid);
 		ut.writeSheet(spid, res);
 
-		/*
-		 * Parte provvisioria da eliminare alla fine del progetto
-		 * elimina lo spreadsheet dopo aver premuto invio
-		 */
-		/*
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Premi invio per continuare. ");
-		sc.nextLine();
-		ut.deleteSheet(spid);
-		System.out.println("Foglio eliminato");
-		sc.close();
-		 */
-	}
 
+	}
 
 }

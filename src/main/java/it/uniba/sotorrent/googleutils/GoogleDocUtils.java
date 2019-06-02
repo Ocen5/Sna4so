@@ -36,8 +36,8 @@ import com.google.cloud.bigquery.FieldValueList;
 import com.google.cloud.bigquery.TableResult;
 
 /**
- * <<boundary>>
- * Utility class for creating, sharing, and deleting Google spreadsheets.
+ * <<Boundary>>
+ * Utility class to create, share and delete Google spreadsheet.
  * For more, refer to <a href="https://developers.google.com/sheets/api/samples/">this documentation</a>.
  */
 public class GoogleDocUtils implements GoogleDocI {
@@ -88,12 +88,13 @@ public class GoogleDocUtils implements GoogleDocI {
 
 	/**
 	 * Performs Google authentication process.
-	 * @return Credential object
-	 * @throws IOException Generic I/O error
-	 * @throws GeneralSecurityException Failed authentication
-	 * @throws URISyntaxException Malformed URI
+	 * 
+	 * @return Credential object.
+	 * @throws IOException Generic I/O error.
+	 * @throws GeneralSecurityException Failed authentication.
+	 * @throws URISyntaxException Malformed URI.
 	 */
-	private Credential authorize() throws IOException, GeneralSecurityException, URISyntaxException {
+	private Credential authorize() throws IOException, URISyntaxException, GeneralSecurityException {
 		GoogleCredential authCred = GoogleCredential.fromStream(new URL(URL).openStream()).toBuilder()
 					.setServiceAccountScopes(SCOPES).build();
 		return authCred;
@@ -102,10 +103,11 @@ public class GoogleDocUtils implements GoogleDocI {
 
 	/**
 	 * Instantiates the the Google Sheets service.
-	 * @return Instance of the Google Sheets service
-	 * @throws IOException Generic I/O error
-	 * @throws GeneralSecurityException Failed authentication
-	 * @throws URISyntaxException Malformed URI
+	 * 
+	 * @return Instance of the Google Sheets service.
+	 * @throws IOException Generic I/O error.
+	 * @throws GeneralSecurityException Failed authentication.
+	 * @throws URISyntaxException Malformed URI.
 	 */
 	private Sheets getSheetsService() throws IOException, GeneralSecurityException, URISyntaxException {
 		return new Sheets.Builder(GoogleNetHttpTransport.newTrustedTransport(),
@@ -116,10 +118,11 @@ public class GoogleDocUtils implements GoogleDocI {
 
 	/**
 	 * Instantiates the the Google Drive service.
-	 * @return Instance of the Google Drive service
-	 * @throws IOException Generic I/O error
-	 * @throws GeneralSecurityException Failed authentication
-	 * @throws URISyntaxException Malformed URI
+	 * 
+	 * @return Instance of the Google Drive service.
+	 * @throws IOException Generic I/O error.
+	 * @throws GeneralSecurityException Failed authentication.
+	 * @throws URISyntaxException Malformed URI.
 	 */
 	private Drive getDriveService() throws IOException, GeneralSecurityException, URISyntaxException {
 		return new Drive.Builder(GoogleNetHttpTransport.newTrustedTransport(),
@@ -130,9 +133,10 @@ public class GoogleDocUtils implements GoogleDocI {
 
 	/**
 	 * Creates a new sheet on every execution.
-	 * @param title Spreadsheet title
-	 * @return The spreadsheet id
-	 * @throws IOException Generic I/O error
+	 * 
+	 * @param title Spreadsheet title.
+	 * @return The spreadsheet id.
+	 * @throws IOException Generic I/O error.
 	 */
 	public String createSheet(final String title) throws IOException {
 		Spreadsheet spreadsheet = new Spreadsheet().setProperties(new SpreadsheetProperties().setTitle(title));
@@ -146,8 +150,9 @@ public class GoogleDocUtils implements GoogleDocI {
 
 	/**
 	 * Returns the spreadsheet id by title.
-	 * @param spid The spreadsheet id
-	 * @throws IOException Generic I/O error
+	 * 
+	 * @param spid The spreadsheet id.
+	 * @throws IOException Generic I/O error.
 	 */
 	public void getSheetByTitle(final String spid) throws IOException {
 			Sheets.Spreadsheets.Get request = sheetsService.spreadsheets().get(spid);
@@ -159,9 +164,10 @@ public class GoogleDocUtils implements GoogleDocI {
 	/**
 	 * Write results to the spreadsheet.
 	 * Also, see <a href="https://developers.google.com/sheets/api/guides/values">here</a>.
-	 * @param spid The spreadsheet id
-	 * @param res The hash map of the results, with URL as key and view count as value
-	 * @throws IOException Generic I/O error
+	 * 
+	 * @param spid The spreadsheet id.
+	 * @param res The hash map of the results, with URL as key and view count as value.
+	 * @throws IOException Generic I/O error.
 	 */
 	public void writeSheet(final String spid, final TableResult res) throws IOException {
 		List<Request> requests = new ArrayList<>();
@@ -213,10 +219,11 @@ public class GoogleDocUtils implements GoogleDocI {
 
 	/**
 	 * Makes the spreadsheet readable to anyone with the link.
-	 * @param spid The spreadsheet id
-	 * @throws IOException Generic I/O error
-	 * @throws GeneralSecurityException Failed authentication
-	 * @throws URISyntaxException Malformed URI
+	 * 
+	 * @param spid The spreadsheet id.
+	 * @throws IOException Generic I/O error.
+	 * @throws GeneralSecurityException Failed authentication.
+	 * @throws URISyntaxException Malformed URI.
 	 */
 	public void shareSheet(final String spid) throws IOException, GeneralSecurityException, URISyntaxException {
 
@@ -245,8 +252,9 @@ public class GoogleDocUtils implements GoogleDocI {
 	// Intentionally not used it. Use it to delete a sheet.
 	/**
 	 * Deletes a spreadsheet.
-	 * @param spid The spreadsheet id
-	 * @throws IOException Generic I/O error
+	 * 
+	 * @param spid The spreadsheet id.
+	 * @throws IOException Generic I/O error.
 	 */
 	@SuppressWarnings("unused")
 	private void deleteSheet(final String spid) throws IOException {
