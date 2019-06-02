@@ -11,13 +11,10 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.security.GeneralSecurityException;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
 
+import java.util.List;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.google.api.client.auth.oauth2.Credential;
@@ -27,13 +24,14 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.drive.Drive;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.SheetsScopes;
-import com.google.api.services.sheets.v4.model.Spreadsheet;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobException;
 import com.google.cloud.bigquery.TableResult;
 
+import it.uniba.sotorrent.googleutils.GoogleBigQueryI;
+import it.uniba.sotorrent.googleutils.GoogleBigQueryUtils;
 import it.uniba.sotorrent.googleutils.GoogleDocUtils;
-import it.uniba.sotorrent.soquery.SOQueryQuestionUsrEdge;
+import it.uniba.sotorrent.soqueries.user.component.QuestionEdgeUser;
 
 
 
@@ -76,8 +74,10 @@ class GoogleDocsUtilsTest {
 				.setApplicationName(APPLICATION_NAME).build();
 
 		//query fasulla per provare la scrittura sul foglio
-		SOQueryQuestionUsrEdge soqf= new SOQueryQuestionUsrEdge(1111,10);
-		Job queryJobf = soqf.runQuery();
+		QuestionEdgeUser soqf= new QuestionEdgeUser(1111,10);
+		GoogleBigQueryI gb =new GoogleBigQueryUtils();
+		Job queryJobf= gb.runQuery(soqf.getQueryString());
+		
 		res= queryJobf.getQueryResults();
 		try {
 			ut.shareSheet(spid);

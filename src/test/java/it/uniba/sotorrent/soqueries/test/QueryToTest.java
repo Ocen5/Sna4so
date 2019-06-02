@@ -52,7 +52,7 @@ public final class QueryToTest{
 				+ "FROM `bigquery-public-data.stackoverflow.posts_questions` "
 				+ "WHERE extract(year from creation_date)=2016 "
 				+ "AND extract(month from creation_date)=2 "
-				+ "AND tags like CONCAT('%\"java\"%') "
+				+ "AND tags like CONCAT('%java%') "
 				+ "AND owner_user_id > 0 GROUP BY owner_user_id "
 				+ "ORDER BY owner_user_id ASC LIMIT 100";
 
@@ -105,7 +105,7 @@ public final class QueryToTest{
 				+ "FROM `bigquery-public-data.stackoverflow.posts_questions` "
 				+ "WHERE extract(year from creation_date)=2016 "
 				+ "AND extract(month from creation_date)=2 "
-				+ "AND tags like CONCAT('%\"java\"%') "
+				+ "AND tags like CONCAT('%java%') "
 				+ "AND owner_user_id > 0 "
 				+ "UNION DISTINCT "
 				+ "SELECT `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id "
@@ -115,7 +115,7 @@ public final class QueryToTest{
 				+ "`bigquery-public-data.stackoverflow.posts_answers`.parent_id "
 				+ "WHERE extract(year FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=2016 "
 				+ "AND extract(month FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=2 "
-				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.tags like CONCAT('%\"java\"%') "
+				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.tags like CONCAT('%java%') "
 				+ "AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
 				+ "GROUP BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id "
 				+ "ORDER BY owner_user_id LIMIT 100";
@@ -168,7 +168,7 @@ public final class QueryToTest{
 				+ "`bigquery-public-data.stackoverflow.posts_answers`.parent_id "
 				+ "WHERE extract(year FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=2016 "
 				+ "AND extract(month FROM `bigquery-public-data.stackoverflow.posts_answers`.creation_date)=2 "
-				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.tags like CONCAT('%\"java\"%') "
+				+ "AND `bigquery-public-data.stackoverflow.posts_questions`.tags like CONCAT('%java%') "
 				+ "AND `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id > 0 "
 				+ "GROUP BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id "
 				+ "ORDER BY `bigquery-public-data.stackoverflow.posts_answers`.owner_user_id ASC LIMIT 100";
