@@ -57,7 +57,7 @@ Noi componenti del gruppo, cioè Aloia Marcello Giovanni, Antonacci Michele, Bel
 
 ## 2. Modello di dominio
 
-![](doc/drawings/diagrammi/modello-dominio.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/modello-dominio.png)
 
 ## 3. Requisiti Specifici
 
@@ -287,7 +287,7 @@ Nello sprint 2 abbiamo deciso di identificare un servizio per l'analisi dei para
 
 Infine, nello sprint 3, abbiamo separato ulteriormente le responsabilità delle componenti distinguendo, in accordo con la Tassonomia ECB, le componenti per connettersi ai servizi forniti da Google Cloud Platform, le query idonee al database di Stack Overflow, implementato il servizio per l'analisi dei parametri in input dividendolo in più componenti, rispettando la suddetta tassonomia.
 
-## 5. OO Design
+## 5. OO Design:
 
 #### 5.1. Diagramma delle classi e diagramma di sequenza
 
