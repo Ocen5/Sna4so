@@ -58,7 +58,6 @@
 	<!-- <property name="fileExtensions" value="java"/> -->
 	<!-- </module> -->
 
-
 	<module name="TreeWalker">
 
 		<!-- Checks for Javadoc comments. -->
