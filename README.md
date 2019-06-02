@@ -1,4 +1,4 @@
-﻿# sna4so [![Build Status](https://travis-ci.com/softeng1819-inf-uniba/progetto1819-codd.svg?token=kX4aeeFvWQqaBLBhsjcZ&branch=master)](https://travis-ci.com/softeng1819-inf-uniba/progetto1819-codd) [![Coverage Status](https://coveralls.io/repos/github/softeng1819-inf-uniba/progetto1819-codd/badge.svg?t=fChM1D&service=github)](https://coveralls.io/github/softeng1819-inf-uniba/progetto1819-codd)
+﻿# sna4so [![Build Status](https://travis-ci.com/softeng1819-inf-uniba/progetto1819-codd.svg?token=kX4aeeFvWQqaBLBhsjcZ&branch=master)](https://travis-ci.com/softeng1819-inf-uniba/progetto1819-codd) [![Coverage Status](https://coveralls.io/repos/github/softeng1819-inf-uniba/progetto1819-codd/badge.svg?t=fChM1D)](https://coveralls.io/github/softeng1819-inf-uniba/progetto1819-codd)
 La struttura della repository si presenta nel seguente modo:
 ```
 |-- build
