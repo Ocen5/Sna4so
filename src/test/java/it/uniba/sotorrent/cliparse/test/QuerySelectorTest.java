@@ -57,6 +57,36 @@ class QuerySelectorTest {
 		args[4]="taglike=java";//tag
 		this.qs=new QuerySelector(cli.parseCLI(args));
 	}
+	private void queryAnswerweight() {
+		String args[]= new String[6];
+		args[0]="yyyy=2015";//year
+		args[1]="mm=11";//month
+		args[2]="limit=10";//limit
+		args[3]="type=answer";//type
+		args[4]="taglike=java";//tag
+		args[5]="weight=yes";//weight
+		this.qs=new QuerySelector(cli.parseCLI(args));
+	}
+	private void queryPostWeight() {
+		String args[]= new String[6];
+		args[0]="yyyy=2015";//year
+		args[1]="mm=11";//month
+		args[2]="limit=10";//limit
+		args[3]="type=post";//type
+		args[4]="dd=02";//tag
+		args[5]="weight=yes";//weight
+		this.qs=new QuerySelector(cli.parseCLI(args));
+	}
+	private void queryPostEdge() {
+		String args[]= new String[6];
+		args[0]="yyyy=2015";//year
+		args[1]="mm=11";//month
+		args[2]="limit=10";//limit
+		args[3]="type=post";//type
+		args[4]="dd=02";//tag
+		args[5]="edge=yes";//edge
+		this.qs=new QuerySelector(cli.parseCLI(args));
+	}
 	private void queryQuestiontag() {
 		String args[]= new String[5];
 		args[0]="yyyy=2015";//year
@@ -158,6 +188,15 @@ class QuerySelectorTest {
 		args[3]="type=question";//type
 		this.qs=new QuerySelector(cli.parseCLI(args));
 	}
+	private void selectWrongQuery() {
+		String args[]= new String[4];
+		args[0]="limit=10";//limit
+		args[1]="edge=no";//edge
+		args[2]="user=1";//user
+		args[3]="type=question";//type
+		this.qs=new QuerySelector(cli.parseCLI(args));
+		
+	}
 
 	@Test
 	void test() {
@@ -194,9 +233,17 @@ class QuerySelectorTest {
 				() -> queryQuestionEdgeuser(),
 				() -> assertEquals(QuestionEdgeUser.class, qs.selectQuery().getClass()),
 				() -> queryAnsweruser(),
-				() -> assertEquals(AnswerEdgeUser.class, qs.selectQuery().getClass())
+				() -> assertEquals(AnswerEdgeUser.class, qs.selectQuery().getClass()),
+				() -> queryPostWeight(),
+				() ->assertThrows(IllegalArgumentException.class, ()-> qs.selectQuery()),
+				() -> queryPostEdge(),
+				() ->assertThrows(IllegalArgumentException.class, ()-> qs.selectQuery()),
+				()->queryAnswerweight(),
+				() ->assertThrows(IllegalArgumentException.class, ()-> qs.selectQuery())
 				);
+		selectWrongQuery();
+		assertThrows(IllegalArgumentException.class, ()-> qs.selectQuery());
 	}
 
-	
+
 }
