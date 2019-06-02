@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testsuite name="it.uniba.example.utils.test.MathUtilsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-05-31T13:41:40" hostname="host-3c-54-12-7a" time="0.523">
+  <properties/>
+  <testcase name="Testing sum of integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.314"/>
+  <testcase name="Testing division between integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.2"/>
+=======
+<<<<<<< HEAD
+<testsuite name="it.uniba.example.utils.test.MathUtilsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-05-31T08:22:34" hostname="LAPTOP-155BODB5" time="0.026">
+  <properties/>
+  <testcase name="Testing sum of integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.02"/>
+  <testcase name="Testing division between integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.005"/>
+=======
+<testsuite name="it.uniba.example.utils.test.MathUtilsTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-05-31T08:22:07" hostname="LAPTOP-9OEVE5N9" time="0.03">
+  <properties/>
+  <testcase name="Testing sum of integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.021"/>
+  <testcase name="Testing division between integers" classname="it.uniba.example.utils.test.MathUtilsTest" time="0.008"/>
+>>>>>>> 75757dc46a84abc72d4595a806fc7a413fe5bf1f
+>>>>>>> da7f5c32a3e385c01ddc42bab44a4fef9c80ab63
+  <system-out><![CDATA[setUpAll
+setUpEach
+teadDownEach
+setUpEach
+teadDownEach
+teadDownAll
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

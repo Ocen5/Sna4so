@@ -2,7 +2,7 @@ package it.uniba.sotorrent.soqueries;
 
 /**
  * <<Entity>>
- * Abstract class for compose the queries.
+ * Interface to compose the queries.
  * @author Codd
  */
 public interface SOQueryI {
