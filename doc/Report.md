@@ -15,7 +15,7 @@
 - ***[4.3. Diagramma dei componenti]( #4.2.-diagramma-dei-componenti)***
 - ***[4.4. Commenti inerenti alle decisioni prese]( #4.4.-commenti-inerenti-alle-decisioni-prese)***
 
-***[5. OO Design:](#5.-oo-design:)***
+***[5. OO Design:](#5.-oo-design)***
 
 - ***[5.1. Diagrammi delle classi e diagrammi di sequenza](#5.1.-diagrammi-delle-classi-e-diagrammi-di-sequenza)***
 
@@ -271,11 +271,11 @@ Lo stile architetturale adottato per la progettazione del software è il ***Pipe
 
 #### 4.2. Diagramma dei package
 
-![](doc/drawings/diagrammi/diagramma-package.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/diagramma-package.png)
 
 #### 4.3. Diagramma dei componenti
 
-![](doc/drawings/diagrammi/diagramma-componenti.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/diagramma-componenti.png)
 
 Il primo servizio esterno che abbiamo utilizzato per interagire con il database messo a disposizione da Stack Overflow è l'API di ***Google BigQuery***, che permette un'analisi di grandi set di dati utilizzando come linguaggio l'SQL Standard. Il secondo servizio esterno è l'API di ***Google Spreadsheet*** che, attraverso un foglio di calcolo elettronico, permette di visualizzare il risultato della query (cioè l'interrogazione da parte di un utente al database). L'ultimo servizio esterno è l'API di ***Google Drive*** che, attraverso un indirizzo URL (fornito da Google Spreadsheet), consente di salvare lo spreadsheet sul Drive.
 
@@ -293,19 +293,19 @@ Infine, nello sprint 3, abbiamo separato ulteriormente le responsabilità delle 
 
 *Diagramma delle classi per la user story 4 dello sprint 1*:
 
-![](doc/drawings/diagrammi/userstory4-sp1-d-classi.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/userstory4-sp1-d-classi.png)
 
 *Diagramma di sequenza per la user story 4 dello sprint 1*:
 
-![](doc/drawings/diagrammi/userstory4-sp1-d-sequenza.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/userstory4-sp1-d-sequenza.png)
 
 *Diagramma delle classi per la user story 6 dello sprint 2*:
 
-![](doc/drawings/diagrammi/userstory6-sp2-d-classi.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/userstory6-sp2-d-classi.png)
 
 *Diagramma di sequenza per la user story 6 dello sprint 2*:
 
-![](doc/drawings/diagrammi/userstory6-sp2-d-sequenza.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/userstory6-sp2-d-sequenza.png)
 
 #### 5.2. Menzionare l'eventuale applicazione di design pattern
 
@@ -313,7 +313,7 @@ Abbiamo deciso di utilizzare alcuni dei design pattern per ottenere buone soluzi
 
 Il design pattern che abbiamo utilizzato per quanto riguarda quelli di tipo Creational è il ***Factory Method***, ***Decorator*** e ***Flyweight*** per quelli di tipo Structural e infine ***Interpreter*** per i Behavioral patterns.
 
-![](doc/drawings/diagrammi/diagramma-classi-sprint3.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/diagramma-classi-sprint3.png)
 
 #### 5.3. Commenti inerenti alle decisioni prese
 
@@ -325,15 +325,15 @@ Successivamente, avendo un gran numero di entità potenzialmente istanziabili ab
 
 Per quanto riguarda il controllo dei parametri in input da command line per la scelta della query abbiamo creato un package apposito, dovendo separare l'analisi della validità dei parametri in input da quella della scelta della query al fine di rendere facilmente estendibile l'inserimento di nuovi parametri in input e la creazione di una nuova query, anche successivamente. In particolare ci siamo avvalsi dell'Interpreter per definire una grammatica che rendesse più facile il controllo sulla validità degli input, potendo definire il dominio degli attributi.
 
-![](doc/drawings/diagrammi/diagramma-dp1.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/diagramma-dp1.png)
 
-![](doc/drawings/diagrammi/diagramma-dp2.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/diagramma-dp2.png)
 
-![](doc/drawings/diagrammi/diagramma-dp3.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/diagrammi/diagramma-dp3.png)
 
 ## 6. Riepilogo del test
 
-![](doc/drawings/coveralls.png)
+![](https://github.com/softeng1819-inf-uniba/progetto1819-codd/blob/master/doc/drawings/coveralls.png)
 
 Conseguentemente al down di Google Cloud Platform i casi di test che necessitavano di tale piattaforma hanno riscontrato dei problemi, diminuendo considerevolmente la percentuale di Coveralls.
 
