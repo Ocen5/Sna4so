@@ -4,7 +4,7 @@ import it.uniba.sotorrent.soqueries.Query;
 import it.uniba.sotorrent.soqueries.day.Day;
 
 /**
- * <<Entity>>
+ * Entity
  * This class extends Day to run query from questions table with year, month, day and limit (edge).
  */
 public class QuestionEdgeDay extends Day {

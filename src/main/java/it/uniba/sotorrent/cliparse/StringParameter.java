@@ -1,9 +1,9 @@
 package it.uniba.sotorrent.cliparse;
 
 /**
- * <<Entity>>
+ * Entity
  * This class represents the string domain of an attribute.
- * @author codd
+ * Author codd
  *
  */
 class StringParameter extends Parameter {

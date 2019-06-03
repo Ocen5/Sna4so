@@ -4,7 +4,7 @@ import it.uniba.sotorrent.soqueries.Query;
 import it.uniba.sotorrent.soqueries.user.User;
 
 /**
- * <<Entity>>
+ * Entity
  * This class extends User to run query from questions table with userId and limit.
  */
 public class QuestionEdgeUser extends User {

@@ -5,7 +5,7 @@ import it.uniba.sotorrent.soqueries.taglike.component.AnswerTagLike;
 import it.uniba.sotorrent.soqueries.taglike.component.QuestionTagLike;
 
 /**
- * <<Entity>>
+ * Entity
  * This class extends TagLike to run query from posts table with year, month, tags and limit.
  */
 public class PostTagLike extends TagLike {

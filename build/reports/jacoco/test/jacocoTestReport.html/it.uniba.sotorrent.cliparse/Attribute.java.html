@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Attribute.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.cliparse</a> &gt; <span class="el_source">Attribute.java</span></div><h1>Attribute.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.cliparse;
+
+/**
+ * Entity
+ * This class represents the attribute of parameter.
+ * Author codd
+ *
+ */
+abstract class Attribute {
+
+	/**
+	 * The Attribute name.
+	 */
+	private String name;
+
+	/**
+	 * Constructor sets this name with parameter.
+	 *
+	 * @param attributeName The name of the attribute.
+	 */
+<span class="fc" id="L21">	Attribute(final String attributeName) {</span>
+
+<span class="fc" id="L23">		name = attributeName;</span>
+
+<span class="fc" id="L25">	}</span>
+
+	/**
+	 * Get name of attribute.
+	 *
+	 * @return name The name of the attribute.
+	 */
+	String getAttribute() {
+
+<span class="nc" id="L34">		return name;</span>
+
+	}
+
+	/**
+	 * @return name String with the name of attribute.
+	 */
+	public String toString() {
+
+<span class="fc" id="L43">		return name;</span>
+
+	}
+
+	/**
+	 * This method checks if attribute names are equal.
+	 * 
+	 * @param attribute The attribute to compare.
+	 * @return true if attribute in input is equal to this, false otherwise.
+	 */
+	public boolean equals(final Object attribute) {
+
+<span class="nc bnc" id="L55" title="All 2 branches missed.">		if (attribute != null) {</span>
+<span class="nc" id="L56">			return toString().equals(attribute.toString());</span>
+		}
+
+<span class="nc" id="L59">		return false;</span>
+
+	}
+
+	/**
+	 * This method is supported for the benefit of hashset.
+	 *
+	 * @return The hashcode value for attribute.
+	 */
+	public int hashCode() {
+
+<span class="fc" id="L70">	    return name.hashCode();</span>
+
+	  }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

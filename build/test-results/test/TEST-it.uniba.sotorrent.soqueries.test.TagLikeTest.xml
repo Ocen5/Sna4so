@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.uniba.sotorrent.soqueries.test.TagLikeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-03T10:58:22" hostname="LAPTOP-155BODB5" time="0.001">
+  <properties/>
+  <testcase name="test()" classname="it.uniba.sotorrent.soqueries.test.TagLikeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

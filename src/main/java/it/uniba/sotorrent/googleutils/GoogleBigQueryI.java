@@ -7,10 +7,10 @@ import com.google.cloud.bigquery.TableResult;
 
 
 /**
- * <<Boundary>>
+ * Boundary
  * Interface to run a query on Stack Overflow via Google's BigQuery service.
  * Use this interface to run new query.
- * @author codd
+ * Author codd
  */
 public interface GoogleBigQueryI {
 

@@ -4,9 +4,9 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 /**
- * <<Entity>>
+ * Entity
  * This class represents the valid values of the domain of string attribute.
- * @author codd
+ * Author codd
  */
 class StringAttribute extends Attribute implements Iterable<String> {
 

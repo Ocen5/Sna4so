@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>QuestionTagLike.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.soqueries.taglike.component</a> &gt; <span class="el_source">QuestionTagLike.java</span></div><h1>QuestionTagLike.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.soqueries.taglike.component;
+
+import it.uniba.sotorrent.soqueries.Query;
+import it.uniba.sotorrent.soqueries.taglike.TagLike;
+
+/**
+ * Entity
+ * This class extends TagLike to run query from questions table with year, month, tags and limit.
+ */
+public class QuestionTagLike extends TagLike {
+
+	/**
+	 * The query.
+	 */
+<span class="fc" id="L15">	private Query query = new Query();</span>
+
+	/**
+	 * Constructor initializes variables for the query.
+	 * 
+	 * @param year	The year parameter to be inserted in the query.
+	 * @param month	The month parameter to be inserted in the query.
+	 * @param taglike The tag parameter to be inserted in the query.
+	 * @param lim 	The limit parameter to be inserted in the query.
+	**/
+	public QuestionTagLike(final Integer year, final Integer month, final String taglike, final Integer lim) {
+
+<span class="fc" id="L27">		super(year, month, taglike, lim);</span>
+<span class="fc" id="L28">		buildQuery();</span>
+
+<span class="fc" id="L30">	}</span>
+
+	/**
+	 * This method builds the query.
+	 */
+	public void buildQuery() {
+
+<span class="fc" id="L37">		query.setSelect(&quot;owner_user_id&quot;);</span>
+<span class="fc" id="L38">		query.setFrom(&quot;`bigquery-public-data.stackoverflow.posts_questions`&quot;);</span>
+<span class="fc" id="L39">		query.setWhere(&quot;extract(year from creation_date)=&quot; + getYear()</span>
+<span class="fc" id="L40">				+ &quot; AND &quot; + &quot;extract(month from creation_date)=&quot; + getMonth()</span>
+<span class="fc" id="L41">				+ &quot; AND &quot; + &quot;tags like CONCAT('%&quot; + getTaglike() + &quot;%')&quot;</span>
+				+ &quot; AND &quot; + &quot;owner_user_id &gt; 0&quot;);
+<span class="fc" id="L43">		query.setGroup(&quot;owner_user_id&quot;);</span>
+<span class="fc" id="L44">		query.setOrder(&quot;owner_user_id ASC&quot;);</span>
+<span class="fc" id="L45">		query.setLimit(getLim());</span>
+
+<span class="fc" id="L47">	}</span>
+
+	/**
+	 * @return query That is the query QuestionTagLike.
+	 */
+	public Query getQuery() {
+
+<span class="fc" id="L54">		return query;</span>
+
+	}
+
+	/**
+	 * @return method toString of the query.
+	 */
+	public String getQueryString() {
+
+<span class="fc" id="L63">		return query.toString();</span>
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

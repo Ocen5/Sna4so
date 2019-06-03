@@ -5,10 +5,10 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * <<Control>>
+ * Control
  * This class implements CLItoParametersI. It takes parameters for the
  * query, parses them and finally give back the query.
- * @author codd
+ * Author codd
  *
  */
 public class CLItoParameters implements CLItoParametersI {
@@ -19,7 +19,7 @@ public class CLItoParameters implements CLItoParametersI {
 	private List<Attribute> attributeSet = new ArrayList<Attribute>();
 
 	/**
-	 * Default Constructor which build and add 9 type of Attribute:
+	 * Constructor which builds and adds 9 types of Attribute:
 	 * year, month, day, taglike, user, limit, type, edge and weight.
 	 */
 	public CLItoParameters() {

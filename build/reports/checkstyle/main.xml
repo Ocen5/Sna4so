@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.8">
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\main\AppMain.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\Attribute.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\BooleanAttribute.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\BooleanParameter.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\CLItoParameters.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\CLItoParametersI.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\NaturalAttribute.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\NaturalParameter.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\Parameter.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\ParameterSet.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\QuerySelector.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\QuerySelectorI.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\StringAttribute.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\cliparse\StringParameter.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleBigQueryI.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleBigQueryUtils.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleDocI.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\googleutils\GoogleDocUtils.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\Query.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\SOQueryI.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\Day.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\component\AnswerDay.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\component\QuestionDay.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\component\QuestionEdgeDay.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\decorator\PostDay.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\day\decorator\QuestionWeightDay.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\TagLike.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\component\AnswerTagLike.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\component\QuestionTagLike.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\taglike\decorator\PostTagLike.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\User.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\component\AnswerEdgeUser.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\component\QuestionEdgeUser.java">
+</file>
+<file name="C:\Users\miche\progetto1819-codd\src\main\java\it\uniba\sotorrent\soqueries\user\decorator\WeightUser.java">
+</file>
+</checkstyle>

@@ -14,10 +14,10 @@ import it.uniba.sotorrent.soqueries.user.component.AnswerEdgeUser;
 import it.uniba.sotorrent.soqueries.user.decorator.WeightUser;
 
 /**
- * <<Control>>
+ * Control
  * This class implements QuerySelectorI and selects the right query based on
  * the parameters.
- * @author codd
+ * Author codd
  *
  */
 public class QuerySelector implements QuerySelectorI {

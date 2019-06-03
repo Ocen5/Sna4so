@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GoogleDocUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.googleutils</a> &gt; <span class="el_source">GoogleDocUtils.java</span></div><h1>GoogleDocUtils.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.googleutils;
+
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.security.GeneralSecurityException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.google.api.client.auth.oauth2.Credential;
+import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
+import com.google.api.client.googleapis.batch.BatchRequest;
+import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
+import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
+import com.google.api.client.googleapis.json.GoogleJsonError;
+import com.google.api.client.http.HttpHeaders;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.drive.Drive;
+import com.google.api.services.drive.model.Permission;
+import com.google.api.services.sheets.v4.Sheets;
+import com.google.api.services.sheets.v4.SheetsScopes;
+import com.google.api.services.sheets.v4.model.BatchUpdateSpreadsheetRequest;
+import com.google.api.services.sheets.v4.model.CellData;
+import com.google.api.services.sheets.v4.model.ExtendedValue;
+import com.google.api.services.sheets.v4.model.GridCoordinate;
+import com.google.api.services.sheets.v4.model.Request;
+import com.google.api.services.sheets.v4.model.RowData;
+import com.google.api.services.sheets.v4.model.Spreadsheet;
+import com.google.api.services.sheets.v4.model.SpreadsheetProperties;
+import com.google.api.services.sheets.v4.model.UpdateCellsRequest;
+
+//Package importati per la struttura dati
+import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.TableResult;
+
+/**
+ * Boundary
+ * Utility class to create, share and delete Google spreadsheet.
+ * For more, refer to &lt;a href=&quot;https://developers.google.com/sheets/api/samples/&quot;&gt;this documentation&lt;/a&gt;.
+ */
+public class GoogleDocUtils implements GoogleDocI {
+
+	/**
+	 * The app name.
+	 */
+	private static final String APPLICATION_NAME = &quot;sna4so-237908&quot;;
+
+	/**
+	 * Permissions to manage Google Drive.
+	 */
+<span class="fc" id="L53">	private static final List&lt;String&gt; SCOPES = Arrays.asList(SheetsScopes.DRIVE);</span>
+
+	/**
+	 * The instance of the Google Spreadsheet service.
+	 */
+	private Sheets sheetsService;
+
+	/**
+	 * The instance of the Google Drive service.
+	 */
+	private Drive driveService;
+
+	/**
+	 * The object built from the JSON credential file.
+	 */
+	private Credential credential;
+
+	/**
+	 * The location where the SON credential file is stored on the Internet.
+	 */
+	private static final String URL = &quot;http://neo.di.uniba.it/credentials/project-codd-we445rt.json&quot;;
+
+	/**
+	 * Default constructor, authenticates and instantiate services.
+	 */
+<span class="fc" id="L78">	public GoogleDocUtils() {</span>
+		try {
+<span class="fc" id="L80">			credential = authorize();</span>
+<span class="fc" id="L81">			sheetsService = getSheetsService();</span>
+<span class="fc" id="L82">			driveService = getDriveService();</span>
+<span class="nc" id="L83">		} catch (Exception e) {</span>
+<span class="nc" id="L84">			System.err.println(e);</span>
+<span class="fc" id="L85">		}</span>
+
+<span class="fc" id="L87">	}</span>
+
+	/**
+	 * Performs Google authentication process.
+	 * 
+	 * @return Credential object.
+	 * @throws IOException Generic I/O error.
+	 * @throws GeneralSecurityException Failed authentication.
+	 * @throws URISyntaxException Malformed URI.
+	 */
+	private Credential authorize() throws IOException, URISyntaxException, GeneralSecurityException {
+<span class="fc" id="L98">		GoogleCredential authCred = GoogleCredential.fromStream(new URL(URL).openStream()).toBuilder()</span>
+<span class="fc" id="L99">					.setServiceAccountScopes(SCOPES).build();</span>
+<span class="fc" id="L100">		return authCred;</span>
+
+	}
+
+	/**
+	 * Instantiates the the Google Sheets service.
+	 * 
+	 * @return Instance of the Google Sheets service.
+	 * @throws IOException Generic I/O error.
+	 * @throws GeneralSecurityException Failed authentication.
+	 * @throws URISyntaxException Malformed URI.
+	 */
+	private Sheets getSheetsService() throws IOException, GeneralSecurityException, URISyntaxException {
+<span class="fc" id="L113">		return new Sheets.Builder(GoogleNetHttpTransport.newTrustedTransport(),</span>
+<span class="fc" id="L114">				JacksonFactory.getDefaultInstance(), credential)</span>
+<span class="fc" id="L115">				.setApplicationName(APPLICATION_NAME).build();</span>
+
+	}
+
+	/**
+	 * Instantiates the the Google Drive service.
+	 * 
+	 * @return Instance of the Google Drive service.
+	 * @throws IOException Generic I/O error.
+	 * @throws GeneralSecurityException Failed authentication.
+	 * @throws URISyntaxException Malformed URI.
+	 */
+	private Drive getDriveService() throws IOException, GeneralSecurityException, URISyntaxException {
+<span class="fc" id="L128">		return new Drive.Builder(GoogleNetHttpTransport.newTrustedTransport(),</span>
+<span class="fc" id="L129">				JacksonFactory.getDefaultInstance(), credential)</span>
+<span class="fc" id="L130">				.setApplicationName(APPLICATION_NAME).build();</span>
+
+	}
+
+	/**
+	 * Creates a new sheet on every execution.
+	 * 
+	 * @param title Spreadsheet title.
+	 * @return The spreadsheet id.
+	 * @throws IOException Generic I/O error.
+	 */
+	public String createSheet(final String title) throws IOException {
+<span class="fc" id="L142">		Spreadsheet spreadsheet = new Spreadsheet().setProperties(new SpreadsheetProperties().setTitle(title));</span>
+<span class="fc" id="L143">		spreadsheet = sheetsService.spreadsheets().create(spreadsheet).setFields(&quot;spreadsheetId&quot;).execute();</span>
+<span class="fc" id="L144">		String spid = spreadsheet.getSpreadsheetId();</span>
+<span class="fc" id="L145">		System.out.println(&quot;Spreadsheet ID: &quot; + spid);</span>
+<span class="fc" id="L146">		System.out.println(&quot;Spreadhsheet URL: https://docs.google.com/spreadsheets/d/&quot; + spid);</span>
+<span class="fc" id="L147">		return spid;</span>
+
+	}
+
+	/**
+	 * Returns the spreadsheet id by title.
+	 * 
+	 * @param spid The spreadsheet id.
+	 * @throws IOException Generic I/O error.
+	 */
+	public void getSheetByTitle(final String spid) throws IOException {
+<span class="fc" id="L158">			Sheets.Spreadsheets.Get request = sheetsService.spreadsheets().get(spid);</span>
+<span class="fc" id="L159">			Spreadsheet response = request.execute();</span>
+<span class="fc" id="L160">			System.out.println(response);</span>
+
+<span class="fc" id="L162">	}</span>
+
+	/**
+	 * Write results to the spreadsheet.
+	 * Also, see &lt;a href=&quot;https://developers.google.com/sheets/api/guides/values&quot;&gt;here&lt;/a&gt;.
+	 * 
+	 * @param spid The spreadsheet id.
+	 * @param res The hash map of the results, with URL as key and view count as value.
+	 * @throws IOException Generic I/O error.
+	 */
+	public void writeSheet(final String spid, final TableResult res) throws IOException {
+<span class="fc" id="L173">		List&lt;Request&gt; requests = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L174">		List&lt;CellData&gt; values = new ArrayList&lt;&gt;();</span>
+
+<span class="pc bpc" id="L176" title="1 of 2 branches missed.">		if (null != res) {</span>
+<span class="fc bfc" id="L177" title="All 2 branches covered.">			for (int schemaIndex = 0; schemaIndex &lt; res.getSchema().getFields().size(); schemaIndex++) {</span>
+<span class="fc" id="L178">				values.add(new CellData().setUserEnteredValue(new ExtendedValue().setStringValue(</span>
+<span class="fc" id="L179">						res.getSchema().getFields().get(schemaIndex).getName())));</span>
+			}
+
+<span class="fc" id="L182">			requests.add(new Request().setUpdateCells(new UpdateCellsRequest()</span>
+<span class="fc" id="L183">					.setStart(new GridCoordinate().setSheetId(0).setRowIndex(0).setColumnIndex(0))</span>
+<span class="fc" id="L184">					.setRows(Arrays.asList(new RowData().setValues(values)))</span>
+<span class="fc" id="L185">					.setFields(&quot;userEnteredValue,userEnteredFormat.backgroundColor&quot;)));</span>
+
+
+<span class="fc" id="L188">			BatchUpdateSpreadsheetRequest batchUpdateRequest =</span>
+<span class="fc" id="L189">					new BatchUpdateSpreadsheetRequest().setRequests(requests);</span>
+<span class="fc" id="L190">			sheetsService.spreadsheets().batchUpdate(spid, batchUpdateRequest).execute();</span>
+<span class="fc" id="L191">			int rowIndex = 1;</span>
+<span class="fc bfc" id="L192" title="All 2 branches covered.">			for (FieldValueList entry : res.iterateAll()) {</span>
+<span class="fc" id="L193">				requests = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L194">				values = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L195">				for (int schemaIndex = 0; schemaIndex &lt; res.getSchema()</span>
+<span class="fc bfc" id="L196" title="All 2 branches covered.">						.getFields().size(); schemaIndex++) {</span>
+<span class="fc" id="L197">					FieldValue value = entry.get(schemaIndex);</span>
+<span class="fc" id="L198">					values.add(new CellData()</span>
+<span class="fc" id="L199">							.setUserEnteredValue(new ExtendedValue()</span>
+<span class="fc" id="L200">									.setStringValue(value.getStringValue())));</span>
+				}
+<span class="fc" id="L202">				requests.add(new Request().setUpdateCells(new UpdateCellsRequest()</span>
+<span class="fc" id="L203">						.setStart(new GridCoordinate().setSheetId(0).setRowIndex(rowIndex)</span>
+<span class="fc" id="L204">								.setColumnIndex(0))</span>
+<span class="fc" id="L205">						.setRows(Arrays.asList(new RowData().setValues(values)))</span>
+<span class="fc" id="L206">						.setFields(&quot;userEnteredValue,userEnteredFormat.backgroundColor&quot;)));</span>
+
+<span class="fc" id="L208">				batchUpdateRequest = new BatchUpdateSpreadsheetRequest().setRequests(requests);</span>
+<span class="fc" id="L209">				sheetsService.spreadsheets().batchUpdate(spid, batchUpdateRequest).execute();</span>
+
+<span class="fc" id="L211">				rowIndex++;</span>
+
+<span class="fc" id="L213">			}</span>
+
+		}
+
+
+<span class="fc" id="L218">	}</span>
+
+	/**
+	 * Makes the spreadsheet readable to anyone with the link.
+	 * 
+	 * @param spid The spreadsheet id.
+	 * @throws IOException Generic I/O error.
+	 * @throws GeneralSecurityException Failed authentication.
+	 * @throws URISyntaxException Malformed URI.
+	 */
+	public void shareSheet(final String spid) throws IOException, GeneralSecurityException, URISyntaxException {
+
+<span class="fc" id="L230">		JsonBatchCallback&lt;Permission&gt; callback = new JsonBatchCallback&lt;Permission&gt;() {</span>
+			public void onFailure(final GoogleJsonError e, final HttpHeaders responseHeaders)
+					throws IOException {
+				// Handle error
+<span class="nc" id="L234">				System.err.println(e.getMessage());</span>
+
+<span class="nc" id="L236">			}</span>
+
+			public void onSuccess(final Permission permission, final HttpHeaders responseHeaders)
+					throws IOException {
+<span class="fc" id="L240">				System.out.println(&quot;Permission ID: &quot; + permission.getId());</span>
+<span class="fc" id="L241">			}</span>
+		};
+
+<span class="fc" id="L244">		BatchRequest batch = driveService.batch();</span>
+<span class="fc" id="L245">		Permission userPermission = new Permission().setType(&quot;anyone&quot;).setRole(&quot;reader&quot;);</span>
+<span class="fc" id="L246">		driveService.permissions().create(spid, userPermission).setFields(&quot;id&quot;).queue(batch, callback);</span>
+
+<span class="fc" id="L248">		batch.execute();</span>
+
+<span class="fc" id="L250">	}</span>
+
+	// Intentionally not used it. Use it to delete a sheet.
+	/**
+	 * Deletes a spreadsheet.
+	 * 
+	 * @param spid The spreadsheet id.
+	 * @throws IOException Generic I/O error.
+	 */
+	@SuppressWarnings(&quot;unused&quot;)
+	private void deleteSheet(final String spid) throws IOException {
+<span class="nc" id="L261">		driveService.files().delete(spid).execute();</span>
+
+<span class="nc" id="L263">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

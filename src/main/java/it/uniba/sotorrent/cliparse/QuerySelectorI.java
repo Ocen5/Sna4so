@@ -3,9 +3,9 @@ package it.uniba.sotorrent.cliparse;
 import it.uniba.sotorrent.soqueries.SOQueryI;
 
 /**
- * <<Control>>
+ * Control
  * Interface to select the right query according to the parameters.
- * @author codd
+ * Author codd
  *
  */
 public interface QuerySelectorI {

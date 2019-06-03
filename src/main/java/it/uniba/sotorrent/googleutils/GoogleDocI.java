@@ -7,10 +7,10 @@ import java.security.GeneralSecurityException;
 import com.google.cloud.bigquery.TableResult;
 
 /**
- * <<Boundary>>
+ * Boundary
  * Utility interface to create, share and delete Google spreadsheet.
  * For more, refer to <a href="https://developers.google.com/sheets/api/samples/">this documentation</a>.
- * @author codd
+ * Author codd
  */
 public interface GoogleDocI {
 

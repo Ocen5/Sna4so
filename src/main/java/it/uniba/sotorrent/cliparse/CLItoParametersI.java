@@ -1,9 +1,9 @@
 package it.uniba.sotorrent.cliparse;
 
 /**
- * <<Control>>
- * @author codd
+ * Control
  * Interface for receiving parameters from CLI and parse them.
+ * Author codd
  */
 public interface CLItoParametersI {
 

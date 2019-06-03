@@ -24,8 +24,9 @@ import it.uniba.sotorrent.soqueries.SOQueryI;
 
 
 /**
- * <<Control>>
+ * Control
  * The main class of SNA4SO.
+ * Author codd.
  * 
  * <b>DO NOT RENAME</b>
  */

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ParameterSet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.cliparse</a> &gt; <span class="el_source">ParameterSet.java</span></div><h1>ParameterSet.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.cliparse;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+/**
+ * Entity
+ * This class represents the set of parameter for attribute.
+ * Author codd
+ *
+ */
+<span class="fc" id="L13">public class ParameterSet implements Iterable&lt;Parameter&gt; {</span>
+
+	/**
+	 * Parameters for attribute.
+	 */
+<span class="fc" id="L18">	private Set&lt;Parameter&gt; parameters = new HashSet&lt;Parameter&gt;();</span>
+
+	/**
+	 * Add parameters to an hashSet.
+	 * 
+	 * @param param The parameter to add.
+	 */
+	void add(final Parameter param) {
+
+<span class="fc" id="L27">		parameters.add(param);</span>
+
+<span class="fc" id="L29">	}</span>
+
+	/**
+	 * Iterator for parameters of attribute.
+	 * 
+	 * @return an iterator over the parameters in this set.
+	 */
+	public Iterator&lt;Parameter&gt; iterator() {
+
+<span class="fc" id="L38">		return parameters.iterator();</span>
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

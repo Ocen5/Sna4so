@@ -1,9 +1,9 @@
 package it.uniba.sotorrent.cliparse;
 
 /**
- * <<Entity>>
+ * Entity
  * This class represents the boolean values of a parameter.
- * @author codd
+ * Author codd
  *
  */
 class BooleanParameter extends Parameter {

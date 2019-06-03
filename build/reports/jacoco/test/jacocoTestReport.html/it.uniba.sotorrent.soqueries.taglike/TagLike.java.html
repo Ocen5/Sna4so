@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TagLike.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.soqueries.taglike</a> &gt; <span class="el_source">TagLike.java</span></div><h1>TagLike.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.soqueries.taglike;
+
+import it.uniba.sotorrent.soqueries.SOQueryI;
+
+/**
+ * Entity
+ * This class implements SOQueryI for queries on tags.
+ */
+public abstract class TagLike implements SOQueryI {
+
+	/**
+	 * The year value.
+	 */
+	private Integer year;
+
+	/**
+	 * The month value.
+	 */
+	private Integer month;
+
+	/**
+	 * The tag value.
+	 */
+	private String taglike;
+
+	/**
+	 * The limit value.
+	 */
+	private Integer lim;
+
+	/**
+	 * Constructor initializes variables for the query.
+	 * 
+	 * @param yyyy	The year parameter to be inserted in the query.
+	 * @param mm	The month parameter to be inserted in the query.
+	 * @param tag 	The tag parameter to be inserted in the query.
+	 * @param limit The limit parameter to be inserted in the query.
+	**/
+	public TagLike(final Integer yyyy, final Integer mm, final String tag, final Integer limit) {
+
+<span class="fc" id="L41">		super();</span>
+<span class="fc" id="L42">		this.year = yyyy;</span>
+<span class="fc" id="L43">		this.month = mm;</span>
+<span class="fc" id="L44">		this.taglike = tag;</span>
+<span class="fc" id="L45">		this.lim = limit;</span>
+
+<span class="fc" id="L47">	}</span>
+
+	/**
+	 * @return the query in string format.
+	 */
+	public abstract String getQueryString();
+
+	/**
+	 * @return year That contain the year of the query.
+	 */
+	public Integer getYear() {
+
+<span class="fc" id="L59">		return year;</span>
+
+	}
+
+	/**
+	 * @return month That contain the month of the query.
+	 */
+	public Integer getMonth() {
+
+<span class="fc" id="L68">		return month;</span>
+
+	}
+
+	/**
+	 * @return tag To indicate the tags of query's tuples.
+	 */
+	public String getTaglike() {
+
+<span class="fc" id="L77">		return taglike;</span>
+
+	}
+
+	/**
+	 * @return limit To indicate the limit of query's tuples.
+	 */
+	public Integer getLim() {
+
+<span class="fc" id="L86">		return lim;</span>
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

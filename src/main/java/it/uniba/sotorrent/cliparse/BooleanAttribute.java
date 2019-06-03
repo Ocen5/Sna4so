@@ -1,9 +1,9 @@
 package it.uniba.sotorrent.cliparse;
 
 /**
- * <<Entity>>
+ * Entity
  * This class represents the boolean values for attribute.
- * @author codd
+ * Author codd
  *
  */
 class BooleanAttribute extends Attribute {

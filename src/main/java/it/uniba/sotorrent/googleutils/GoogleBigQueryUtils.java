@@ -17,7 +17,7 @@ import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
 
 /**
- * <<Boundary>>
+ * Boundary
  * Class to run a query on Stack Overflow via Google's BigQuery service.
  */
 public class GoogleBigQueryUtils implements GoogleBigQueryI {

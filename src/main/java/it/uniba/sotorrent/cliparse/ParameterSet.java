@@ -5,9 +5,9 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * <<Entity>>
+ * Entity
  * This class represents the set of parameter for attribute.
- * @author codd
+ * Author codd
  *
  */
 public class ParameterSet implements Iterable<Parameter> {
