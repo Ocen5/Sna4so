@@ -1,0 +1,13 @@
+it.uniba.main
+it.uniba.sotorrent.cliparse
+it.uniba.sotorrent.googleutils
+it.uniba.sotorrent.soqueries
+it.uniba.sotorrent.soqueries.day
+it.uniba.sotorrent.soqueries.day.component
+it.uniba.sotorrent.soqueries.day.decorator
+it.uniba.sotorrent.soqueries.taglike
+it.uniba.sotorrent.soqueries.taglike.component
+it.uniba.sotorrent.soqueries.taglike.decorator
+it.uniba.sotorrent.soqueries.user
+it.uniba.sotorrent.soqueries.user.component
+it.uniba.sotorrent.soqueries.user.decorator

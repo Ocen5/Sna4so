@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Query.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.soqueries</a> &gt; <span class="el_source">Query.java</span></div><h1>Query.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.soqueries;
+
+/**
+ * Entity
+ * This class contains getter and setter of the keywords SQL to compose the queries.
+ * Author codd.
+ */
+<span class="fc" id="L8">public class Query {</span>
+
+	/**
+	 * The argument of the SELECT statement.
+	 */
+<span class="fc" id="L13">	private String select = &quot;&quot;;</span>
+
+	/**
+	 * The argument of the FROM statement.
+	 */
+<span class="fc" id="L18">	private String from = &quot;&quot;;</span>
+
+	/**
+	 * The argument of the WHERE statement.
+	 */
+<span class="fc" id="L23">	private String where = &quot;&quot;;</span>
+
+	/**
+	 * The argument of the GROUP BY statement.
+	 */
+<span class="fc" id="L28">	private String group = &quot;&quot;;</span>
+
+	/**
+	 * The argument of the ORDER BY statement.
+	 */
+<span class="fc" id="L33">	private String order = &quot;&quot;;</span>
+
+	/**
+	 * The argument of the LIMIT statement.
+	 */
+<span class="fc" id="L38">	private Integer limit = 0;</span>
+
+	/**
+	 * @return select That contain SELECT of the query.
+	 */
+	public final String getSelect() {
+
+<span class="fc" id="L45">		return select;</span>
+
+	}
+
+	/**
+	 * @param slc That contain SELECT of the query.
+	 */
+	public void setSelect(final String slc) {
+
+<span class="fc" id="L54">		this.select = slc;</span>
+
+<span class="fc" id="L56">	}</span>
+
+	/**
+	 * @return from That contain the table of the query.
+	 */
+	public String getFrom() {
+
+<span class="fc" id="L63">		return from;</span>
+
+	}
+
+	/**
+	 * @param frm That contain the table of the query.
+	 */
+	public void setFrom(final String frm) {
+
+<span class="fc" id="L72">		this.from = frm;</span>
+
+<span class="fc" id="L74">	}</span>
+
+	/**
+	 * @return where That contain condition of the query.
+	 */
+	public String getWhere() {
+
+<span class="fc" id="L81">		return where;</span>
+
+	}
+
+	/**
+	 * @param whr That contain condition of the query.
+	 */
+	public void setWhere(final String whr) {
+
+<span class="fc" id="L90">		this.where = whr;</span>
+
+<span class="fc" id="L92">	}</span>
+
+	/**
+	 * @return group That contain GROUP BY of the query.
+	 */
+	public String getGroup() {
+
+<span class="fc" id="L99">		return group;</span>
+
+	}
+
+	/**
+	 * @param grp That contain GROUP BY of the query.
+	 */
+	public void setGroup(final String grp) {
+
+<span class="fc" id="L108">		this.group = grp;</span>
+
+<span class="fc" id="L110">	}</span>
+
+	/**
+	 * @return order That contain ORDER BY of the query.
+	 */
+	public String getOrder() {
+
+<span class="fc" id="L117">		return order;</span>
+
+	}
+
+	/**
+	 * @param ord That contain ORDER BY of the query.
+	 */
+	public void setOrder(final String ord) {
+
+<span class="fc" id="L126">		this.order = ord;</span>
+
+<span class="fc" id="L128">	}</span>
+
+	/**
+	 * @return limit The limit of tuples.
+	 */
+	public Integer getLimit() {
+
+<span class="fc" id="L135">		return limit;</span>
+
+	}
+
+	/**
+	 * @param lim The limit of tuples.
+	 */
+	public void setLimit(final Integer lim) {
+
+<span class="fc" id="L144">		this.limit = lim;</span>
+
+<span class="fc" id="L146">	}</span>
+
+	/**
+	 * This method composes the statements of the query.
+	 * 
+	 * @return string concatenation.
+	 */
+	public String toString() {
+
+<span class="fc" id="L155">		return &quot;SELECT &quot; + select + &quot; &quot;</span>
+				+ &quot;FROM &quot; + from + &quot; &quot;
+				+ &quot;WHERE &quot; + where + &quot; &quot;
+				+ &quot;GROUP BY &quot; + group + &quot; &quot;
+				+ &quot;ORDER BY &quot; + order + &quot; &quot;
+				+ &quot;LIMIT &quot; + limit;
+
+	}
+
+	/**
+	 * This method gets the string of the UNION DISTINCT of this query
+	 * with another query.
+	 * 
+	 * @param query2 The query to add.
+	 * @return string concatenation with query2.
+	 */
+	public String toUnionDistinct(final Query query2) {
+
+<span class="fc" id="L173">		return &quot;SELECT &quot; + select + &quot; &quot;</span>
+				+ &quot;FROM &quot; + from + &quot; &quot;
+				+ &quot;WHERE &quot; + where + &quot; &quot;
+				+ &quot;UNION DISTINCT &quot;
+				+ &quot;SELECT &quot; + query2.select + &quot; &quot;
+				+ &quot;FROM &quot; + query2.from + &quot; &quot;
+				+ &quot;WHERE &quot; + query2.where + &quot; &quot;
+				+ &quot;GROUP BY &quot; + query2.group + &quot; &quot;
+				+ &quot;ORDER BY &quot; + query2.order + &quot; &quot;
+				+ &quot;LIMIT &quot; + query2.limit;
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

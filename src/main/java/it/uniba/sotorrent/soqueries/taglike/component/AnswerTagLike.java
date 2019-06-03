@@ -4,7 +4,7 @@ import it.uniba.sotorrent.soqueries.Query;
 import it.uniba.sotorrent.soqueries.taglike.TagLike;
 
 /**
- * <<Entity>>
+ * Entity
  * This class extends TagLike to run query from answers table with year, month, tags and limit.
  */
 public class AnswerTagLike extends TagLike {

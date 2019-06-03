@@ -4,7 +4,7 @@ import it.uniba.sotorrent.soqueries.SOQueryI;
 import it.uniba.sotorrent.soqueries.user.User;
 
 /**
- * <<Entity>>
+ * Entity
  * This class implements SOQueryI for queries with user and limit.
  */
 public class WeightUser implements SOQueryI {

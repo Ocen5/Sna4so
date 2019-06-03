@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Parameter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.cliparse</a> &gt; <span class="el_source">Parameter.java</span></div><h1>Parameter.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.cliparse;
+
+/**
+ * Entity
+ * This class represents a parameter with an attribute and a value.
+ * Author codd
+ *
+ */
+abstract class Parameter {
+
+	/**
+	 * The attribute of parameter.
+	 */
+	private Attribute attribute;
+
+	/**
+	 * The value of parameter.
+	 */
+	private Object value;
+
+	/**
+	 * Constructor sets this Parameter.
+	 * 
+	 * @param att The attribute of Parameter.
+	 * @param val The value of Parameter.
+	 */
+<span class="fc" id="L27">	Parameter(final Attribute att, final Object val) {</span>
+
+<span class="fc" id="L29">		attribute = att;</span>
+<span class="fc" id="L30">		value = val;</span>
+
+<span class="fc" id="L32">	}</span>
+
+	/**
+	 * Get attribute.
+	 * 
+	 * @return attribute Attribute value.
+	 */
+	Attribute getAttribute() {
+
+<span class="fc" id="L41">		return attribute;</span>
+
+	}
+
+	/**
+	 * Gets the value of parameter.
+	 * 
+	 * @return value.
+	 */
+	Object getValue() {
+
+<span class="fc" id="L52">		return value;</span>
+
+	}
+
+	/**
+	 * This method returns the parameter name, it's the attribute name.
+	 * 
+	 * @return String The parameter name.
+	 */
+	public String toString() {
+
+<span class="nc" id="L63">		return attribute.toString();</span>
+
+	}
+
+	/**
+	 * This method checks if parameter names are equal.
+	 * 
+	 * @param parameter The parameter to compare.
+	 * @return boolean True when passed parameter name equals to this parameter name.
+	 */
+	public boolean equals(final Object parameter) {
+
+<span class="nc bnc" id="L75" title="All 2 branches missed.">		if (parameter != null) {</span>
+<span class="nc" id="L76">			return (toString().equals(parameter.toString()));</span>
+		}
+
+<span class="nc" id="L79">		return false;</span>
+
+	}
+
+	/**
+	 * This method is supported for the benefit of hashset.
+	 * 
+	 * @return int The hashcode value for parameter.
+	 */
+	public int hashCode() {
+
+<span class="fc" id="L90">		return attribute.hashCode();</span>
+
+	  }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

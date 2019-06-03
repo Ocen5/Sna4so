@@ -1,9 +1,9 @@
 package it.uniba.sotorrent.cliparse;
 
 /**
- * <<Entity>>
+ * Entity
  * This class represents the attribute of parameter.
- * @author codd
+ * Author codd
  *
  */
 abstract class Attribute {

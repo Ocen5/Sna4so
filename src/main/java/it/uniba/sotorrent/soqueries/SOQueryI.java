@@ -1,9 +1,9 @@
 package it.uniba.sotorrent.soqueries;
 
 /**
- * <<Entity>>
+ * Entity
  * Interface to compose the queries.
- * @author Codd
+ * Author codd.
  */
 public interface SOQueryI {
 

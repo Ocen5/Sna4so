@@ -1,8 +1,9 @@
 package it.uniba.sotorrent.soqueries;
 
 /**
- * <<Entity>>
+ * Entity
  * This class contains getter and setter of the keywords SQL to compose the queries.
+ * Author codd.
  */
 public class Query {
 

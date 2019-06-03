@@ -5,7 +5,7 @@ import it.uniba.sotorrent.soqueries.day.component.AnswerDay;
 import it.uniba.sotorrent.soqueries.day.component.QuestionDay;
 
 /**
- * <<Entity>>
+ * Entity
  * This class extends Day to run query from posts table with year, month, day and limit.
  */
 public class PostDay extends Day {

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AnswerDay.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.soqueries.day.component</a> &gt; <span class="el_source">AnswerDay.java</span></div><h1>AnswerDay.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.soqueries.day.component;
+
+import it.uniba.sotorrent.soqueries.Query;
+import it.uniba.sotorrent.soqueries.day.Day;
+
+/**
+ * Entity
+ * This class extends Day to run query from answers table with year, month, day and limit.
+ */
+public class AnswerDay extends Day {
+
+	/**
+	 * The query.
+	 */
+<span class="fc" id="L15">	private Query query = new Query();</span>
+
+	/**
+	 * Constructor initializes variables for the query.
+	 *
+	 * @param year	The year parameter to be inserted in the query.
+	 * @param month	The month parameter to be inserted in the query.
+	 * @param day 	The day parameter to be inserted in the query.
+	 * @param lim 	The limit parameter to be inserted in the query.
+	**/
+	public AnswerDay(final Integer year, final Integer month, final Integer day, final Integer lim) {
+
+<span class="fc" id="L27">		super(year, month, day, lim);</span>
+<span class="fc" id="L28">		buildQuery();</span>
+
+<span class="fc" id="L30">	}</span>
+
+	/**
+	 * This method builds the query.
+	 */
+	private void buildQuery() {
+<span class="fc" id="L36">		query.setSelect(&quot;owner_user_id&quot;);</span>
+<span class="fc" id="L37">		query.setFrom(&quot;`bigquery-public-data.stackoverflow.posts_answers`&quot;);</span>
+<span class="fc" id="L38">		query.setWhere(&quot;extract(year from creation_date)=&quot; + getYear()</span>
+<span class="fc" id="L39">				+ &quot; AND &quot; + &quot;extract(month from creation_date)=&quot; + getMonth()</span>
+<span class="fc" id="L40">				+ &quot; AND &quot; + &quot;extract(day from creation_date)=&quot; + getDay()</span>
+				+ &quot; AND &quot; + &quot;owner_user_id &gt; 0&quot;);
+<span class="fc" id="L42">		query.setGroup(&quot;owner_user_id&quot;);</span>
+<span class="fc" id="L43">		query.setOrder(&quot;owner_user_id ASC&quot;);</span>
+<span class="fc" id="L44">		query.setLimit(getLim());</span>
+<span class="fc" id="L45">	}</span>
+
+	/**
+	 * @return query That is the query AnswerDay.
+	 */
+	public Query getQuery() {
+
+<span class="fc" id="L52">		return query;</span>
+
+	}
+
+	/**
+	 * @return method toString of the query.
+	 */
+	public String getQueryString() {
+
+<span class="fc" id="L61">		return query.toString();</span>
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

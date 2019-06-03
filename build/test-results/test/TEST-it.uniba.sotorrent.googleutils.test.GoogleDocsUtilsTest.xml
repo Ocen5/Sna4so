@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.uniba.sotorrent.googleutils.test.GoogleDocsUtilsTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-06-03T10:58:20" hostname="LAPTOP-155BODB5" time="1.696">
+  <properties/>
+  <testcase name="testWriteSheet()" classname="it.uniba.sotorrent.googleutils.test.GoogleDocsUtilsTest" time="0.005"/>
+  <testcase name="testGetSheetByTitle()" classname="it.uniba.sotorrent.googleutils.test.GoogleDocsUtilsTest" time="0.318"/>
+  <testcase name="testCreateSheet()" classname="it.uniba.sotorrent.googleutils.test.GoogleDocsUtilsTest" time="1.118"/>
+  <testcase name="testShareSheet()" classname="it.uniba.sotorrent.googleutils.test.GoogleDocsUtilsTest" time="0.251"/>
+  <system-out><![CDATA[Spreadsheet ID: 1JGr6k8D967cj5YIDbi6S8MXjKbjksoEY6I9l-JrqhDw
+Spreadhsheet URL: https://docs.google.com/spreadsheets/d/1JGr6k8D967cj5YIDbi6S8MXjKbjksoEY6I9l-JrqhDw
+Permission ID: anyoneWithLink
+{"properties":{"autoRecalc":"ON_CHANGE","defaultFormat":{"backgroundColor":{"blue":1.0,"green":1.0,"red":1.0},"padding":{"bottom":2,"left":3,"right":3,"top":2},"textFormat":{"bold":false,"fontFamily":"arial,sans,sans-serif","fontSize":10,"foregroundColor":{},"italic":false,"strikethrough":false,"underline":false},"verticalAlignment":"BOTTOM","wrapStrategy":"OVERFLOW_CELL"},"locale":"en_US","timeZone":"Etc/GMT","title":"non nullo"},"sheets":[{"properties":{"gridProperties":{"columnCount":26,"rowCount":1000},"index":0,"sheetId":0,"sheetType":"GRID","title":"Sheet1"}}],"spreadsheetId":"1JGr6k8D967cj5YIDbi6S8MXjKbjksoEY6I9l-JrqhDw","spreadsheetUrl":"https://docs.google.com/spreadsheets/d/1JGr6k8D967cj5YIDbi6S8MXjKbjksoEY6I9l-JrqhDw/edit"}
+Spreadsheet ID: 1hWB_KXld9XxsDATdnAKqCwOHq_rEFMM5476JCdXsZKE
+Spreadhsheet URL: https://docs.google.com/spreadsheets/d/1hWB_KXld9XxsDATdnAKqCwOHq_rEFMM5476JCdXsZKE
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

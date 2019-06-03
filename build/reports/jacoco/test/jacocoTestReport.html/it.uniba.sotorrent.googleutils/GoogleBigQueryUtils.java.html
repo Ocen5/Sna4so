@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GoogleBigQueryUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.googleutils</a> &gt; <span class="el_source">GoogleBigQueryUtils.java</span></div><h1>GoogleBigQueryUtils.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.googleutils;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URL;
+import java.util.UUID;
+
+import com.google.auth.oauth2.ServiceAccountCredentials;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.FieldValueList;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobException;
+import com.google.cloud.bigquery.JobId;
+import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.TableResult;
+
+/**
+ * Boundary
+ * Class to run a query on Stack Overflow via Google's BigQuery service.
+ */
+public class GoogleBigQueryUtils implements GoogleBigQueryI {
+
+	/**
+	 * Instance of BigQuery service.
+	 */
+	private BigQuery bigquery;
+
+	/**
+	 * URL of credentials JSON file.
+	 */
+	private static final String URL = &quot;http://neo.di.uniba.it/credentials/project-codd-we445rt.json&quot;;
+
+	/**
+	 * Default constructor, instantiates BigQuery API service.
+	 * 
+	 * @throws FileNotFoundException The remote JSON file with credential is 404.
+	 * @throws IOException Malformed JSON file.
+	 */
+<span class="fc" id="L41">	public GoogleBigQueryUtils() throws FileNotFoundException, IOException {</span>
+
+<span class="fc" id="L43">		bigquery = BigQueryOptions.newBuilder().setProjectId(&quot;sna4so-237908&quot;)</span>
+<span class="fc" id="L44">				.setCredentials(ServiceAccountCredentials.fromStream(new URL(URL).openStream())).build()</span>
+<span class="fc" id="L45">				.getService();</span>
+<span class="fc" id="L46">	}</span>
+
+	/**
+	 * Starts the query.
+	 * 
+	 * @param query Query to run.
+	 * @return Job The job associated to the query.
+	 * @throws InterruptedException Raised on timeouts.
+	 */
+	public Job runQuery(final String query) throws InterruptedException {
+
+		// Use standard SQL syntax for queries.
+		// See: https://cloud.google.com/bigquery/sql-reference/
+<span class="fc" id="L59">		QueryJobConfiguration queryConfig = QueryJobConfiguration.newBuilder(query)</span>
+<span class="fc" id="L60">				.setUseLegacySql(false).build();</span>
+
+		// Create a job ID so that we can safely retry.
+<span class="fc" id="L63">		JobId jobId = JobId.of(UUID.randomUUID().toString());</span>
+<span class="fc" id="L64">		Job queryJob = bigquery.create(JobInfo.newBuilder(queryConfig).setJobId(jobId).build());</span>
+
+		// Wait for the query to complete.
+<span class="fc" id="L67">		queryJob = queryJob.waitFor();</span>
+
+		// Check for errors
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">		if (queryJob == null) {</span>
+<span class="nc" id="L71">			throw new RuntimeException(&quot;Job no longer exists&quot;);</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">		} else if (queryJob.getStatus().getError() != null) {</span>
+			// You can also look at queryJob.getStatus().getExecutionErrors() for all
+			// errors, not just the latest one.
+<span class="nc" id="L75">			throw new RuntimeException(queryJob.getStatus().getError().toString());</span>
+		}
+
+<span class="fc" id="L78">		return queryJob;</span>
+
+	}
+
+	/**
+	 * Returns the results from the query job.
+	 * 
+	 * @param queryJob The job associated to the query.
+	 * @return Results as a hash map, with URL as key and view count as value.
+	 * @throws JobException Generic error occurred.
+	 * @throws InterruptedException Raised on timeouts.
+	 */
+	@Override
+	public final TableResult getResults(final Job queryJob) throws JobException, InterruptedException {
+
+<span class="fc" id="L93">		TableResult result = null;</span>
+<span class="pc bpc" id="L94" title="1 of 2 branches missed.">		if (queryJob != null) {</span>
+<span class="fc" id="L95">			result = queryJob.getQueryResults();</span>
+			// Print all pages of the results.
+<span class="fc bfc" id="L97" title="All 2 branches covered.">			for (FieldValueList row : result.iterateAll()) {</span>
+<span class="fc" id="L98">				for (int schemaIndex = 0; schemaIndex &lt; result.getSchema()</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">						.getFields().size(); schemaIndex++) {</span>
+<span class="fc" id="L100">					String attributeName = result.getSchema().getFields()</span>
+<span class="fc" id="L101">							.get(schemaIndex).getName();</span>
+<span class="fc" id="L102">					String value = row.get(attributeName).getStringValue();</span>
+<span class="fc" id="L103">					System.out.printf(&quot;%s: %s \t\t&quot;, attributeName, value);</span>
+				}
+<span class="fc" id="L105">				System.out.println(&quot;&quot;);</span>
+
+<span class="fc" id="L107">			}</span>
+
+		}
+
+<span class="fc" id="L111">		return result;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

@@ -4,7 +4,7 @@ import it.uniba.sotorrent.soqueries.Query;
 import it.uniba.sotorrent.soqueries.SOQueryI;
 
 /**
- * <<entity>>
+ * Entity
  * This class implements SOQueryI for queries with user and limit.
  */
 public abstract class User implements SOQueryI {
@@ -23,7 +23,7 @@ public abstract class User implements SOQueryI {
 	 * Constructor initializes variables for the query.
 	 * 
 	 * @param usrId The user parameter to be inserted in the query.
-	 * @param lim The limit parameter to be inserted in the query.
+	 * @param limit The limit parameter to be inserted in the query.
 	**/
 	public User(final Integer usrId, final Integer limit) {
 

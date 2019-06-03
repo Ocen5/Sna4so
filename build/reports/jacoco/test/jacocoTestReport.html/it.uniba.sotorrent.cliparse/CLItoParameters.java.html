@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="it"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CLItoParameters.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">sna4so</a> &gt; <a href="index.source.html" class="el_package">it.uniba.sotorrent.cliparse</a> &gt; <span class="el_source">CLItoParameters.java</span></div><h1>CLItoParameters.java</h1><pre class="source lang-java linenums">package it.uniba.sotorrent.cliparse;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * Control
+ * This class implements CLItoParametersI. It takes parameters for the
+ * query, parses them and finally give back the query.
+ * Author codd
+ *
+ */
+public class CLItoParameters implements CLItoParametersI {
+
+	/**
+	 * The List of Attributes.
+	 */
+<span class="fc" id="L19">	private List&lt;Attribute&gt; attributeSet = new ArrayList&lt;Attribute&gt;();</span>
+
+	/**
+	 * Constructor which builds and adds 9 types of Attribute:
+	 * year, month, day, taglike, user, limit, type, edge and weight.
+	 */
+<span class="fc" id="L25">	public CLItoParameters() {</span>
+
+		//create attributeSet
+<span class="fc" id="L28">		final Integer maxYear = 2019, minYear = 2008;</span>
+<span class="fc" id="L29">		Attribute year = new NaturalAttribute(&quot;yyyy&quot;, maxYear, minYear);</span>
+<span class="fc" id="L30">		attributeSet.add(year);</span>
+
+<span class="fc" id="L32">		final Integer maxMonth = 12, minMonth = 1;</span>
+<span class="fc" id="L33">		Attribute month = new NaturalAttribute(&quot;mm&quot;, maxMonth, minMonth);</span>
+<span class="fc" id="L34">		attributeSet.add(month);</span>
+
+<span class="fc" id="L36">		final Integer maxDay = 31, minDay = 1;</span>
+<span class="fc" id="L37">		Attribute day = new NaturalAttribute(&quot;dd&quot;, maxDay, minDay);</span>
+<span class="fc" id="L38">		attributeSet.add(day);</span>
+
+<span class="fc" id="L40">		Attribute taglike = new StringAttribute(&quot;taglike&quot;, new String[0]);</span>
+<span class="fc" id="L41">		attributeSet.add(taglike);</span>
+
+<span class="fc" id="L43">		final Integer maxUser = 11142405, minUser = 1;</span>
+<span class="fc" id="L44">		Attribute user = new NaturalAttribute(&quot;user&quot;, maxUser, minUser);</span>
+<span class="fc" id="L45">		attributeSet.add(user);</span>
+
+<span class="fc" id="L47">		final Integer maxLimit = 500, minLimit = 0;</span>
+<span class="fc" id="L48">		Attribute limit = new NaturalAttribute(&quot;limit&quot;, maxLimit, minLimit);</span>
+<span class="fc" id="L49">		attributeSet.add(limit);</span>
+
+<span class="fc" id="L51">		Attribute type = new StringAttribute(&quot;type&quot;, new String[] {&quot;question&quot;, &quot;answer&quot;, &quot;post&quot;});</span>
+<span class="fc" id="L52">		attributeSet.add(type);</span>
+
+<span class="fc" id="L54">		Attribute edge = new BooleanAttribute(&quot;edge&quot;);</span>
+<span class="fc" id="L55">		attributeSet.add(edge);</span>
+
+<span class="fc" id="L57">		Attribute weight = new BooleanAttribute(&quot;weight&quot;);</span>
+<span class="fc" id="L58">		attributeSet.add(weight);</span>
+
+
+<span class="fc" id="L61">	}</span>
+
+	/**
+	 * This method parses the parameter got from CLI.
+	 * 
+	 * @param args The command line inputs.
+	 * @return paramSet ParameterSet which contains the input parameters to the query.
+	 * @throws IllegalArgumentException Wrong parameter passed from CLI.
+	 */
+	public ParameterSet parseCLI(final String[] args) throws IllegalArgumentException {
+
+<span class="fc" id="L72">		ParameterSet paramSet = new ParameterSet();</span>
+
+<span class="fc" id="L74">		String paramName = &quot;&quot;;</span>
+<span class="fc" id="L75">		String paramValue = &quot;&quot;;</span>
+
+		//for each args
+<span class="fc bfc" id="L78" title="All 2 branches covered.">		for (Integer index = 0; index &lt; args.length; index++) {</span>
+
+			//get index of &quot;=&quot;
+<span class="fc" id="L81">			Integer equal = args[index].indexOf(&quot;=&quot;);</span>
+
+			//if &quot;=&quot; is not first or last char
+<span class="pc bpc" id="L84" title="1 of 2 branches missed.">			if (equal &gt; 0) {</span>
+<span class="pc bpc" id="L85" title="1 of 2 branches missed.">				if (equal &lt; args[index].length()) {</span>
+					//get param name
+<span class="fc" id="L87">					paramName = args[index].substring(0, equal);</span>
+					//get param value
+<span class="fc" id="L89">					paramValue = args[index].substring(equal + 1, args[index].length());</span>
+				} else {
+<span class="nc" id="L91">					throw new IllegalArgumentException();</span>
+				}
+			} else {
+<span class="nc" id="L94">				throw new IllegalArgumentException();</span>
+			}
+
+<span class="fc" id="L97">			Boolean noSuchAttribute = true;</span>
+			//for each attribute in set
+<span class="fc bfc" id="L99" title="All 2 branches covered.">			for (Attribute attribute : attributeSet) {</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">				if (attribute.toString().equals(paramName)) {</span>
+
+					//if is a natural attribute
+<span class="fc bfc" id="L103" title="All 2 branches covered.">					if (attribute instanceof NaturalAttribute) {</span>
+<span class="fc" id="L104">						paramSet.add(buildNaturalParameter(</span>
+<span class="fc" id="L105">						(NaturalAttribute) attribute, Integer.valueOf(paramValue)));</span>
+					}
+
+					//if is a String attribute
+<span class="fc bfc" id="L109" title="All 2 branches covered.">					if (attribute instanceof StringAttribute) {</span>
+<span class="fc" id="L110">						paramSet.add(buildStringParameter(</span>
+								(StringAttribute) attribute, paramValue));
+					}
+
+					//if is a boolean attribute
+<span class="fc bfc" id="L115" title="All 2 branches covered.">					if (attribute instanceof BooleanAttribute) {</span>
+<span class="fc" id="L116">						paramSet.add(buildBooleanParameter(</span>
+								(BooleanAttribute) attribute, paramValue));
+					}
+
+<span class="fc" id="L120">					noSuchAttribute = false;</span>
+				}
+<span class="fc" id="L122">			}</span>
+
+<span class="pc bpc" id="L124" title="1 of 2 branches missed.">			if (noSuchAttribute) {</span>
+<span class="nc" id="L125">				throw new IllegalArgumentException();</span>
+			}
+
+		} //end check argument
+
+<span class="fc" id="L130">		return paramSet;</span>
+	}
+
+	/**
+	* This method checks passed value and builds the natural parameter.
+	* 
+ 	* @param attribute The natural attribute.
+ 	* @param value The natural value.
+ 	* @return NaturalParameter The natural parameter parses.
+ 	* @throws IllegalArgumentException Wrong value passed from CLI.
+ 	*/
+	private NaturalParameter buildNaturalParameter(final NaturalAttribute attribute, final Integer value)
+			throws IllegalArgumentException {
+
+<span class="fc bfc" id="L144" title="All 4 branches covered.">		if (value &gt;= attribute.getMin() &amp;&amp; value &lt;= attribute.getMax()) {</span>
+<span class="fc" id="L145">			return new NaturalParameter(attribute, value);</span>
+
+		} else {
+<span class="fc" id="L148">			throw new IllegalArgumentException();</span>
+		}
+
+	}
+
+	/**
+	 * This method checks passed value and builds the string parameter.
+	 * 
+	 * @param attribute The string attribute.
+	 * @param value value The string value.
+	 * @return StringParameter The string parameter parses.
+	 * @throws IllegalArgumentException Wrong value passed from CLI.
+	 */
+	private StringParameter buildStringParameter(final StringAttribute attribute, final String value)
+			throws IllegalArgumentException {
+
+<span class="fc" id="L164">		Iterator&lt;String&gt; iter = attribute.iterator();</span>
+
+<span class="fc bfc" id="L166" title="All 2 branches covered.">		if (!iter.hasNext()) {</span>
+<span class="fc" id="L167">			return new StringParameter(attribute, value);</span>
+		}
+
+<span class="pc bpc" id="L170" title="1 of 2 branches missed.">		while (iter.hasNext()) {</span>
+<span class="fc bfc" id="L171" title="All 2 branches covered.">			if (iter.next().equals(value)) {</span>
+<span class="fc" id="L172">				return new StringParameter(attribute, value);</span>
+			}
+		}
+
+<span class="nc" id="L176">		throw new IllegalArgumentException();</span>
+
+	}
+
+	/**
+	 * This method checks passed value and builds the boolean parameter.
+	 * 
+	 * @param attribute The boolean attribute.
+	 * @param value The boolean value.
+	 * @return BooleanParameter The boolean parameter parses.
+	 * @throws IllegalArgumentException Wrong value passed from CLI.
+	 */
+	private BooleanParameter buildBooleanParameter(final BooleanAttribute attribute, final String value)
+			throws IllegalArgumentException {
+
+<span class="fc bfc" id="L191" title="All 2 branches covered.">		if (attribute.getTrue().equals(value)) {</span>
+<span class="fc" id="L192">			return new BooleanParameter(attribute, true);</span>
+		}
+
+<span class="pc bpc" id="L195" title="1 of 2 branches missed.">		if (attribute.getFalse().equals(value)) {</span>
+<span class="fc" id="L196">			return new BooleanParameter(attribute, false);</span>
+		}
+
+<span class="nc" id="L199">		throw new IllegalArgumentException();</span>
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.0.201801022044</span></div></body></html>

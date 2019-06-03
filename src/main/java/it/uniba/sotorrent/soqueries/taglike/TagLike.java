@@ -3,7 +3,7 @@ package it.uniba.sotorrent.soqueries.taglike;
 import it.uniba.sotorrent.soqueries.SOQueryI;
 
 /**
- * <<Entity>>
+ * Entity
  * This class implements SOQueryI for queries on tags.
  */
 public abstract class TagLike implements SOQueryI {

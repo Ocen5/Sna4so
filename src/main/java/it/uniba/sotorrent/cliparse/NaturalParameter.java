@@ -1,9 +1,9 @@
 package it.uniba.sotorrent.cliparse;
 
 /**
- * <<Entity>>
+ * Entity
  * This class represents the integer domain of an attribute.
- * @author codd
+ * Author codd
  *
  */
 class NaturalParameter extends Parameter {

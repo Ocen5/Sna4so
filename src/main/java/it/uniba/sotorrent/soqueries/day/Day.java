@@ -3,7 +3,7 @@ package it.uniba.sotorrent.soqueries.day;
 import it.uniba.sotorrent.soqueries.SOQueryI;
 
 /**
- * <<Entity>>
+ * Entity
  * This class implements SOQueryI for queries with day.
  */
 public abstract class Day implements SOQueryI {
